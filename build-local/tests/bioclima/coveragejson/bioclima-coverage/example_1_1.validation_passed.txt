@@ -1,0 +1,10 @@
+Validation report for ogc.bioclima.coveragejson.bioclima-coverage - BioClima CoverageJSON profile
+Generated 2026-05-18T07:19:37.128193+00:00
+=== Files ===
+Using examples/minimal-coverage.covjson from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

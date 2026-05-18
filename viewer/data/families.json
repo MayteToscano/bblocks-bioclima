@@ -1,0 +1,112 @@
+{
+  "_comment": "Single source of truth for family labels used by viewer (index.html, registry.html, bblock.html). Generated from the groupLabel field of every bblock.json by scripts/build-families.py.",
+  "order": [
+    "coveragejson",
+    "ebv",
+    "indicator",
+    "zonification",
+    "ontology",
+    "policy",
+    "provenance"
+  ],
+  "families": {
+    "coveragejson": {
+      "label": {
+        "en": "CoverageJSON / BioClima Coverage",
+        "es": "CoverageJSON / BioClima Coverage",
+        "zh": "CoverageJSON / BioClima Coverage",
+        "ro": "CoverageJSON / BioClima Coverage"
+      },
+      "description": {
+        "en": "Pivot block of the whole register: profile of OGC CoverageJSON that every gridded artefact conforms to.",
+        "es": "Bloque pivote del registro: perfil de OGC CoverageJSON al que se ajustan todos los artefactos gridded.",
+        "zh": "整个注册表的枢轴块:所有栅格成果遵循的 OGC CoverageJSON 配置文件。",
+        "ro": "Blocul-pivot al registrului: profil OGC CoverageJSON la care se conformează toate artefactele gridate."
+      }
+    },
+    "ebv": {
+      "label": {
+        "en": "EBVs (Essential Biodiversity Variables)",
+        "es": "EBVs (Variables Esenciales de Biodiversidad)",
+        "zh": "基本生物多样性变量(EBV)",
+        "ro": "EBV (Variabile esențiale de biodiversitate)"
+      },
+      "description": {
+        "en": "Generic EBV template plus concrete EBV datasets shipped as CoverageJSON.",
+        "es": "Plantilla genérica de EBV y datasets concretos en CoverageJSON.",
+        "zh": "通用 EBV 模板与具体 EBV 数据集(CoverageJSON)。",
+        "ro": "Șablon generic EBV și seturi concrete EBV ca CoverageJSON."
+      }
+    },
+    "indicator": {
+      "label": {
+        "en": "Spatial Indicators",
+        "es": "Indicadores espaciales",
+        "zh": "空间指标",
+        "ro": "Indicatori spațiali"
+      },
+      "description": {
+        "en": "Generic indicator recipe schema and the Phenological Change Indicator (PCI), a 4-parameter ParameterGroup with Theil-Sen trend, anomaly and Pettitt change-point detection.",
+        "es": "Esquema genérico de receta de indicador y el PCI, un ParameterGroup de 4 parámetros con tendencia Theil-Sen, anomalía y detección de punto de cambio de Pettitt.",
+        "zh": "通用指标配方模式与 PCI(4 参数 ParameterGroup,含 Theil-Sen 趋势、异常与 Pettitt 变点检测)。",
+        "ro": "Schemă generică de rețetă și PCI (ParameterGroup cu 4 parametri: tendință Theil-Sen, anomalie, detecție de punct de schimbare Pettitt)."
+      }
+    },
+    "zonification": {
+      "label": {
+        "en": "Bioclimatic Zonification",
+        "es": "Zonificación bioclimática",
+        "zh": "生物气候分区",
+        "ro": "Zonificare bioclimatică"
+      },
+      "description": {
+        "en": "Aggregated polygons of contiguous pixels of the same PCI category, with a true outline traced from a connected-components flood-fill (not per-cell rectangles).",
+        "es": "Polígonos agregados de píxeles contiguos con la misma categoría de PCI, con contorno real trazado desde componentes conexos (no rectángulos por celda).",
+        "zh": "由相邻同类 PCI 像素聚合而成的多边形,使用连通分量轮廓追踪(非逐像元矩形)。",
+        "ro": "Poligoane agregate de pixeli adiacenți cu aceeași categorie PCI, cu contur real urmărit din componente conexe."
+      }
+    },
+    "ontology": {
+      "label": {
+        "en": "Ontology",
+        "es": "Ontología",
+        "zh": "本体",
+        "ro": "Ontologie"
+      },
+      "description": {
+        "en": "Semantic model used by EBVs, indicators, policy alignment, provenance records and zonification categories.",
+        "es": "Modelo semántico usado por EBVs, indicadores, alineación con políticas, provenance y categorías de zonificación.",
+        "zh": "EBV、指标、政策对齐、出处和分区类别使用的语义模型。",
+        "ro": "Model semantic utilizat de EBV-uri, indicatori, aliniere politică, proveniență și categorii de zonificare."
+      }
+    },
+    "policy": {
+      "label": {
+        "en": "Policy alignment",
+        "es": "Alineación con políticas",
+        "zh": "政策对齐",
+        "ro": "Aliniere cu politici"
+      },
+      "description": {
+        "en": "KMGBF targets and the indicator ↔ policy alignment schema with relationship types and evidence strength. The relationship is bidirectional: targets back-link to indicators via `informedBy`.",
+        "es": "Metas KMGBF y el esquema de alineación indicador ↔ política con tipos de relación y fuerza de evidencia. La relación es bidireccional: las metas enlazan de vuelta a los indicadores vía `informedBy`.",
+        "zh": "昆蒙框架目标及含关系类型与证据强度的指标↔政策对齐模式。双向关系:目标通过 `informedBy` 反向链接到指标。",
+        "ro": "Țintele KMGBF și schema de aliniere indicator ↔ politică (relație + forța evidenței). Relația este bidirecțională: țintele se conectează înapoi la indicatori prin `informedBy`."
+      }
+    },
+    "provenance": {
+      "label": {
+        "en": "Provenance",
+        "es": "Provenance / Trazabilidad",
+        "zh": "出处与溯源",
+        "ro": "Proveniență"
+      },
+      "description": {
+        "en": "PROV-O records for EBV inputs and indicator outputs, with git commit hash and GitHub Actions run id for indicators.",
+        "es": "Registros PROV-O para EBVs e indicadores, con hash de commit git y run id de GitHub Actions para indicadores.",
+        "zh": "EBV 输入与指标输出的 PROV-O 记录,指标含 git 提交哈希与 GitHub Actions 运行 ID。",
+        "ro": "Înregistrări PROV-O pentru intrările EBV și ieșirile indicatorilor."
+      }
+    }
+  }
+}

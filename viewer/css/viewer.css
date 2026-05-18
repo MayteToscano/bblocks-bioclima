@@ -1,0 +1,216 @@
+/* ===========================================================================
+ * Bioclima viewer — visual identity
+ * Inspired by the BioClima project website (https://bioclima.net/).
+ * Greens for biodiversity / blues for climate, neutral grays for chrome.
+ * =========================================================================== */
+:root {
+  --bioclima-green:      #2e7d4f;
+  --bioclima-green-dark: #1f5a37;
+  --bioclima-blue:       #1d6b8c;
+  --bioclima-blue-light: #cfe5ee;
+  --bioclima-sand:       #f5efe1;
+  --bioclima-leaf:       #8cba6c;
+
+  --bg:      #f5f8f5;
+  --surface: #ffffff;
+  --border:  #dde5dc;
+  --text:    #1c2a23;
+  --muted:   #5f6f64;
+  --accent:  var(--bioclima-green);
+  --accent-light: #e5f1e9;
+  --accent-strong: var(--bioclima-green-dark);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text); }
+body { display: flex; background: var(--bg); }
+
+/* Sidebar */
+#sidebar {
+  width: 320px; min-width: 320px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 1.1rem 1.25rem 0.8rem;
+  overflow-y: auto;
+  display: flex; flex-direction: column; gap: 1.1rem;
+}
+#sidebar header { display: flex; flex-direction: column; gap: 0.4rem; }
+#sidebar header .branding {
+  display: flex; align-items: center; gap: 0.6rem;
+  text-decoration: none; color: inherit;
+}
+#sidebar header .branding img {
+  height: 36px; width: auto;
+  display: block;
+}
+#sidebar header h1 {
+  margin: 0; font-size: 1.05rem;
+  color: var(--accent-strong); font-weight: 600;
+  line-height: 1.15;
+}
+#sidebar header h1 small {
+  display: block; font-size: 0.7rem; color: var(--muted);
+  font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em;
+  margin-top: 0.15rem;
+}
+#sidebar header .subtitle { margin: 0; color: var(--muted); font-size: 0.82rem; }
+#sidebar footer {
+  margin-top: auto; font-size: 0.72rem; color: var(--muted);
+  padding-top: 0.8rem; border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 0.35rem;
+}
+#sidebar footer a { color: var(--accent); }
+#sidebar footer .eu-funding {
+  background: var(--bioclima-sand); padding: 0.5rem 0.6rem; border-radius: 6px;
+  font-size: 0.7rem; line-height: 1.4; color: #4a3d1f;
+}
+#sidebar footer .partners-link { color: var(--muted); font-style: italic; }
+
+.control label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+  font-weight: 600;
+}
+.control select, .control button {
+  font-family: inherit;
+  font-size: 0.88rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+}
+.control select { width: 100%; }
+
+/* Layer list */
+#layer-list { display: flex; flex-direction: column; gap: 0.3rem; }
+.layer-item {
+  display: flex; align-items: flex-start; gap: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--surface);
+  transition: background 0.15s, border-color 0.15s;
+}
+.layer-item:hover { background: var(--accent-light); border-color: var(--bioclima-leaf); }
+.layer-item.active { border-color: var(--accent); background: var(--accent-light); }
+.layer-item input { margin-top: 0.2rem; accent-color: var(--accent); }
+.layer-item .layer-meta { flex: 1; }
+.layer-item .layer-title { font-size: 0.88rem; font-weight: 500; }
+.layer-item .layer-kind { font-size: 0.7rem; color: var(--muted); margin-top: 0.15rem; }
+
+/* Time controls */
+.time-row { display: flex; align-items: center; gap: 0.5rem; }
+.time-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.time-row button {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--accent); color: white; border: 0;
+  cursor: pointer; font-size: 0.85rem;
+}
+#time-label { font-size: 0.85rem; color: var(--muted); min-width: 40px; }
+
+/* Legend */
+#legend { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.78rem; }
+.legend-item { display: flex; align-items: center; gap: 0.5rem; }
+.legend-swatch { width: 18px; height: 12px; border-radius: 2px; border: 1px solid var(--border); }
+
+/* Map */
+#map { flex: 1; height: 100%; }
+.leaflet-container { background: #c7d6c2; }
+
+/* Info panel */
+#info-panel {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 340px;
+  max-height: calc(100% - 2rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 4px 20px rgba(31, 90, 55, 0.12);
+  overflow-y: auto;
+  z-index: 1000;
+}
+#info-panel h2 { margin: 0 0 0.3rem 0; font-size: 1.05rem; color: var(--accent-strong); padding-right: 1.5rem; }
+#info-panel h3 { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0.9rem 0 0.35rem 0; }
+.info-definition { font-size: 0.86rem; line-height: 1.5; color: var(--text); }
+#info-properties { display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 0.7rem; font-size: 0.82rem; margin: 0.5rem 0; }
+#info-properties dt { color: var(--muted); }
+#info-properties dd { margin: 0; }
+#info-policy { padding-left: 1.2rem; margin: 0; font-size: 0.83rem; }
+#info-policy li { margin-bottom: 0.4rem; }
+.info-source { font-size: 0.78rem; margin-top: 0.7rem; }
+.info-source a { color: var(--accent); }
+#info-close {
+  position: absolute; top: 0.5rem; right: 0.5rem;
+  background: transparent; border: 0; cursor: pointer;
+  color: var(--muted); font-size: 1rem;
+}
+
+/* Family headers in the layer list */
+.family-header {
+  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--bioclima-blue); font-weight: 700;
+  margin-top: 0.6rem; margin-bottom: 0.15rem; padding-left: 0.1rem;
+}
+.family-header:first-child { margin-top: 0; }
+.bblock-link { color: var(--muted); text-decoration: none; font-family: ui-monospace, Menlo, monospace; font-size: 0.7rem; }
+.bblock-link:hover { color: var(--accent); text-decoration: underline; }
+
+/* Semantic-navigation styling */
+.concept-link, .attr-link {
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+}
+.concept-link:hover, .attr-link:hover {
+  text-decoration: none; border-bottom-style: solid;
+}
+.attr-link::after { content: " ↗"; font-size: 0.7em; opacity: 0.5; }
+.concept-link::after { content: " ↗"; font-size: 0.7em; opacity: 0.6; }
+
+.info-bblock { font-size: 0.72rem; color: var(--muted); margin: 0 0 0.4rem 0; }
+.info-bblock a { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.info-hint { font-size: 0.7rem; color: var(--muted); font-style: italic; margin: 0.2rem 0 0.4rem 0; }
+
+.policy-link { color: var(--accent); text-decoration: none; font-weight: 500; }
+.policy-link:hover { text-decoration: underline; }
+.policy-rel, .policy-ev {
+  display: inline-block;
+  font-size: 0.68rem;
+  background: var(--accent-light);
+  color: var(--accent-strong);
+  padding: 0.05rem 0.4rem;
+  margin-left: 0.25rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.policy-ev { background: var(--bioclima-blue-light); color: var(--bioclima-blue); }
+.policy-just { font-size: 0.77rem; color: var(--muted); margin-top: 0.2rem; line-height: 1.4; }
+
+.registry-link { color: var(--accent); font-weight: 500; }
+
+/* Parameter selector (PCI ParameterGroup) */
+#param-controls { display: flex; flex-direction: column; gap: 0.3rem; }
+#param-controls label {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted); margin-bottom: 0.2rem; font-weight: 600;
+}
+.param-btn {
+  text-align: left; cursor: pointer;
+  font-family: inherit; font-size: 0.82rem;
+  padding: 0.35rem 0.6rem; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text); transition: all 0.15s;
+}
+.param-btn:hover { background: var(--accent-light); border-color: var(--accent); }
+.param-btn.active {
+  background: var(--accent); color: white; border-color: var(--accent);
+  font-weight: 500;
+}

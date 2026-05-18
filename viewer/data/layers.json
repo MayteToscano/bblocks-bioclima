@@ -1,0 +1,139 @@
+[
+  {
+    "id": "vap-coniferous",
+    "bblock": "ogc.bioclima.ebv.vap-coniferous",
+    "family": "ebv",
+    "kind": "coverage",
+    "title": {
+      "en": "VAP — Coniferous forests (Finland)",
+      "es": "VAP — Bosques de coníferas (Finlandia)",
+      "zh": "VAP — 针叶林(芬兰)",
+      "ro": "VAP — Păduri de conifere (Finlanda)"
+    },
+    "dataUrl": "../_sources/ebv/vap-coniferous/examples/finland-vap-coniferous-2001-2018.covjson",
+    "observedPropertyIri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+    "attributeIris": {
+      "value":  "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+      "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/day-of-year",
+      "entity": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest"
+    },
+    "unit": { "symbol": "DOY", "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/day-of-year" },
+    "range": [60, 160],
+    "colorRamp": ["#3B8BD4", "#FCDE5A", "#E85D24"],
+    "policyAlignment": [
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8", "relationship": "informs" },
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/sdg-15",         "relationship": "supports-reporting-on" }
+    ]
+  },
+  {
+    "id": "vap-deciduous",
+    "bblock": "ogc.bioclima.ebv.vap-deciduous",
+    "family": "ebv",
+    "kind": "coverage",
+    "title": {
+      "en": "VAP — Deciduous vegetation (Finland)",
+      "es": "VAP — Vegetación caducifolia (Finlandia)",
+      "zh": "VAP — 落叶植被(芬兰)",
+      "ro": "VAP — Vegetație foioasă (Finlanda)"
+    },
+    "dataUrl": "../_sources/ebv/vap-deciduous/examples/finland-vap-deciduous-2001-2018.covjson",
+    "observedPropertyIri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+    "attributeIris": {
+      "value":  "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+      "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/day-of-year",
+      "entity": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/deciduous-vegetation"
+    },
+    "unit": { "symbol": "DOY", "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/day-of-year" },
+    "range": [60, 160],
+    "colorRamp": ["#3B8BD4", "#FCDE5A", "#E85D24"],
+    "policyAlignment": [
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8", "relationship": "informs" },
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/sdg-15",         "relationship": "supports-reporting-on" }
+    ]
+  },
+  {
+    "id": "pci",
+    "bblock": "ogc.bioclima.indicator.pci",
+    "family": "indicator",
+    "kind": "coverage",
+    "title": {
+      "en": "PCI — Phenological Change Indicator",
+      "es": "PCI — Indicador de cambio fenológico",
+      "zh": "PCI — 物候变化指标",
+      "ro": "PCI — Indicator al schimbării fenologice"
+    },
+    "dataUrl": "../_sources/indicator/pci/examples/pci-finland-2001-2018.covjson",
+    "observedPropertyIri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+    "isParameterGroup": true,
+    "defaultParameter": "trend",
+    "parameters": [
+      {
+        "key": "trend",
+        "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend",
+        "label": { "en": "Trend",   "es": "Tendencia",       "zh": "趋势",       "ro": "Tendință" },
+        "unit":  { "symbol": "d/yr", "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/days-per-year" },
+        "range": [-0.8, 0.8],
+        "colorRamp": ["#1D9E75", "#F1EFE8", "#E24B4A"]
+      },
+      {
+        "key": "anomaly",
+        "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-anomaly",
+        "label": { "en": "Anomaly", "es": "Anomalía",         "zh": "异常",       "ro": "Anomalie" },
+        "unit":  { "symbol": "d",    "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/day-of-year" },
+        "range": [-15, 15],
+        "colorRamp": ["#1D9E75", "#F1EFE8", "#E24B4A"]
+      },
+      {
+        "key": "changepoint_year",
+        "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-changepoint-year",
+        "label": { "en": "Changepoint year (Pettitt)", "es": "Año del punto de cambio (Pettitt)", "zh": "变点年份(Pettitt)", "ro": "Anul punctului de schimbare (Pettitt)" },
+        "unit":  { "symbol": "yr",   "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/year" },
+        "range": [2002, 2017],
+        "colorRamp": ["#3B8BD4", "#FCDE5A", "#7F77DD"]
+      },
+      {
+        "key": "changepoint_pvalue",
+        "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-changepoint-pvalue",
+        "label": { "en": "Changepoint p-value", "es": "Valor p del punto de cambio", "zh": "变点 p 值", "ro": "Valoarea p a punctului de schimbare" },
+        "unit":  { "symbol": "—",    "iri": "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/dimensionless" },
+        "range": [0.0, 1.0],
+        "colorRamp": ["#E24B4A", "#F1EFE8", "#3B8BD4"]
+      }
+    ],
+    "attributeIris": {
+      "value":  "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+      "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/days-per-year"
+    },
+    "policyAlignment": [
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8", "relationship": "measures-progress-on", "evidenceStrength": "direct" },
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1", "relationship": "informs",              "evidenceStrength": "indirect" },
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/sdg-15",         "relationship": "supports-reporting-on", "evidenceStrength": "contextual" }
+    ]
+  },
+  {
+    "id": "bioclimatic-zones",
+    "bblock": "ogc.bioclima.zonification.bioclimatic-zone",
+    "family": "zonification",
+    "kind": "geojson",
+    "title": {
+      "en": "Bioclimatic zones (PCI-based)",
+      "es": "Zonas bioclimáticas (basadas en PCI)",
+      "zh": "生物气候区(基于 PCI)",
+      "ro": "Zone bioclimatice (pe baza PCI)"
+    },
+    "dataUrl": "../_sources/zonification/bioclimatic-zone/examples/finland-zones-2001-2018.geojson",
+    "attributeIris": {
+      "category":    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category",
+      "mean_pci":    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend",
+      "min_pci":     "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend",
+      "max_pci":     "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend",
+      "std_pci":     "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend",
+      "pixel_count": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pixel-count",
+      "area_km2":    "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/square-kilometre"
+    },
+    "policyAlignment": [
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1", "relationship": "informs" },
+      { "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8", "relationship": "measures-progress-on" }
+    ]
+  }
+]

@@ -1,0 +1,105 @@
+{
+  "type": "Coverage",
+  "domain": {
+    "type": "Domain",
+    "domainType": "Grid",
+    "axes": {
+      "x": {
+        "values": [
+          14.1,
+          14.17,
+          14.23
+        ]
+      },
+      "y": {
+        "values": [
+          57.75,
+          57.82,
+          57.88
+        ]
+      },
+      "t": {
+        "values": [
+          "2010-01-01T00:00:00Z",
+          "2011-01-01T00:00:00Z"
+        ]
+      }
+    },
+    "referencing": [
+      {
+        "coordinates": [
+          "y",
+          "x"
+        ],
+        "system": {
+          "type": "GeographicCRS",
+          "id": "http://www.opengis.net/def/crs/EPSG/0/4326"
+        }
+      },
+      {
+        "coordinates": [
+          "t"
+        ],
+        "system": {
+          "type": "TemporalRS",
+          "calendar": "Gregorian"
+        }
+      }
+    ]
+  },
+  "parameters": {
+    "vap_doy": {
+      "type": "Parameter",
+      "observedProperty": {
+        "id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+        "label": {
+          "en": "Start of VAP (Day of Year)",
+          "es": "Inicio del periodo activo de vegetaci\u00f3n (d\u00eda del a\u00f1o)",
+          "zh": "\u690d\u88ab\u6d3b\u52a8\u671f\u5f00\u59cb(\u5e74\u79ef\u65e5)",
+          "ro": "\u00cenceputul perioadei active a vegeta\u021biei (ziua din an)"
+        }
+      },
+      "unit": {
+        "id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/day-of-year",
+        "symbol": "DOY"
+      }
+    }
+  },
+  "ranges": {
+    "vap_doy": {
+      "type": "NdArray",
+      "dataType": "integer",
+      "axisNames": [
+        "t",
+        "y",
+        "x"
+      ],
+      "shape": [
+        2,
+        3,
+        3
+      ],
+      "nodata": -32768,
+      "values": [
+        120,
+        122,
+        121,
+        119,
+        121,
+        123,
+        118,
+        120,
+        122,
+        118,
+        119,
+        120,
+        117,
+        118,
+        121,
+        116,
+        117,
+        120
+      ]
+    }
+  }
+}

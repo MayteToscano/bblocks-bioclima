@@ -1,0 +1,22 @@
+BioClima OGC Building Blocks
+============================
+
+Data and content
+----------------
+This work is licensed under a Creative Commons Attribution 4.0 International
+License (CC-BY-4.0). A copy of the license is available at:
+
+  https://creativecommons.org/licenses/by/4.0/legalcode
+
+Software and code
+-----------------
+The Python implementations under _sources/indicator/*/code/ and the auxiliary
+scripts under scripts/ are licensed under the Apache License, Version 2.0:
+
+  https://www.apache.org/licenses/LICENSE-2.0
+
+Attribution
+-----------
+If you use this register or its data, please cite:
+  - The GeoBON DOI 10.25829/xf8ek6 for the underlying VAP datasets.
+  - The BioClima project for the register, ontology and indicators.

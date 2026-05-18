@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioClima — Block documentation (official viewer)</title>
+  <link rel="stylesheet" href="css/viewer.css" />
+  <style>
+    body { display: flex; flex-direction: column; height: 100vh; background: var(--bg); }
+    .topbar {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar .branding { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit; }
+    .topbar .branding img { height: 28px; }
+    .topbar .branding strong { color: var(--accent-strong); font-size: 0.95rem; }
+    .topbar nav { display: flex; gap: 0.8rem; font-size: 0.85rem; }
+    .topbar nav a { color: var(--accent); text-decoration: none; }
+    .topbar nav a:hover { text-decoration: underline; }
+    .topbar nav a.active { font-weight: 600; color: var(--accent-strong); }
+    .topbar .spacer { flex: 1; }
+    .topbar select {
+      padding: 0.35rem 0.6rem; border-radius: 6px;
+      border: 1px solid var(--border); background: var(--surface);
+      font-family: inherit; font-size: 0.88rem; min-width: 320px;
+    }
+    .notice {
+      background: var(--bioclima-blue-light);
+      color: var(--bioclima-blue);
+      padding: 0.5rem 1rem; font-size: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .notice a { color: var(--bioclima-blue); font-weight: 600; }
+    main { flex: 1; display: flex; }
+    iframe {
+      flex: 1; border: 0; width: 100%; height: 100%;
+      background: var(--surface);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="branding" href="https://bioclima.net/" target="_blank" rel="noopener">
+      <img src="https://bioclima.net/media/images/bioclima_logo.original.png" alt="BioClima" />
+      <strong>OGC Building Blocks</strong>
+    </a>
+    <nav>
+      <a href="index.html">▸ Map viewer</a>
+      <a href="registry.html">▸ Registry index</a>
+      <a class="active">▸ Block documentation</a>
+    </nav>
+    <span class="spacer"></span>
+    <label for="block-select" style="font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em;">Block</label>
+    <select id="block-select"></select>
+  </header>
+
+  <p class="notice" id="notice">
+    Showing the official OGC <a href="https://ogcincubator.github.io/bblocks-viewer/" target="_blank" rel="noopener">bblocks-viewer</a>
+    rendering of the selected block. The CoverageJSON data layer is rendered in the
+    <a href="index.html">map viewer</a>; this page shows the schema, dependencies and metadata.
+  </p>
+
+  <main>
+    <iframe id="bblocks-frame" title="bblocks-viewer" src="about:blank"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+  </main>
+
+  <script>
+    // Configuration -----------------------------------------------------------
+    const REGISTER_URL = "https://maytetoscano.github.io/bblocks-bioclima/build/register.json";
+    const BBLOCKS_VIEWER = "https://ogcincubator.github.io/bblocks-viewer/";
+    // The official viewer accepts ?register=<url>&bblock=<id>. The CoverageJSON
+    // plugin (if available) can be loaded by appending &plugin=<url>. The
+    // exact plugin URL is documented in bblocks-docs once it's published; for
+    // now we leave the hook ready and the iframe works without it.
+    const COVJSON_PLUGIN_URL = "";  // <-- set this when the plugin is published
+
+    // ------------------------------------------------------------------------
+    const select = document.getElementById("block-select");
+    const frame  = document.getElementById("bblocks-frame");
+
+    function buildFrameUrl(blockId) {
+      const u = new URL(BBLOCKS_VIEWER);
+      u.searchParams.set("register", REGISTER_URL);
+      if (blockId) u.searchParams.set("bblock", blockId);
+      if (COVJSON_PLUGIN_URL) u.searchParams.set("plugin", COVJSON_PLUGIN_URL);
+      return u.toString();
+    }
+
+    async function loadRegister() {
+      // Try the local build first (for offline preview), fall back to remote.
+      let reg = null;
+      try {
+        reg = await fetch("../build/register.json").then(r => r.ok ? r.json() : null);
+      } catch (_) { /* ignore */ }
+      if (!reg) {
+        try { reg = await fetch(REGISTER_URL).then(r => r.json()); }
+        catch (e) {
+          select.innerHTML = "<option>Could not load register.json</option>";
+          return [];
+        }
+      }
+      return reg.bblocks || [];
+    }
+
+    (async function init() {
+      const blocks = await loadRegister();
+      blocks.sort((a, b) => a.itemIdentifier.localeCompare(b.itemIdentifier));
+
+      // Group blocks by family in the dropdown.
+      const groups = {};
+      for (const b of blocks) {
+        const g = b.group || "other";
+        (groups[g] = groups[g] || []).push(b);
+      }
+      const order = ["coveragejson", "ebv", "indicator", "zonification", "ontology", "policy", "provenance", "other"];
+      select.innerHTML = "";
+      for (const g of order) {
+        if (!groups[g]) continue;
+        const og = document.createElement("optgroup");
+        og.label = (groups[g][0]?.groupLabel?.en) || g;
+        for (const b of groups[g]) {
+          const opt = document.createElement("option");
+          opt.value = b.itemIdentifier;
+          opt.textContent = b.name + "  ·  " + b.itemIdentifier;
+          og.appendChild(opt);
+        }
+        select.appendChild(og);
+      }
+
+      // Honour ?id= from the URL for direct linking.
+      const url = new URL(window.location.href);
+      const requested = url.searchParams.get("id");
+      if (requested && blocks.some(b => b.itemIdentifier === requested)) {
+        select.value = requested;
+      }
+      load(select.value);
+
+      select.addEventListener("change", () => load(select.value));
+    })();
+
+    function load(blockId) {
+      frame.src = buildFrameUrl(blockId);
+      const u = new URL(window.location.href);
+      u.searchParams.set("id", blockId);
+      history.replaceState(null, "", u);
+    }
+  </script>
+</body>
+</html>

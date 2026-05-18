@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioClima OGC Building Blocks — registry index</title>
+  <link rel="stylesheet" href="css/viewer.css" />
+  <style>
+    body { display: block; padding: 2rem 2.5rem; max-width: 1100px; margin: 0 auto; background: var(--bg); }
+    h1 { color: var(--accent); margin: 0 0 0.2rem 0; }
+    .lead { color: var(--muted); margin-bottom: 1.5rem; max-width: 65ch; }
+    .controls { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem; }
+    .controls select { padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid var(--border); }
+    .family-section { margin: 2rem 0 1rem 0; }
+    .family-section h2 {
+      font-size: 1.05rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-light);
+      padding-bottom: 0.4rem;
+      margin: 0 0 0.4rem 0;
+    }
+    .family-section .family-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+    .block-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+    .block-card.pivot { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; background: var(--accent-light); }
+    .block-card h3 { margin: 0 0 0.2rem 0; font-size: 1rem; color: var(--text); }
+    .block-card h3 .pivot-tag {
+      font-size: 0.65rem; background: var(--accent); color: white;
+      padding: 0.15rem 0.5rem; border-radius: 999px; margin-left: 0.5rem; vertical-align: middle;
+    }
+    .block-card .bid { font-family: ui-monospace, Menlo, monospace; color: var(--muted); font-size: 0.78rem; }
+    .block-card .abstract { font-size: 0.86rem; line-height: 1.5; margin: 0.5rem 0; color: var(--text); }
+    .block-card .meta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; font-size: 0.78rem; color: var(--muted); }
+    .block-card .links a {
+      display: inline-block; margin-right: 0.6rem; color: var(--accent);
+      text-decoration: none; font-size: 0.82rem; font-weight: 500;
+    }
+    .block-card .links a:hover { text-decoration: underline; }
+    .deps { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; }
+    .deps code { font-family: ui-monospace, Menlo, monospace; background: var(--bg); padding: 0.05rem 0.3rem; border-radius: 3px; }
+    .back { display: inline-block; color: var(--accent); text-decoration: none; margin-bottom: 1rem; font-size: 0.85rem; }
+    .families-toc { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .families-toc a {
+      padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--accent-light);
+      color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 500;
+    }
+    .families-toc a:hover { background: var(--accent); color: white; }
+  </style>
+</head>
+<body>
+  <header style="display:flex; align-items:center; gap:1rem; margin-bottom: 1rem;">
+    <a href="https://bioclima.net/" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:0.5rem; text-decoration:none; color:inherit;">
+      <img src="https://bioclima.net/media/images/bioclima_logo.original.png" alt="BioClima" style="height: 42px;" />
+    </a>
+    <div style="flex:1;">
+      <h1 style="margin:0;">OGC Building Blocks — registry index</h1>
+      <p class="lead" id="lead" style="margin:0.2rem 0 0 0;">Building blocks grouped by family. Each block links to its data layer in the map viewer, to the official OGC documentation page, and to its dependencies.</p>
+    </div>
+  </header>
+  <p style="margin-bottom:1rem;">
+    <a href="index.html" class="back">← Map viewer</a> &nbsp;·&nbsp;
+    <a href="bblock.html" class="back">▸ Block documentation (official bblocks-viewer)</a>
+  </p>
+
+  <div class="controls">
+    <label for="lang-select">Language</label>
+    <select id="lang-select">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="zh">中文</option>
+      <option value="ro">Română</option>
+    </select>
+  </div>
+
+  <div class="families-toc" id="toc"></div>
+  <div id="registry"></div>
+
+  <!-- Referenced vocabulary resources --------------------------------------- -->
+  <section class="family-section" id="fam-vocabularies" style="margin-top: 2rem;">
+    <h2 id="vocab-heading">Referenced vocabularies</h2>
+    <p class="family-desc" id="vocab-desc">
+      SKOS / RDF vocabulary resources dereferenced by IRI from the blocks.
+      The local ontology is also published as the <strong>Ontology</strong> building block;
+      the canonical long-term target for controlled vocabularies in the OGC ecosystem is
+      <a href="https://www.ogc.org/standards-resources/the-rainbow/" target="_blank" rel="noopener">OGC Rainbow</a>.
+      Today the local TTL is the source of truth; the <code>rainbowUri</code> slot
+      in <a href="data/vocabularies.json"><code>vocabularies.json</code></a> is reserved
+      for the migration target.
+    </p>
+    <div id="vocabularies"></div>
+  </section>
+
+  <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--muted);">
+    <p style="background: var(--bioclima-sand); padding: 0.7rem 1rem; border-radius: 6px; line-height: 1.5; color: #4a3d1f;">
+      <strong>BioClima</strong> — Funded by the European Union, GA no. 101181408.
+      Views and opinions expressed are those of the authors only and do not necessarily reflect those of the European Union or REA.
+    </p>
+    <p>
+      <a href="https://bioclima.net/" target="_blank" rel="noopener">BioClima project</a> ·
+      <a href="https://bioclima.net/partners/" target="_blank" rel="noopener">Partners</a> ·
+      <a href="https://github.com/MayteToscano/bblocks-bioclima" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script>
+    const FAMILY_ORDER = [
+      ["coveragejson",  { en: "CoverageJSON / BioClima Coverage", es: "CoverageJSON / BioClima Coverage", zh: "CoverageJSON / BioClima Coverage", ro: "CoverageJSON / BioClima Coverage" },
+        { en: "The CoverageJSON profile that every gridded dataset in the register conforms to. This is the pivot block of the whole register: EBVs, indicators and zonification link back here.",
+          es: "Perfil de CoverageJSON al que se ajustan todos los datasets gridded del registro. Es el bloque pivote: EBVs, indicadores y zonificación enlazan aquí.",
+          zh: "本注册表所有栅格数据集所遵循的 CoverageJSON 配置文件。这是整个注册表的枢轴。",
+          ro: "Profilul CoverageJSON la care se conformează toate seturile de date gridate. Este blocul-pivot al registrului." }],
+      ["ebv",           { en: "EBVs (Essential Biodiversity Variables)", es: "EBVs (Variables Esenciales de Biodiversidad)", zh: "基本生物多样性变量 (EBV)", ro: "EBV (Variabile esențiale de biodiversitate)" },
+        { en: "Generic EBV template plus concrete EBV datasets shipped as CoverageJSON.",
+          es: "Plantilla genérica de EBV y datasets concretos en CoverageJSON.",
+          zh: "通用 EBV 模板与具体 EBV 数据集(CoverageJSON)。",
+          ro: "Șablon generic EBV și seturi concrete EBV ca CoverageJSON." }],
+      ["indicator",     { en: "Spatial indicators", es: "Indicadores espaciales", zh: "空间指标", ro: "Indicatori spațiali" },
+        { en: "Generic indicator recipe schema plus the Phenological Change Indicator (PCI). Indicators derive from EBVs and declare an explicit policy alignment.",
+          es: "Esquema genérico de receta de indicador y el PCI. Los indicadores derivan de EBVs y declaran alineación política explícita.",
+          zh: "通用指标配方模式与物候变化指标(PCI)。指标由 EBV 派生并声明明确的政策对齐。",
+          ro: "Schemă generică de rețetă de indicator și PCI. Indicatorii derivă din EBV-uri și declară aliniere politică explicită." }],
+      ["zonification",  { en: "Bioclimatic zonification", es: "Zonificación bioclimática", zh: "生物气候分区", ro: "Zonificare bioclimatică" },
+        { en: "Aggregated polygons of contiguous pixels sharing the same PCI category. Each zone carries summary statistics and a policy relevance block per Feature.",
+          es: "Polígonos agregados de píxeles contiguos con la misma categoría de PCI. Cada zona lleva estadísticas y relevancia política por Feature.",
+          zh: "由连通像素聚合而成的多边形,共享同一 PCI 类别。每个区域携带统计与政策相关性。",
+          ro: "Poligoane agregate de pixeli adiacenți cu aceeași categorie PCI. Fiecare zonă poartă statistici și relevanță politică." }],
+      ["ontology",      { en: "Ontology", es: "Ontología", zh: "本体", ro: "Ontologie" },
+        { en: "Semantic model used by EBVs, indicators, policy alignment, provenance records and zonification categories.",
+          es: "Modelo semántico usado por EBVs, indicadores, alineación con políticas, provenance y categorías de zonificación.",
+          zh: "EBV、指标、政策对齐、出处和分区类别使用的语义模型。",
+          ro: "Model semantic utilizat de EBV-uri, indicatori, aliniere politică, proveniență și categorii de zonificare." }],
+      ["policy",        { en: "Policy alignment", es: "Alineación con políticas", zh: "政策对齐", ro: "Aliniere cu politici" },
+        { en: "KMGBF targets and the indicator ↔ policy alignment schema with relationship types and evidence strength.",
+          es: "Metas KMGBF y el esquema de alineación indicador ↔ política con tipos de relación y fuerza de evidencia.",
+          zh: "昆蒙框架目标及含关系类型与证据强度的指标↔政策对齐模式。",
+          ro: "Țintele KMGBF și schema de aliniere indicator ↔ politică, cu tipuri de relație și forța evidenței." }],
+      ["provenance",    { en: "Provenance", es: "Provenance / Trazabilidad", zh: "出处与溯源", ro: "Proveniență" },
+        { en: "PROV-O records for EBV inputs and indicator outputs. Every published artefact carries a chain of custody.",
+          es: "Registros PROV-O para EBVs e indicadores. Cada artefacto publicado lleva su cadena de custodia.",
+          zh: "EBV 输入和指标输出的 PROV-O 记录。每个发布的成果都附带出处链。",
+          ro: "Înregistrări PROV-O pentru intrările EBV și ieșirile indicatorilor. Fiecare artefact publicat poartă lanțul de proveniență." }]
+    ];
+
+    const state = { lang: "en", register: null };
+
+    (async function init() {
+      const url = new URL(window.location.href);
+      const qLang = url.searchParams.get("lang");
+      if (qLang && ["en", "es", "zh", "ro"].includes(qLang)) state.lang = qLang;
+      document.getElementById("lang-select").value = state.lang;
+      document.getElementById("lang-select").addEventListener("change", e => {
+        state.lang = e.target.value;
+        render();
+      });
+
+      // Try the local build first, fall back to remote
+      let reg = null;
+      try {
+        reg = await fetch("../build/register.json").then(r => r.ok ? r.json() : null);
+      } catch (_) { /* ignore */ }
+      if (!reg) {
+        try {
+          reg = await fetch("https://maytetoscano.github.io/bblocks-bioclima/build/register.json").then(r => r.json());
+        } catch (e) {
+          document.getElementById("registry").innerHTML =
+            "<p>Could not load <code>register.json</code>. Once the CI publishes it this page will populate automatically.</p>";
+          return;
+        }
+      }
+      state.register = reg;
+      render();
+      renderVocabularies();
+    })();
+
+    async function renderVocabularies() {
+      const root = document.getElementById("vocabularies");
+      let cfg = null;
+      try { cfg = await fetch("data/vocabularies.json").then(r => r.json()); } catch (_) {}
+      if (!cfg || !cfg.vocabularies || !cfg.vocabularies.length) {
+        root.innerHTML = "<p style='color:var(--muted);'>vocabularies.json not loadable.</p>";
+        return;
+      }
+      root.innerHTML = "";
+      for (const v of cfg.vocabularies) {
+        const card = document.createElement("article");
+        card.className = "block-card";
+        card.style.borderLeft = "3px solid var(--bioclima-blue)";
+        const title = v.title?.[state.lang] || v.title?.en || v.id;
+        const desc  = v.description?.[state.lang] || v.description?.en || "";
+        const status = v.rainbow?.migrated && v.rainbow?.rainbowUri
+          ? `<span class="pivot-tag" style="background: var(--bioclima-green);">in OGC Rainbow</span>`
+          : `<span class="pivot-tag" style="background: var(--bioclima-blue);">local (Rainbow migration pending)</span>`;
+        const schemes = (v.schemes || [])
+          .map(s => `<code>${v.id}:${s.id}</code>`).join(", ");
+        const ttl  = v.sources?.ttl
+          ? `<a href="${v.sources.ttl}" target="_blank" rel="noopener">TTL</a>`
+          : "";
+        const idx  = v.sources?.conceptIndex
+          ? `<a href="${v.sources.conceptIndex}">concept index (JSON)</a>`
+          : "";
+        const shacl = v.sources?.shacl
+          ? `<a href="${v.sources.shacl}" target="_blank" rel="noopener">SHACL shapes</a>`
+          : "";
+        const rainbow = v.rainbow?.rainbowUri
+          ? `<a href="${v.rainbow.rainbowUri}" target="_blank" rel="noopener">OGC Rainbow</a>`
+          : `<span style="color:var(--muted);">OGC Rainbow URI: <em>not yet published</em></span>`;
+        card.innerHTML = `
+          <h3>${escape(title)} ${status}</h3>
+          <div class="bid">baseIri: <code>${v.baseIri || ""}</code></div>
+          <p class="abstract">${escape(desc)}</p>
+          <div class="meta">
+            <span>languages: ${(v.languages || []).join(", ")}</span>
+            <span>license: <a href="${v.license}" target="_blank" rel="noopener">CC-BY 4.0</a></span>
+          </div>
+          ${schemes ? `<div class="deps">schemes: ${schemes}</div>` : ""}
+          <div class="links" style="margin-top:0.6rem;">
+            ${ttl ? '▸ '+ttl : ""}
+            ${idx ? ' &nbsp; ▸ '+idx : ""}
+            ${shacl ? ' &nbsp; ▸ '+shacl : ""}
+            <br/>${rainbow}
+          </div>`;
+        root.appendChild(card);
+      }
+    }
+
+    function render() {
+      // Group blocks by group field (falling back to a heuristic from itemIdentifier)
+      const byFamily = {};
+      for (const b of (state.register.bblocks || [])) {
+        const fam = b.group || inferFamily(b.itemIdentifier);
+        (byFamily[fam] = byFamily[fam] || []).push(b);
+      }
+
+      const toc = document.getElementById("toc");
+      toc.innerHTML = "";
+      const root = document.getElementById("registry");
+      root.innerHTML = "";
+
+      for (const [famKey, famLabels, famDesc] of FAMILY_ORDER) {
+        const blocks = byFamily[famKey];
+        if (!blocks || !blocks.length) continue;
+
+        const label = famLabels[state.lang] || famLabels.en;
+
+        const tocLink = document.createElement("a");
+        tocLink.href = "#fam-" + famKey;
+        tocLink.textContent = label + ` (${blocks.length})`;
+        toc.appendChild(tocLink);
+
+        const sec = document.createElement("section");
+        sec.className = "family-section";
+        sec.id = "fam-" + famKey;
+        sec.innerHTML = `<h2>${label}</h2><p class="family-desc">${famDesc[state.lang] || famDesc.en}</p>`;
+
+        for (const b of blocks) {
+          sec.appendChild(renderBlock(b));
+        }
+        root.appendChild(sec);
+      }
+    }
+
+    function inferFamily(id) {
+      if (!id) return "other";
+      if (id.includes(".coveragejson.")) return "coveragejson";
+      if (id.includes(".ebv."))          return "ebv";
+      if (id.includes(".indicator.bioclimatic-zone")) return "zonification";
+      if (id.includes(".indicator."))    return "indicator";
+      if (id.includes(".provenance."))   return "provenance";
+      if (id.includes(".policy."))       return "policy";
+      if (id.includes(".ontology."))     return "ontology";
+      return "other";
+    }
+
+    function renderBlock(b) {
+      const card = document.createElement("article");
+      const isPivot = (b.tags || []).includes("pivot");
+      card.className = "block-card" + (isPivot ? " pivot" : "");
+      const seeAlso = (b.seeAlso || []).filter(Boolean);
+
+      // Build links: viewer-layer first if present, then registry-index, then others
+      const viewerEntry = seeAlso.find(s => s.rel === "viewer-layer") || seeAlso.find(s => s.rel === "viewer");
+      const otherLinks  = seeAlso.filter(s => s !== viewerEntry).slice(0, 4);
+
+      const pivotTag = isPivot ? `<span class="pivot-tag">pivot</span>` : "";
+      const viewerLink = viewerEntry
+        ? `<a href="${viewerEntry.link}">▸ ${labelFor(viewerEntry, "View in viewer")}</a>`
+        : "";
+      // Local bblocks-viewer iframe + remote OGC bblocks-viewer.
+      const bblockViewerLocal  = `<a href="bblock.html?id=${b.itemIdentifier}">▸ Block documentation</a>`;
+      const docLinks = (b.documentation && b.documentation["bblocks-viewer"])
+        ? `<a href="${b.documentation["bblocks-viewer"].url}" target="_blank" rel="noopener">▸ Doc (OGC)</a>`
+        : "";
+
+      card.innerHTML = `
+        <h3>${b.name}${pivotTag}</h3>
+        <div class="bid">${b.itemIdentifier}</div>
+        <p class="abstract">${escape(b.abstract || "")}</p>
+        <div class="meta">
+          <span>itemClass: <code>${b.itemClass || ""}</code></span>
+          <span>version: ${b.version || ""}</span>
+          <span>status: ${b.status || ""}</span>
+        </div>
+        ${(b.dependsOn && b.dependsOn.length)
+          ? `<div class="deps">depends on: ${b.dependsOn.map(d => `<code>${d}</code>`).join(", ")}</div>`
+          : ""}
+        <div class="links" style="margin-top:0.6rem;">
+          ${viewerLink}
+          ${bblockViewerLocal}
+          ${docLinks}
+          ${otherLinks.map(l => `<a href="${l.link}">▸ ${labelFor(l, l.rel || "link")}</a>`).join("")}
+        </div>`;
+      return card;
+    }
+
+    function labelFor(entry, fallback) { return entry.title || fallback; }
+    function escape(s) { return String(s).replace(/[<>&]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;"}[c])); }
+  </script>
+</body>
+</html>

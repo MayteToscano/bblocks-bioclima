@@ -1,0 +1,56 @@
+{
+  "_comment": "Single parametric source for every vocabulary referenced by this register. The ontology is NOT a building block — it is an external SKOS vocabulary that every block dereferences by IRI. Today the canonical source is the TTL shipped with the repo and the JSON projection used by the viewer; the migration target is OGC Rainbow (https://defs.opengis.net/). When the Rainbow URI is published, set `rainbowUri` and toggle `migrated: true` — the viewer and registry will then resolve concepts there instead of locally.",
+  "vocabularies": [
+    {
+      "id":            "bioclima-skos",
+      "title":         {
+        "en": "BioClima multilingual SKOS vocabulary",
+        "es": "Vocabulario SKOS multilingüe de BioClima",
+        "zh": "BioClima 多语种 SKOS 词汇表",
+        "ro": "Vocabular SKOS multilingv BioClima"
+      },
+      "description":   {
+        "en": "Concept schemes for EBV classes, indicators, units, observed entities and policy targets, with labels and definitions in en/es/zh/ro. Every parameter, category and target referenced anywhere in the register dereferences into this vocabulary by IRI.",
+        "es": "Esquemas de conceptos para clases de EBV, indicadores, unidades, entidades observadas y metas políticas, con labels y definiciones en en/es/zh/ro. Cada parámetro, categoría y meta referenciada en el registro se dereferencia en este vocabulario por IRI."
+      },
+      "baseIri":       "https://maytetoscano.github.io/bblocks-bioclima/ontology/",
+      "license":       "https://creativecommons.org/licenses/by/4.0/",
+      "languages":     ["en", "es", "zh", "ro"],
+
+      "sources": {
+        "ttl":          "../ontology/bioclima-ontology.ttl",
+        "conceptIndex": "data/concepts.json",
+        "shacl":        "../ontology/shapes.shacl"
+      },
+
+      "rainbow": {
+        "migrated":   false,
+        "rainbowUri": "",
+        "_note":      "When the vocabulary is published in OGC Rainbow, set rainbowUri to its base URI (e.g. https://defs.opengis.net/bioclima/) and set migrated: true. The viewer will then dereference concepts via Rainbow content negotiation instead of the local concepts.json projection. No code change required."
+      },
+
+      "schemes": [
+        {
+          "id":    "ebv-scheme",
+          "label": {"en": "EBV classes, names and observed properties", "es": "Clases EBV, nombres y propiedades observadas"}
+        },
+        {
+          "id":    "indicator-scheme",
+          "label": {"en": "Indicators (PCI ParameterGroup and zone categories)", "es": "Indicadores (ParameterGroup del PCI y categorías de zonas)"}
+        },
+        {
+          "id":    "units-scheme",
+          "label": {"en": "Units of measurement", "es": "Unidades de medida"}
+        },
+        {
+          "id":    "entity-scheme",
+          "label": {"en": "Observed entities (forest types)", "es": "Entidades observadas (tipos de bosque)"}
+        },
+        {
+          "id":    "policy-scheme",
+          "label": {"en": "KMGBF targets and SDG 15", "es": "Metas KMGBF y ODS 15"}
+        }
+      ]
+    }
+  ]
+}

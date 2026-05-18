@@ -1,0 +1,23 @@
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix bioclima: <https://maytetoscano.github.io/bblocks-bioclima/ontology/> .
+
+# Every SKOS concept in BioClima must carry preferred labels and definitions
+# in the four supported languages.
+
+bioclima:MultilingualConceptShape a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 4 ;
+        sh:uniqueLang true ;
+        sh:languageIn ( "en" "es" "zh" "ro" ) ;
+        sh:message "Every concept needs a prefLabel in en, es, zh and ro."@en
+    ] ;
+    sh:property [
+        sh:path skos:definition ;
+        sh:minCount 4 ;
+        sh:uniqueLang true ;
+        sh:languageIn ( "en" "es" "zh" "ro" ) ;
+        sh:message "Every concept needs a definition in en, es, zh and ro."@en
+    ] .

@@ -1,0 +1,81 @@
+# BioClima OGC Building Blocks
+
+**Main viewer:** https://maytetoscano.github.io/bblocks-bioclima/viewer/  
+**Classified register:** https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html  
+**OGC Building Blocks viewer:** https://maytetoscano.github.io/bblocks-bioclima/bblocks/  
+**Ontology landing page:** https://maytetoscano.github.io/bblocks-bioclima/ontology/
+
+The repository is organised into seven visible building-block families: CoverageJSON / BioClima Coverage, EBVs, Spatial Indicators, Bioclimatic Zonification, Ontology, Policy Alignment and Provenance.
+
+---
+
+BioClima OGC Building Blocks — guía rápida
+==============================================
+
+ESTRUCTURA DE LA CARPETA
+------------------------
+
+Visibles siempre en Finder
+   _sources/      11 building blocks
+   ontology/      vocabulario SKOS (TTL + SHACL)
+   viewer/        visor web (mapa + índice del registro)
+   scripts/       lint, build-families, build-concepts-index
+   tests/         16 tests del pipeline
+   github/        ← LOS WORKFLOWS DE CI REALES (vivos, editables)
+     └── workflows/
+            process-bblocks.yml         validate + deploy
+            validate.yml                lint + tests
+            recompute-indicators.yml    PCI + zonas
+   build/         (auto-generado por el CI — NO editar)
+   LICENSE
+   README.md
+   LEEME.txt      este fichero
+
+Carpeta oculta (visible con ⌘⇧·)
+   .github/workflows/   contiene SOLO enlaces (symlinks) a github/workflows/.
+                        GitHub Actions exige este path con el punto, pero
+                        nunca necesitas tocarlo: edita siempre los YAML en
+                        `github/workflows/` (carpeta visible) y los symlinks
+                        propagan el cambio automáticamente.
+
+
+EDITAR EL CI DESDE MAC
+----------------------
+Abre Finder → entra en `github/workflows/`. Verás los 3 archivos YAML.
+Edítalos con cualquier editor. Git commitea los cambios. GitHub Actions
+lee a través de los symlinks de `.github/workflows/` y ejecuta lo que
+pusiste. No tienes que enseñar archivos ocultos en Finder.
+
+
+CAMBIAR LA URL DE LA ONTOLOGÍA (cuando se publique en OGC Rainbow)
+------------------------------------------------------------------
+Un único sitio:   viewer/data/vocabularies.json
+
+   "rainbow": {
+     "migrated":   false,           ← cambiar a true
+     "rainbowUri": ""                ← poner la URL de Rainbow,
+                                       p.ej. https://defs.opengis.net/bioclima/
+   }
+
+El visor empieza a dereferenciar contra Rainbow automáticamente.
+
+
+PARÁMETROS DEL PIPELINE
+-----------------------
+PCI (4 parámetros, Theil-Sen + Pettitt):
+   _sources/indicator/pci/code/compute.py
+   _sources/indicator/pci/recipe.jsonld
+
+Zonificación bioclimática (umbrales, min-pixels):
+   _sources/zonification/bioclimatic-zone/code/zonify.py
+   _sources/zonification/bioclimatic-zone/recipe.jsonld
+
+Los workflows re-ejecutan estos scripts y commitean los outputs
+automáticamente cuando cambian los EBVs o el código de los indicadores.
+
+
+BRANDING BIOCLIMA
+-----------------
+Logo:    https://bioclima.net/media/images/bioclima_logo.original.png
+Web:     https://bioclima.net/
+Financiación UE: GA no. 101181408

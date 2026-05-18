@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.coveragejson.bioclima-coverage/schema.yaml",
+  "title": "BioClima CoverageJSON profile",
+  "description": "Profile of CoverageJSON for BioClima EBV and Indicator datasets:\n  - type MUST be \"Coverage\"\n  - referencing MUST include EPSG:4326 for (y, x)\n  - every parameter MUST have observedProperty.id resolvable in the BioClima ontology\n  - parameter labels SHOULD be available in en/es/zh/ro\n",
+  "type": "object",
+  "required": [
+    "type",
+    "domain",
+    "parameters",
+    "ranges"
+  ],
+  "properties": {
+    "type": {
+      "const": "Coverage"
+    },
+    "domain": {
+      "type": "object",
+      "required": [
+        "type",
+        "axes",
+        "referencing"
+      ],
+      "properties": {
+        "type": {
+          "const": "Domain"
+        },
+        "domainType": {
+          "type": "string"
+        },
+        "axes": {
+          "type": "object"
+        },
+        "referencing": {
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/Parameter"
+      }
+    },
+    "ranges": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "type",
+          "dataType",
+          "axisNames",
+          "shape"
+        ],
+        "properties": {
+          "type": {
+            "const": "NdArray"
+          },
+          "dataType": {
+            "enum": [
+              "float",
+              "integer"
+            ]
+          },
+          "axisNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "shape": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "values": {
+            "type": "array"
+          },
+          "nodata": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "Parameter": {
+      "type": "object",
+      "required": [
+        "type",
+        "observedProperty"
+      ],
+      "properties": {
+        "type": {
+          "const": "Parameter"
+        },
+        "observedProperty": {
+          "type": "object",
+          "required": [
+            "id",
+            "label"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "iri",
+              "pattern": "^https://maytetoscano\\.github\\.io/bblocks-bioclima/",
+              "description": "Must resolve to a SKOS Concept in the BioClima ontology"
+            },
+            "label": {
+              "type": "object",
+              "required": [
+                "en"
+              ],
+              "properties": {
+                "en": {
+                  "type": "string"
+                },
+                "es": {
+                  "type": "string"
+                },
+                "zh": {
+                  "type": "string"
+                },
+                "ro": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": {
+              "type": "object"
+            }
+          }
+        },
+        "unit": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

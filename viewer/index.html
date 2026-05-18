@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioClima — OGC Building Blocks viewer</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- chroma-scale for color ramps -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+
+  <link rel="stylesheet" href="css/viewer.css" />
+</head>
+<body>
+  <aside id="sidebar">
+    <header>
+      <a class="branding" href="https://bioclima.net/" target="_blank" rel="noopener" title="BioClima project — bioclima.net">
+        <img src="https://bioclima.net/media/images/bioclima_logo.original.png" alt="BioClima" />
+        <h1>OGC Building Blocks<small data-i18n="subtitle">Biodiversity &amp; Climate Monitoring</small></h1>
+      </a>
+    </header>
+
+    <section class="control">
+      <label for="lang-select" data-i18n="language">Language</label>
+      <select id="lang-select">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="zh">中文</option>
+        <option value="ro">Română</option>
+      </select>
+    </section>
+
+    <section class="control">
+      <label data-i18n="layers">Layers</label>
+      <div id="layer-list"></div>
+    </section>
+
+    <section class="control" id="param-controls" hidden></section>
+
+    <section class="control" id="time-controls" hidden>
+      <label data-i18n="time">Time</label>
+      <div class="time-row">
+        <button id="btn-play" aria-label="Play / pause">▶</button>
+        <input type="range" id="time-slider" min="0" max="0" value="0" />
+        <span id="time-label">—</span>
+      </div>
+    </section>
+
+    <section class="control">
+      <label data-i18n="legend">Legend</label>
+      <div id="legend"></div>
+    </section>
+
+    <footer>
+      <p>
+        <a class="registry-link" href="registry.html" data-i18n="openRegistry">Open registry index</a> ·
+        <a class="registry-link" href="bblock.html" data-i18n="openBblockViewer">Block documentation (official viewer)</a>
+      </p>
+      <p data-i18n="footer">Register: <a href="../build/register.json">register.json</a></p>
+      <p class="partners-link">
+        <a href="https://bioclima.net/partners/" target="_blank" rel="noopener" data-i18n="bioclimaPartners">BioClima partners</a> ·
+        <a href="https://github.com/MayteToscano/bblocks-bioclima" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p class="eu-funding">
+        <strong>BioClima</strong> — Funded by the European Union, GA no. 101181408.
+        Views and opinions expressed are those of the authors only and do not necessarily
+        reflect those of the European Union or REA.
+      </p>
+    </footer>
+  </aside>
+
+  <main id="map"></main>
+
+  <!-- Click info panel -->
+  <aside id="info-panel" hidden>
+    <button id="info-close" aria-label="Close">✕</button>
+    <h2 id="info-title">—</h2>
+    <p class="info-bblock"><span data-i18n="block">Block:</span> <a id="info-bblock" href="#" target="_blank" hidden>—</a></p>
+    <p class="info-definition" id="info-definition"></p>
+    <h3 data-i18n="attributes">Attributes</h3>
+    <p class="info-hint" data-i18n="attributesHint">Click an attribute name to open its definition in the ontology.</p>
+    <dl id="info-properties"></dl>
+    <h3 data-i18n="policy">Policy alignment</h3>
+    <ul id="info-policy"></ul>
+    <p class="info-source">
+      <a class="registry-link" href="registry.html" data-i18n="openRegistry">Open registry index</a>
+    </p>
+  </aside>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/covjson.js"></script>
+  <script src="js/viewer.js"></script>
+</body>
+</html>

@@ -194,7 +194,7 @@
   "name": "Building Blocks - BioClima OGC Building Blocks",
   "abstract": "Interactive BioClima viewer: https://maytetoscano.github.io/bblocks-bioclima/viewer/\n\nRegister of OGC Building Blocks for Essential Biodiversity Variables (EBVs),\nderived indicators, bioclimatic zonification, data provenance and policy\nalignment with the Kunming-Montreal GBF. The pilot dataset is the Start of\nVegetation Active Period in Finland (2001-2018).\n",
   "description": "**Interactive map viewer:** https://maytetoscano.github.io/bblocks-bioclima/viewer/\n\n**Classified registry by family:** https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html\n\n**OGC Building Blocks viewer:** https://maytetoscano.github.io/bblocks-bioclima/bblocks/\n\nThis register defines BioClima-specific building blocks on top of the\nOGC CoverageJSON community standard. It includes:\n\n- A profile of CoverageJSON for BioClima EBV datasets.\n- Generic schemas for EBV records and indicator records.\n- Concrete EBV datasets for Finnish coniferous and deciduous vegetation.\n- The Phenological Change Indicator (PCI) and its bioclimatic zonification,\n  each with a Python implementation that the CI can re-run automatically.\n- A multilingual SKOS/RDF ontology building block used by EBVs, indicators,\n  policy alignment, provenance and zonification records.\n- W3C PROV-O provenance schemas for both EBVs and indicators.\n- Policy alignment schemas linking indicators to Kunming-Montreal GBF\n  targets and SDG 15.\n",
-  "modified": "2026-05-18T07:32:44.776893",
+  "modified": "2026-05-18T07:35:20.695627",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"6b01f188cc614cc2e65f4bf86a2623f98f101dfd",
@@ -1400,10 +1400,10 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.indicator",
+        "bblocks://ogc.bioclima.policy.policy-alignment",
         "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
-        "bblocks://ogc.bioclima.ebv.ebv-definition",
-        "bblocks://ogc.bioclima.policy.policy-alignment"
+        "bblocks://ogc.bioclima.indicator",
+        "bblocks://ogc.bioclima.ebv.ebv-definition"
       ],
       "maintainers": [
         {
@@ -1638,8 +1638,8 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.policy.kmgbf-target",
         "bblocks://ogc.bioclima.policy",
+        "bblocks://ogc.bioclima.policy.kmgbf-target",
         "bblocks://ogc.bioclima.indicator.indicator-definition"
       ],
       "maintainers": [
@@ -1771,8 +1771,8 @@
       "version": "0.2.0",
       "dependsOn": [
         "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
-        "bblocks://ogc.bioclima.provenance.ebv-provenance",
         "bblocks://ogc.bioclima.ebv",
+        "bblocks://ogc.bioclima.provenance.ebv-provenance",
         "bblocks://ogc.bioclima.ebv.ebv-definition"
       ],
       "maintainers": [
@@ -1908,8 +1908,8 @@
       "version": "0.2.0",
       "dependsOn": [
         "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
-        "bblocks://ogc.bioclima.provenance.ebv-provenance",
         "bblocks://ogc.bioclima.ebv",
+        "bblocks://ogc.bioclima.provenance.ebv-provenance",
         "bblocks://ogc.bioclima.ebv.ebv-definition"
       ],
       "maintainers": [
@@ -2044,8 +2044,8 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.provenance.ebv-provenance",
         "bblocks://ogc.bioclima.provenance",
+        "bblocks://ogc.bioclima.provenance.ebv-provenance",
         "bblocks://ogc.bioclima.indicator.indicator-definition"
       ],
       "maintainers": [
@@ -2162,13 +2162,13 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.ebv.vap-coniferous",
-        "bblocks://ogc.bioclima.indicator.indicator-definition",
-        "bblocks://ogc.bioclima.policy.policy-alignment",
-        "bblocks://ogc.bioclima.provenance.indicator-provenance",
         "bblocks://ogc.bioclima.ebv.vap-deciduous",
+        "bblocks://ogc.bioclima.indicator.indicator-definition",
+        "bblocks://ogc.bioclima.provenance.indicator-provenance",
+        "bblocks://ogc.bioclima.ebv.vap-coniferous",
+        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
         "bblocks://ogc.bioclima.indicator",
-        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage"
+        "bblocks://ogc.bioclima.policy.policy-alignment"
       ],
       "maintainers": [
         {
@@ -2309,11 +2309,11 @@
       "version": "0.2.0",
       "dependsOn": [
         "bblocks://ogc.bioclima.indicator.indicator-definition",
-        "bblocks://ogc.bioclima.indicator.pci",
-        "bblocks://ogc.bioclima.policy.policy-alignment",
         "bblocks://ogc.bioclima.provenance.indicator-provenance",
+        "bblocks://ogc.bioclima.indicator.pci",
         "bblocks://ogc.bioclima.zonification",
-        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage"
+        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
+        "bblocks://ogc.bioclima.policy.policy-alignment"
       ],
       "maintainers": [
         {

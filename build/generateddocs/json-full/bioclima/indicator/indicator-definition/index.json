@@ -17,10 +17,10 @@
   },
   "version": "0.2.0",
   "dependsOn": [
-    "ogc.bioclima.indicator",
+    "ogc.bioclima.policy.policy-alignment",
     "ogc.bioclima.coveragejson.bioclima-coverage",
-    "ogc.bioclima.ebv.ebv-definition",
-    "ogc.bioclima.policy.policy-alignment"
+    "ogc.bioclima.indicator",
+    "ogc.bioclima.ebv.ebv-definition"
   ],
   "maintainers": [
     {

@@ -17,13 +17,13 @@
   },
   "version": "0.2.0",
   "dependsOn": [
-    "ogc.bioclima.ebv.vap-coniferous",
-    "ogc.bioclima.indicator.indicator-definition",
-    "ogc.bioclima.policy.policy-alignment",
-    "ogc.bioclima.provenance.indicator-provenance",
     "ogc.bioclima.ebv.vap-deciduous",
+    "ogc.bioclima.indicator.indicator-definition",
+    "ogc.bioclima.provenance.indicator-provenance",
+    "ogc.bioclima.ebv.vap-coniferous",
+    "ogc.bioclima.coveragejson.bioclima-coverage",
     "ogc.bioclima.indicator",
-    "ogc.bioclima.coveragejson.bioclima-coverage"
+    "ogc.bioclima.policy.policy-alignment"
   ],
   "maintainers": [
     {

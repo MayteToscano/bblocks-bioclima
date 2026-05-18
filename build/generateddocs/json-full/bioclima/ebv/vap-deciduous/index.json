@@ -18,8 +18,8 @@
   "version": "0.2.0",
   "dependsOn": [
     "ogc.bioclima.coveragejson.bioclima-coverage",
-    "ogc.bioclima.provenance.ebv-provenance",
     "ogc.bioclima.ebv",
+    "ogc.bioclima.provenance.ebv-provenance",
     "ogc.bioclima.ebv.ebv-definition"
   ],
   "maintainers": [

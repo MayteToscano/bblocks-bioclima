@@ -17,8 +17,8 @@
   },
   "version": "0.2.0",
   "dependsOn": [
-    "ogc.bioclima.provenance.ebv-provenance",
     "ogc.bioclima.provenance",
+    "ogc.bioclima.provenance.ebv-provenance",
     "ogc.bioclima.indicator.indicator-definition"
   ],
   "maintainers": [

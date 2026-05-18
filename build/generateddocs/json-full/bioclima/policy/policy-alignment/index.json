@@ -17,8 +17,8 @@
   },
   "version": "0.2.0",
   "dependsOn": [
-    "ogc.bioclima.policy.kmgbf-target",
     "ogc.bioclima.policy",
+    "ogc.bioclima.policy.kmgbf-target",
     "ogc.bioclima.indicator.indicator-definition"
   ],
   "maintainers": [

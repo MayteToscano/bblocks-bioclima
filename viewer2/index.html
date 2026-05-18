@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BioClima Observations Building Blocks Portal</title>
+  <meta name="description" content="Catalog, map viewer and semantic building-block explorer for BioClima EBVs, ECVs, indicators, ontology, provenance and policy links." />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="preconnect" href="https://tile.openstreetmap.org" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/portal.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="BioClima navigation">
+      <div class="brand">
+        <div class="logo-mark" aria-hidden="true">⌁</div>
+        <div>
+          <h1 class="brand-title">BioClima</h1>
+          <p class="brand-subtitle">Observations<br/>Building Blocks Portal</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button><span class="ico">⌂</span>Home</button>
+        <button><span class="ico">🌿</span>EBV Catalog</button>
+        <button><span class="ico">〰️</span>ECV Catalog</button>
+        <button><span class="ico">▥</span>Indicators Catalog</button>
+        <button><span class="ico">⬡</span>Building Blocks</button>
+        <button class="active"><span class="ico">🗺</span>Map Viewer</button>
+        <button><span class="ico">⌘</span>Ontology</button>
+        <button><span class="ico">&lt;/&gt;</span>API</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="footer-row"><span>🌐 Language</span><strong>EN</strong></div>
+        <a class="footer-link" href="../README.md">About</a>
+        <a class="footer-link" href="../bblocks/">Documentation</a>
+        <p>© 2026 BioClima Portal</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="search-row">
+          <div class="searchbox">
+            <span class="magnifier">⌕</span>
+            <input id="search-input" type="search" placeholder="Search EBVs, ECVs, indicators, ontology terms..." autocomplete="off" />
+          </div>
+          <div class="header-actions" aria-label="Header actions">
+            <button class="icon-btn" title="Help">?</button>
+            <button class="icon-btn" title="Notifications">◌</button>
+            <div class="avatar"><span class="avatar-badge">BC</span><span>BioClima</span>⌄</div>
+          </div>
+        </div>
+        <div id="filter-row" class="filter-row">
+          <button id="clear-filters" class="clear-filters">⚙ Clear filters</button>
+        </div>
+      </header>
+
+      <section class="workspace" aria-label="BioClima portal workspace">
+        <section class="panel catalog-panel" aria-label="Catalog results">
+          <div class="panel-header">
+            <span id="results-count" class="subtle">0 results</span>
+            <div class="catalog-toolbar">
+              <span>Sort by:</span>
+              <select aria-label="Sort catalog results"><option>Relevance</option></select>
+              <span>☷</span>
+            </div>
+          </div>
+          <div id="results-list" class="results"></div>
+        </section>
+
+        <section class="panel structure-panel" aria-label="Building Blocks Structure">
+          <div class="panel-header">
+            <h2 class="panel-title">Building Blocks Structure ⓘ</h2>
+            <button class="expand-btn" type="button">↗ Expand all</button>
+          </div>
+          <div class="structure-body">
+            <div class="structure-grid">
+              <div class="root-node">
+                <span class="node-ico">🌿</span>
+                <div id="structure-root-title" class="node-label">—</div>
+                <div id="structure-root-sub" class="node-sub">—</div>
+              </div>
+              <div id="structure-branch" class="branch"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel map-panel" aria-label="Map Viewer">
+          <div class="panel-header">
+            <h2 class="panel-title">Map Viewer</h2>
+            <span class="subtle">CoverageJSON / GeoJSON</span>
+          </div>
+          <div class="map-controls">
+            <div class="form-field">
+              <label for="layer-select">Variable</label>
+              <select id="layer-select"></select>
+            </div>
+            <div class="form-field">
+              <label for="time-select">Year / time</label>
+              <select id="time-select"></select>
+            </div>
+            <button id="map-more" class="icon-btn" type="button" title="Fit to data">⋯</button>
+            <div class="form-field" style="grid-column: 1 / -1;">
+              <label for="param-select">Parameter</label>
+              <select id="param-select"></select>
+            </div>
+          </div>
+          <div class="map-wrap">
+            <div id="map" role="application" aria-label="BioClima map viewer"></div>
+            <div id="map-status" class="map-status">Map ready</div>
+            <div class="legend-card" aria-label="Legend">
+              <div class="legend-title">Value</div>
+              <div class="legend-body">
+                <div id="legend-ramp" class="legend-ramp"></div>
+                <div class="legend-labels">
+                  <span id="legend-hi">—</span>
+                  <span id="legend-mid">—</span>
+                  <span id="legend-lo">—</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel details-panel" aria-label="Ontology Description">
+          <div class="panel-header">
+            <h2 class="panel-title">Ontology Description</h2>
+            <button id="close-details" class="close-btn" type="button" aria-label="Collapse details">×</button>
+          </div>
+          <div class="details-body">
+            <p class="kicker">Preferred Label</p>
+            <div class="detail-title-row">
+              <h3 id="ontology-label" class="detail-title">—</h3>
+              <span id="ontology-tag" class="tag ontology">Ontology Class</span>
+            </div>
+
+            <section class="detail-section">
+              <h4>Definition</h4>
+              <p id="ontology-definition">—</p>
+            </section>
+            <section class="detail-section">
+              <h4>Synonym</h4>
+              <p id="ontology-synonym">—</p>
+            </section>
+            <section class="detail-section">
+              <h4>Units</h4>
+              <p id="ontology-units">—</p>
+            </section>
+            <section class="detail-section">
+              <h4>Broader Class</h4>
+              <p id="ontology-broader">—</p>
+            </section>
+            <section class="detail-section">
+              <h4>Related Classes</h4>
+              <ul id="ontology-related" class="link-list"></ul>
+            </section>
+            <section class="detail-section">
+              <h4>Semantic Relations</h4>
+              <div id="semantic-relations" class="relation-box"></div>
+            </section>
+            <section class="detail-section">
+              <h4>Links to Blocks</h4>
+              <ul id="ontology-links" class="link-list"></ul>
+            </section>
+          </div>
+        </aside>
+      </section>
+
+      <section class="bottom-drawer" aria-label="Metadata details">
+        <div class="tabs">
+          <button class="tab active" type="button">Metadata</button>
+          <button class="tab" type="button">API</button>
+          <button class="tab" type="button">Downloads</button>
+          <button class="tab" type="button">Validation</button>
+          <button class="tab" type="button">Examples</button>
+        </div>
+        <div class="metadata">
+          <div id="meta-left"></div>
+          <div id="meta-middle"></div>
+          <div>
+            <strong>Summary</strong>
+            <p id="summary-text" class="summary-text">—</p>
+          </div>
+          <div>
+            <strong>Keywords</strong>
+            <div id="keywords" class="keywords"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/portal-data.js"></script>
+  <script src="js/covjson-lite.js"></script>
+  <script src="js/portal.js"></script>
+</body>
+</html>

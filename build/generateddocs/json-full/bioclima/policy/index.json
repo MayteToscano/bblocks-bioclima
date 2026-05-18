@@ -55,7 +55,7 @@
   ],
   "shaclShapes": {},
   "dateOfLastChange": "2024-11-01",
-  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/",
+  "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/",
   "validationPassed": true,
   "description": "# Policy alignment\n\nFamily block for policy alignment resources. It groups policy targets and mappings between indicators, evidence and reporting frameworks.\n\n## Where this appears\n\n- Interactive map viewer: <https://maytetoscano.github.io/bblocks-bioclima/viewer/>\n- Classified register by family: <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy>\n- OGC Building Blocks viewer: <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.policy>\n\n## Blocks in this family\n\n- `ogc.bioclima.policy.kmgbf-target`\n- `ogc.bioclima.policy.policy-alignment`\n",
   "annotatedSchema": null,

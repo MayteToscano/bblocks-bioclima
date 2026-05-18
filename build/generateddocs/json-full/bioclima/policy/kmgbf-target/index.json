@@ -79,12 +79,12 @@
   "shaclShapes": {},
   "dateOfLastChange": "2024-11-01",
   "schema": {
-    "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.yaml",
-    "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.json"
+    "application/yaml": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/kmgbf-target/schema.yaml",
+    "application/json": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/kmgbf-target/schema.json"
   },
-  "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/kmgbf-target/schema.yaml",
-  "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/resolvedProperties.json",
-  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/kmgbf-target/",
+  "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/kmgbf-target/schema.yaml",
+  "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/kmgbf-target/resolvedProperties.json",
+  "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/kmgbf-target/",
   "validationPassed": true,
   "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/policy/kmgbf-target/",
   "description": "# Kunming-Montreal GBF Target\n\nSchema for one of the 23 targets of the Kunming-Montreal Global Biodiversity Framework. Each target carries a multilingual label, definition, deadline and the list of indicators that report against it.\n",
@@ -95,9 +95,9 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/kmgbf-target/examples/target-8.jsonld",
+          "ref": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/kmgbf-target/examples/target-8.jsonld",
           "code": "{\n  \"@context\": {\n    \"@vocab\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/\",\n    \"skos\":   \"http://www.w3.org/2004/02/skos/core#\",\n    \"label\":      { \"@id\": \"skos:prefLabel\", \"@container\": \"@language\" },\n    \"definition\": { \"@id\": \"skos:definition\", \"@container\": \"@language\" }\n  },\n  \"id\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8\",\n  \"targetNumber\": 8,\n  \"label\": {\n    \"en\": \"Climate change adaptation\",\n    \"es\": \"Adaptaci\u00f3n al cambio clim\u00e1tico\",\n    \"zh\": \"\u6c14\u5019\u53d8\u5316\u9002\u5e94\",\n    \"ro\": \"Adaptare la schimb\u0103rile climatice\"\n  },\n  \"definition\": {\n    \"en\": \"Minimize the impact of climate change on biodiversity through mitigation, adaptation and disaster risk reduction actions, including through nature-based solutions and/or ecosystem-based approaches.\",\n    \"es\": \"Minimizar el impacto del cambio clim\u00e1tico sobre la biodiversidad mediante acciones de mitigaci\u00f3n, adaptaci\u00f3n y reducci\u00f3n del riesgo de desastres, incluso mediante soluciones basadas en la naturaleza y/o enfoques basados en los ecosistemas.\",\n    \"zh\": \"\u901a\u8fc7\u51cf\u7f13\u3001\u9002\u5e94\u548c\u51cf\u5c11\u707e\u5bb3\u98ce\u9669\u7684\u884c\u52a8,\u5305\u62ec\u57fa\u4e8e\u81ea\u7136\u7684\u89e3\u51b3\u65b9\u6848\u548c/\u6216\u57fa\u4e8e\u751f\u6001\u7cfb\u7edf\u7684\u65b9\u6cd5,\u5c3d\u91cf\u51cf\u5c11\u6c14\u5019\u53d8\u5316\u5bf9\u751f\u7269\u591a\u6837\u6027\u7684\u5f71\u54cd\u3002\",\n    \"ro\": \"Minimizarea impactului schimb\u0103rilor climatice asupra biodiversit\u0103\u021bii prin ac\u021biuni de atenuare, adaptare \u0219i reducere a riscului de dezastre, inclusiv prin solu\u021bii bazate pe natur\u0103 \u0219i/sau abord\u0103ri bazate pe ecosisteme.\"\n  },\n  \"deadline\": \"2030-12-31\",\n  \"keyIndicators\": [\n    \"https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci\",\n    \"https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-strong-advance\",\n    \"https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-delay\"\n  ],\n  \"informedBy\": [\n    {\n      \"bblock\":       \"ogc.bioclima.indicator.pci\",\n      \"relationship\": \"measures-progress-on\",\n      \"evidenceStrength\": \"direct\"\n    },\n    {\n      \"bblock\":       \"ogc.bioclima.zonification.bioclimatic-zone\",\n      \"relationship\": \"measures-progress-on\",\n      \"evidenceStrength\": \"direct\"\n    }\n  ],\n  \"source\": \"https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf\"\n}\n",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/bioclima/policy/kmgbf-target/example_1_1.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/../../tmp/bblocks-tests/bioclima/policy/kmgbf-target/example_1_1.json"
         }
       ]
     },
@@ -107,9 +107,9 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/kmgbf-target/examples/target-1.jsonld",
+          "ref": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/kmgbf-target/examples/target-1.jsonld",
           "code": "{\n  \"@context\": {\n    \"@vocab\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/\",\n    \"skos\":   \"http://www.w3.org/2004/02/skos/core#\",\n    \"label\":      { \"@id\": \"skos:prefLabel\", \"@container\": \"@language\" },\n    \"definition\": { \"@id\": \"skos:definition\", \"@container\": \"@language\" }\n  },\n  \"id\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1\",\n  \"targetNumber\": 1,\n  \"label\": {\n    \"en\": \"Spatial planning\",\n    \"es\": \"Planificaci\u00f3n espacial\",\n    \"zh\": \"\u7a7a\u95f4\u89c4\u5212\",\n    \"ro\": \"Planificare spa\u021bial\u0103\"\n  },\n  \"definition\": {\n    \"en\": \"Ensure that all areas are under participatory, integrated and biodiversity-inclusive spatial planning and/or effective management processes addressing land- and sea-use change by 2030.\",\n    \"es\": \"Garantizar que para 2030 todas las \u00e1reas est\u00e9n bajo procesos de planificaci\u00f3n espacial participativa, integrada e inclusiva con la biodiversidad y/o procesos efectivos de gesti\u00f3n que aborden los cambios de uso de la tierra y el mar.\",\n    \"zh\": \"\u786e\u4fdd\u5230 2030 \u5e74\u6240\u6709\u533a\u57df\u90fd\u7eb3\u5165\u53c2\u4e0e\u5f0f\u3001\u7efc\u5408\u4e14\u5305\u5bb9\u751f\u7269\u591a\u6837\u6027\u7684\u7a7a\u95f4\u89c4\u5212\u548c/\u6216\u6709\u6548\u7ba1\u7406\u6d41\u7a0b,\u89e3\u51b3\u571f\u5730\u4e0e\u6d77\u6d0b\u5229\u7528\u53d8\u5316\u95ee\u9898\u3002\",\n    \"ro\": \"Asigurarea c\u0103, p\u00e2n\u0103 \u00een 2030, toate zonele se afl\u0103 sub procese participative, integrate \u0219i inclusive pentru biodiversitate de planificare spa\u021bial\u0103 \u0219i/sau gestionare eficient\u0103 a schimb\u0103rilor de utilizare a terenurilor \u0219i m\u0103rilor.\"\n  },\n  \"deadline\": \"2030-12-31\",\n  \"keyIndicators\": [\n    \"https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category\"\n  ],\n  \"informedBy\": [\n    {\n      \"bblock\":       \"ogc.bioclima.zonification.bioclimatic-zone\",\n      \"relationship\": \"informs\",\n      \"evidenceStrength\": \"direct\"\n    }\n  ],\n  \"source\": \"https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf\"\n}\n",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/bioclima/policy/kmgbf-target/example_2_1.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/../../tmp/bblocks-tests/bioclima/policy/kmgbf-target/example_2_1.json"
         }
       ]
     }

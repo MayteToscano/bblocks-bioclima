@@ -17,10 +17,10 @@
   },
   "version": "0.2.0",
   "dependsOn": [
+    "ogc.bioclima.coveragejson.bioclima-coverage",
     "ogc.bioclima.provenance.ebv-provenance",
-    "ogc.bioclima.ebv.ebv-definition",
     "ogc.bioclima.ebv",
-    "ogc.bioclima.coveragejson.bioclima-coverage"
+    "ogc.bioclima.ebv.ebv-definition"
   ],
   "maintainers": [
     {
@@ -88,12 +88,12 @@
   "shaclShapes": {},
   "dateOfLastChange": "2024-11-01",
   "schema": {
-    "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.yaml",
-    "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.json"
+    "application/yaml": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-coniferous/schema.yaml",
+    "application/json": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-coniferous/schema.json"
   },
-  "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-coniferous/schema.yaml",
-  "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/resolvedProperties.json",
-  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-coniferous/",
+  "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/vap-coniferous/schema.yaml",
+  "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-coniferous/resolvedProperties.json",
+  "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/vap-coniferous/",
   "validationPassed": true,
   "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/ebv/vap-coniferous/",
   "description": "# VAP Coniferous Finland 2001-2018\n\nConcrete EBV dataset. The CoverageJSON file lives in `examples/finland-vap-coniferous-2001-2018.covjson` and the metadata record in `examples/metadata.jsonld`.\n\n## Source\n\nMODIS Terra Level 1B, processed by SYKE/VTT. Algorithm: sigmoid fit on Fractional Snow Cover time series. See B\u00f6ttcher et al. 2014, [doi:10.1016/j.rse.2013.09.022](https://doi.org/10.1016/j.rse.2013.09.022).\n\n## Grid\n\n- CRS: EPSG:4326\n- Bounds: lon 14.10 - 35.23, lat 57.75 - 71.17\n- Resolution: 0.0664\u00b0 (~7 km)\n- 18 yearly time slices (2001-2018)\n- 202 \u00d7 318 cells\n",
@@ -104,14 +104,14 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-coniferous/examples/metadata.jsonld",
+          "ref": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/vap-coniferous/examples/metadata.jsonld",
           "code": "{\n  \"id\": \"10-coniferous\",\n  \"naming_authority\": \"The German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig\",\n  \"title\": {\n    \"en\": \"Start of Vegetation Active Period in Coniferous Forests of Finland\",\n    \"es\": \"Inicio del periodo activo de vegetaci\u00f3n en bosques de con\u00edferas de Finlandia\",\n    \"zh\": \"\u82ac\u5170\u9488\u53f6\u6797\u690d\u88ab\u6d3b\u52a8\u671f\u5f00\u59cb\",\n    \"ro\": \"\u00cenceputul perioadei active a vegeta\u021biei \u00een p\u0103durile de conifere din Finlanda\"\n  },\n  \"product_version\": \"2\",\n  \"doi\": \"10.25829/xf8ek6\",\n  \"date_created\": \"2020-11-04\",\n  \"date_issued\": \"2023-07-18\",\n  \"summary\": {\n    \"en\": \"Yearly maps (2001-2018) of the start of the vegetation active period in coniferous forests in Finland, derived from MODIS Fractional Snow Cover.\",\n    \"es\": \"Mapas anuales (2001-2018) del inicio del periodo activo de vegetaci\u00f3n en bosques de con\u00edferas en Finlandia, derivados de la cobertura fraccional de nieve de MODIS.\",\n    \"zh\": \"\u82ac\u5170\u9488\u53f6\u6797\u690d\u88ab\u6d3b\u52a8\u671f\u5f00\u59cb\u7684\u5e74\u5ea6\u5730\u56fe(2001-2018),\u6e90\u81ea MODIS \u5206\u6570\u96ea\u76d6\u3002\",\n    \"ro\": \"H\u0103r\u021bi anuale (2001-2018) ale \u00eenceputului perioadei active a vegeta\u021biei \u00een p\u0103durile de conifere din Finlanda, derivate din acoperirea frac\u021bionat\u0103 cu z\u0103pad\u0103 MODIS.\"\n  },\n  \"keywords\": [\n    \"Boreal\",\n    \"Green-up\",\n    \"Phenology\",\n    \"Vegetation\",\n    \"Start of season\"\n  ],\n  \"references\": [\n    \"https://doi.org/10.1016/j.rse.2013.09.022\",\n    \"https://doi.org/10.3390/rs8070580\"\n  ],\n  \"source\": \"MODIS Terra Level 1B, processed by SYKE/VTT.\",\n  \"license\": \"https://creativecommons.org/licenses/by/4.0\",\n  \"creator\": {\n    \"name\": \"Kristin B\u00f6ttcher\",\n    \"email\": \"Kristin.Bottcher@ymparisto.fi\",\n    \"institution\": \"The Finnish Environment Institute (SYKE)\"\n  },\n  \"ebv\": {\n    \"ebv_class\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/ecosystem-functioning\",\n    \"ebv_name\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/ecosystem-phenology\"\n  },\n  \"ebv_entity\": {\n    \"ebv_entity_type\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest\",\n    \"ebv_entity_scope\": \"Coniferous forests in Finland\",\n    \"ebv_entity_names\": [\n      \"Coniferous\"\n    ]\n  },\n  \"ebv_metric\": {\n    \"vap_doy\": {\n      \"standard_name\": {\n        \"en\": \"Start of VAP (Day of Year)\",\n        \"es\": \"Inicio del VAP (d\u00eda del a\u00f1o)\",\n        \"zh\": \"VAP \u8d77\u59cb(\u5e74\u79ef\u65e5)\",\n        \"ro\": \"\u00cenceputul VAP (ziua din an)\"\n      },\n      \"long_name\": {\n        \"en\": \"The day when coniferous trees start to photosynthesize in spring, used as a proxy for the start of the vegetation active period.\",\n        \"es\": \"D\u00eda en que las con\u00edferas empiezan a fotosintetizar en primavera, usado como indicador del inicio del periodo activo de vegetaci\u00f3n.\",\n        \"zh\": \"\u9488\u53f6\u6811\u6625\u5b63\u5f00\u59cb\u8fdb\u884c\u5149\u5408\u4f5c\u7528\u4e4b\u65e5,\u7528\u4f5c\u690d\u88ab\u6d3b\u52a8\u671f\u5f00\u59cb\u7684\u4ee3\u7406\u6307\u6807\u3002\",\n        \"ro\": \"Ziua \u00een care arborii de conifere \u00eencep s\u0103 fac\u0103 fotosintez\u0103 prim\u0103vara, folosit\u0103 ca indicator al \u00eenceputului perioadei active a vegeta\u021biei.\"\n      },\n      \"units\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/units/day-of-year\"\n    }\n  },\n  \"geospatial\": {\n    \"crs\": \"EPSG:4326\",\n    \"lat_resolution\": \"0.066428063829064 degree\",\n    \"lon_resolution\": \"0.066428063829064 degree\",\n    \"lat_min\": 57.7532613743371,\n    \"lat_max\": 71.171730267808,\n    \"lon_min\": 14.1011663430375,\n    \"lon_max\": 35.2252906406799,\n    \"scope\": \"National\",\n    \"description\": \"Finland\"\n  },\n  \"time_coverage\": {\n    \"resolution\": \"P1Y\",\n    \"start\": \"2001-01-01\",\n    \"end\": \"2018-01-01\"\n  },\n  \"ebv_domain\": [\n    \"Terrestrial\"\n  ],\n  \"comment\": \"Comparison with eddy covariance GPP gave R\u00b2=0.7 and 9-day accuracy over 2001-2016.\",\n  \"dataset\": {\n    \"coverage\": \"examples/finland-vap-coniferous-2001-2018.covjson\"\n  }\n}",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/bioclima/ebv/vap-coniferous/example_1_1.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/../../tmp/bblocks-tests/bioclima/ebv/vap-coniferous/example_1_1.json"
         }
       ]
     }
   ],
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.ebv.vap-coniferous/schema.yaml\ntitle: VAP Coniferous Finland metadata record\nallOf:\n- $ref: https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.yaml\n- type: object\n  properties:\n    ebv_entity:\n      type: object\n      properties:\n        ebv_entity_type:\n          const: https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.ebv.vap-coniferous/schema.yaml\ntitle: VAP Coniferous Finland metadata record\nallOf:\n- $ref: https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/ebv-definition/schema.yaml\n- type: object\n  properties:\n    ebv_entity:\n      type: object\n      properties:\n        ebv_entity_type:\n          const: https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest\n",
   "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
   "gitPath": "_sources/ebv/vap-coniferous"
 }

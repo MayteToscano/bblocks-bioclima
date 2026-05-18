@@ -79,12 +79,12 @@
   ],
   "shaclShapes": {
     "ogc.bioclima.ontology.bioclima-ontology": [
-      "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/shapes.shacl"
+      "https://maytetoscano.github.io/bblocks-bioclima/_sources/ontology/bioclima-ontology/shapes.shacl"
     ]
   },
-  "ontology": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/bioclima-ontology/ontology.ttl",
+  "ontology": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ontology/bioclima-ontology/ontology.ttl",
   "dateOfLastChange": "2024-11-01",
-  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/",
+  "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ontology/bioclima-ontology/",
   "validationPassed": true,
   "description": "# BioClima ontology\n\nThis building block publishes the semantic model used by the BioClima register.\n\nIt defines the concepts referenced by EBVs, observed properties, spatial indicators, policy-alignment records, provenance records and bioclimatic zonification categories. The concepts are expressed in RDF/SKOS and supported by SHACL shapes.\n",
   "annotatedSchema": null,

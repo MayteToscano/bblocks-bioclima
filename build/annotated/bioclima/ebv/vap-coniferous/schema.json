@@ -4,7 +4,7 @@
   "title": "VAP Coniferous Finland metadata record",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.json"
+      "$ref": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/ebv-definition/schema.json"
     },
     {
       "type": "object",

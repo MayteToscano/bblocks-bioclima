@@ -182,8 +182,8 @@ properties:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.yaml)
+* YAML version: [schema.yaml](https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/kmgbf-target/schema.json)
+* JSON version: [schema.json](https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/kmgbf-target/schema.yaml)
 
 ## Sources
 

@@ -56,7 +56,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 $id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.provenance.indicator-provenance/schema.yaml
 title: Indicator Provenance
 allOf:
-- $ref: https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml
+- $ref: https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml
 - type: object
   properties:
     wasGeneratedBy:
@@ -79,8 +79,8 @@ allOf:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.yaml)
+* YAML version: [schema.yaml](https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/indicator-provenance/schema.json)
+* JSON version: [schema.json](https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/indicator-provenance/schema.yaml)
 
 ## Sources
 

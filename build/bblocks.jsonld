@@ -1,7 +1,7 @@
 {
   "@context": [
     {
-      "@base": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined"
+      "@base": "https://maytetoscano.github.io/bblocks-bioclima"
     },
     {
       "bblocks": "https://www.opengis.net/def/bblocks/",
@@ -194,7 +194,7 @@
   "name": "Building Blocks - BioClima OGC Building Blocks",
   "abstract": "Interactive BioClima viewer: https://maytetoscano.github.io/bblocks-bioclima/viewer/\n\nRegister of OGC Building Blocks for Essential Biodiversity Variables (EBVs),\nderived indicators, bioclimatic zonification, data provenance and policy\nalignment with the Kunming-Montreal GBF. The pilot dataset is the Start of\nVegetation Active Period in Finland (2001-2018).\n",
   "description": "**Interactive map viewer:** https://maytetoscano.github.io/bblocks-bioclima/viewer/\n\n**Classified registry by family:** https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html\n\n**OGC Building Blocks viewer:** https://maytetoscano.github.io/bblocks-bioclima/bblocks/\n\nThis register defines BioClima-specific building blocks on top of the\nOGC CoverageJSON community standard. It includes:\n\n- A profile of CoverageJSON for BioClima EBV datasets.\n- Generic schemas for EBV records and indicator records.\n- Concrete EBV datasets for Finnish coniferous and deciduous vegetation.\n- The Phenological Change Indicator (PCI) and its bioclimatic zonification,\n  each with a Python implementation that the CI can re-run automatically.\n- A multilingual SKOS/RDF ontology building block used by EBVs, indicators,\n  policy alignment, provenance and zonification records.\n- W3C PROV-O provenance schemas for both EBVs and indicators.\n- Policy alignment schemas linking indicators to Kunming-Montreal GBF\n  targets and SDG 15.\n",
-  "modified": "2026-05-18T07:31:05.313165",
+  "modified": "2026-05-18T07:32:44.776893",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"6b01f188cc614cc2e65f4bf86a2623f98f101dfd",
@@ -204,30 +204,30 @@
   },
   "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
   "gitHubRepository": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/",
-  "baseURL": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/",
-  "viewerURL": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks",
-  "validationReport": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/report.html",
-  "validationReportJson": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/report.json",
+  "baseURL": "https://maytetoscano.github.io/bblocks-bioclima/",
+  "viewerURL": "https://maytetoscano.github.io/bblocks-bioclima/bblocks",
+  "validationReport": "https://maytetoscano.github.io/bblocks-bioclima/../../tmp/bblocks-tests/report.html",
+  "validationReportJson": "https://maytetoscano.github.io/bblocks-bioclima/../../tmp/bblocks-tests/report.json",
   "imports": [
     "https://opengeospatial.github.io/bblocks/register.json"
   ],
-  "remoteCacheDir": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/_cache",
+  "remoteCacheDir": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/_cache",
   "links": [
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/register.json",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/build/register.json",
       "type": "application/json",
       "title": "This Building Blocks Register in JSON format"
     },
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/bblocks.ttl",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/build/bblocks.ttl",
       "type": "text/turtle",
       "title": "This Building Blocks Register in RDF Turtle format"
     },
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/bblocks.jsonld",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/build/bblocks.jsonld",
       "type": "application/ld+json",
       "title": "This Building Blocks Register in JSON-LD format"
     }
@@ -293,20 +293,20 @@
       ],
       "shaclShapes": null,
       "dateOfLastChange": "2024-11-01",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/coveragejson/",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/coveragejson/",
       "validationPassed": true,
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/coveragejson/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/coveragejson/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/coveragejson/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/coveragejson/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.coveragejson"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.coveragejson"
         }
       },
       "@id": "bblocks://ogc.bioclima.coveragejson",
@@ -325,7 +325,7 @@
       "dependsOn": null,
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -384,20 +384,20 @@
       ],
       "shaclShapes": null,
       "dateOfLastChange": "2024-11-01",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/",
       "validationPassed": true,
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/ebv/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/ebv/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ebv"
         }
       },
       "@id": "bblocks://ogc.bioclima.ebv",
@@ -416,7 +416,7 @@
       "dependsOn": null,
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -474,20 +474,20 @@
       ],
       "shaclShapes": null,
       "dateOfLastChange": "2024-11-01",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/indicator/",
       "validationPassed": true,
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/indicator/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/indicator/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator"
         }
       },
       "@id": "bblocks://ogc.bioclima.indicator",
@@ -506,7 +506,7 @@
       "dependsOn": null,
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -568,26 +568,26 @@
       ],
       "shaclShapes": null,
       "ontology": {
-        "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/ontology.ttl",
+        "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ontology/ontology.ttl",
         "prof:hasRole": "role:specification",
         "dct:format": "text/turtle",
         "dct:conformsTo": "http://www.w3.org/2002/07/owl#Ontology"
       },
       "dateOfLastChange": "2024-11-01",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ontology/",
       "validationPassed": true,
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ontology/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/ontology/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ontology/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/ontology/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ontology"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ontology"
         }
       },
       "@id": "bblocks://ogc.bioclima.ontology",
@@ -605,7 +605,7 @@
       "dependsOn": null,
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -663,20 +663,20 @@
       ],
       "shaclShapes": null,
       "dateOfLastChange": "2024-11-01",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/",
       "validationPassed": true,
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/policy/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/policy/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.policy"
         }
       },
       "@id": "bblocks://ogc.bioclima.policy",
@@ -695,7 +695,7 @@
       "dependsOn": null,
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -753,20 +753,20 @@
       ],
       "shaclShapes": null,
       "dateOfLastChange": "2024-11-01",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/provenance/",
       "validationPassed": true,
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/provenance/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/provenance/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.provenance"
         }
       },
       "@id": "bblocks://ogc.bioclima.provenance",
@@ -785,7 +785,7 @@
       "dependsOn": null,
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -842,20 +842,20 @@
       ],
       "shaclShapes": null,
       "dateOfLastChange": "2024-11-01",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/zonification/",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/zonification/",
       "validationPassed": true,
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/zonification/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/zonification/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/zonification/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/zonification/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.zonification"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.zonification"
         }
       },
       "@id": "bblocks://ogc.bioclima.zonification",
@@ -874,7 +874,7 @@
       "dependsOn": null,
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -956,35 +956,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/coveragejson/bioclima-coverage/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/coveragejson/bioclima-coverage/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/coveragejson/bioclima-coverage/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/coveragejson/bioclima-coverage/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/coveragejson/bioclima-coverage/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/coveragejson/bioclima-coverage/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/coveragejson/bioclima-coverage/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/coveragejson/bioclima-coverage/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/coveragejson/bioclima-coverage/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/coveragejson/bioclima-coverage/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/coveragejson/bioclima-coverage/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/coveragejson/bioclima-coverage/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/coveragejson/bioclima-coverage/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/coveragejson/bioclima-coverage/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/coveragejson/bioclima-coverage/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.coveragejson.bioclima-coverage"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.coveragejson.bioclima-coverage"
         }
       },
       "@id": "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
@@ -1001,7 +1001,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -1084,7 +1084,7 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/shapes.shacl"
+            "https://maytetoscano.github.io/bblocks-bioclima/_sources/ontology/bioclima-ontology/shapes.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.bioclima.ontology.bioclima-ontology",
           "prof:hasRole": "role:validation",
@@ -1093,26 +1093,26 @@
         }
       ],
       "ontology": {
-        "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/bioclima-ontology/ontology.ttl",
+        "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ontology/bioclima-ontology/ontology.ttl",
         "prof:hasRole": "role:specification",
         "dct:format": "text/turtle",
         "dct:conformsTo": "http://www.w3.org/2002/07/owl#Ontology"
       },
       "dateOfLastChange": "2024-11-01",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ontology/bioclima-ontology/",
       "validationPassed": true,
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ontology/bioclima-ontology/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/ontology/bioclima-ontology/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ontology/bioclima-ontology/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/ontology/bioclima-ontology/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ontology.bioclima-ontology"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ontology.bioclima-ontology"
         }
       },
       "@id": "bblocks://ogc.bioclima.ontology.bioclima-ontology",
@@ -1129,7 +1129,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -1212,35 +1212,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/kmgbf-target/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/kmgbf-target/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/kmgbf-target/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/kmgbf-target/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/kmgbf-target/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/kmgbf-target/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/kmgbf-target/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/policy/kmgbf-target/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/kmgbf-target/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/policy/kmgbf-target/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/kmgbf-target/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/policy/kmgbf-target/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy.kmgbf-target"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.policy.kmgbf-target"
         }
       },
       "@id": "bblocks://ogc.bioclima.policy.kmgbf-target",
@@ -1257,7 +1257,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -1277,8 +1277,8 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.ebv",
-        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage"
+        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
+        "bblocks://ogc.bioclima.ebv"
       ],
       "maintainers": [
         {
@@ -1335,35 +1335,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/ebv-definition/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/ebv-definition/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/ebv-definition/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/ebv-definition/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/ebv-definition/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/ebv-definition/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/ebv-definition/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/ebv/ebv-definition/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/ebv-definition/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/ebv/ebv-definition/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/ebv-definition/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/ebv/ebv-definition/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.ebv-definition"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ebv.ebv-definition"
         }
       },
       "@id": "bblocks://ogc.bioclima.ebv.ebv-definition",
@@ -1380,7 +1380,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -1400,10 +1400,10 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.ebv.ebv-definition",
-        "bblocks://ogc.bioclima.policy.policy-alignment",
+        "bblocks://ogc.bioclima.indicator",
         "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
-        "bblocks://ogc.bioclima.indicator"
+        "bblocks://ogc.bioclima.ebv.ebv-definition",
+        "bblocks://ogc.bioclima.policy.policy-alignment"
       ],
       "maintainers": [
         {
@@ -1452,35 +1452,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/indicator-definition/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/indicator/indicator-definition/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/indicator-definition/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/indicator/indicator-definition/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/indicator-definition/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/indicator-definition/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/indicator-definition/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/indicator/indicator-definition/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/indicator/indicator-definition/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/indicator/indicator-definition/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/indicator/indicator-definition/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/indicator-definition/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/indicator/indicator-definition/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/indicator-definition/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/indicator/indicator-definition/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator.indicator-definition"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.indicator-definition"
         }
       },
       "@id": "bblocks://ogc.bioclima.indicator.indicator-definition",
@@ -1497,7 +1497,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -1573,35 +1573,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/ebv-provenance/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/ebv-provenance/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/ebv-provenance/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/provenance/ebv-provenance/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/ebv-provenance/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/provenance/ebv-provenance/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/provenance/ebv-provenance/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/ebv-provenance/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/provenance/ebv-provenance/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/ebv-provenance/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/provenance/ebv-provenance/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance.ebv-provenance"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.provenance.ebv-provenance"
         }
       },
       "@id": "bblocks://ogc.bioclima.provenance.ebv-provenance",
@@ -1618,7 +1618,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -1638,9 +1638,9 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.indicator.indicator-definition",
+        "bblocks://ogc.bioclima.policy.kmgbf-target",
         "bblocks://ogc.bioclima.policy",
-        "bblocks://ogc.bioclima.policy.kmgbf-target"
+        "bblocks://ogc.bioclima.indicator.indicator-definition"
       ],
       "maintainers": [
         {
@@ -1705,35 +1705,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/policy-alignment/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/policy-alignment/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/policy-alignment/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/policy-alignment/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/policy-alignment/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/policy/policy-alignment/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/policy-alignment/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/policy/policy-alignment/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/policy-alignment/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/policy/policy-alignment/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/policy-alignment/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/policy/policy-alignment/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy.policy-alignment"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.policy.policy-alignment"
         }
       },
       "@id": "bblocks://ogc.bioclima.policy.policy-alignment",
@@ -1750,7 +1750,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -1770,10 +1770,10 @@
       },
       "version": "0.2.0",
       "dependsOn": [
+        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
         "bblocks://ogc.bioclima.provenance.ebv-provenance",
-        "bblocks://ogc.bioclima.ebv.ebv-definition",
         "bblocks://ogc.bioclima.ebv",
-        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage"
+        "bblocks://ogc.bioclima.ebv.ebv-definition"
       ],
       "maintainers": [
         {
@@ -1842,35 +1842,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-coniferous/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-coniferous/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-coniferous/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-coniferous/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/vap-coniferous/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-coniferous/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/vap-coniferous/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/ebv/vap-coniferous/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/vap-coniferous/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/ebv/vap-coniferous/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/vap-coniferous/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/ebv/vap-coniferous/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.vap-coniferous"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ebv.vap-coniferous"
         }
       },
       "@id": "bblocks://ogc.bioclima.ebv.vap-coniferous",
@@ -1887,7 +1887,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -1907,10 +1907,10 @@
       },
       "version": "0.2.0",
       "dependsOn": [
+        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
         "bblocks://ogc.bioclima.provenance.ebv-provenance",
-        "bblocks://ogc.bioclima.ebv.ebv-definition",
         "bblocks://ogc.bioclima.ebv",
-        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage"
+        "bblocks://ogc.bioclima.ebv.ebv-definition"
       ],
       "maintainers": [
         {
@@ -1979,35 +1979,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-deciduous/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-deciduous/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-deciduous/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-deciduous/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-deciduous/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-deciduous/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-deciduous/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/vap-deciduous/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-deciduous/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/ebv/vap-deciduous/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/ebv/vap-deciduous/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/vap-deciduous/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/ebv/vap-deciduous/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/vap-deciduous/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/ebv/vap-deciduous/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.vap-deciduous"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ebv.vap-deciduous"
         }
       },
       "@id": "bblocks://ogc.bioclima.ebv.vap-deciduous",
@@ -2024,7 +2024,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -2097,35 +2097,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/indicator-provenance/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/indicator-provenance/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/indicator-provenance/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/indicator-provenance/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/provenance/indicator-provenance/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/indicator-provenance/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/provenance/indicator-provenance/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/provenance/indicator-provenance/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/indicator-provenance/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/provenance/indicator-provenance/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/indicator-provenance/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/provenance/indicator-provenance/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance.indicator-provenance"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.provenance.indicator-provenance"
         }
       },
       "@id": "bblocks://ogc.bioclima.provenance.indicator-provenance",
@@ -2142,7 +2142,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -2162,13 +2162,13 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.indicator",
-        "bblocks://ogc.bioclima.ebv.vap-deciduous",
         "bblocks://ogc.bioclima.ebv.vap-coniferous",
         "bblocks://ogc.bioclima.indicator.indicator-definition",
-        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
+        "bblocks://ogc.bioclima.policy.policy-alignment",
         "bblocks://ogc.bioclima.provenance.indicator-provenance",
-        "bblocks://ogc.bioclima.policy.policy-alignment"
+        "bblocks://ogc.bioclima.ebv.vap-deciduous",
+        "bblocks://ogc.bioclima.indicator",
+        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage"
       ],
       "maintainers": [
         {
@@ -2243,35 +2243,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/pci/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/indicator/pci/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/pci/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/indicator/pci/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/pci/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/pci/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/pci/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/indicator/pci/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/indicator/pci/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/indicator/pci/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/indicator/pci/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/pci/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/indicator/pci/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/pci/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/indicator/pci/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator.pci"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci"
         }
       },
       "@id": "bblocks://ogc.bioclima.indicator.pci",
@@ -2288,7 +2288,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     },
     {
@@ -2308,12 +2308,12 @@
       },
       "version": "0.2.0",
       "dependsOn": [
-        "bblocks://ogc.bioclima.zonification",
-        "bblocks://ogc.bioclima.indicator.pci",
-        "bblocks://ogc.bioclima.provenance.indicator-provenance",
         "bblocks://ogc.bioclima.indicator.indicator-definition",
-        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage",
-        "bblocks://ogc.bioclima.policy.policy-alignment"
+        "bblocks://ogc.bioclima.indicator.pci",
+        "bblocks://ogc.bioclima.policy.policy-alignment",
+        "bblocks://ogc.bioclima.provenance.indicator-provenance",
+        "bblocks://ogc.bioclima.zonification",
+        "bblocks://ogc.bioclima.coveragejson.bioclima-coverage"
       ],
       "maintainers": [
         {
@@ -2376,35 +2376,35 @@
       "dateOfLastChange": "2024-11-01",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/zonification/bioclimatic-zone/schema.yaml",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/zonification/bioclimatic-zone/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/zonification/bioclimatic-zone/schema.json",
+          "prof:hasArtifact": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/zonification/bioclimatic-zone/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/zonification/bioclimatic-zone/schema.yaml",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/zonification/bioclimatic-zone/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/zonification/bioclimatic-zone/",
+      "sourceSchema": "https://maytetoscano.github.io/bblocks-bioclima/_sources/zonification/bioclimatic-zone/schema.yaml",
+      "resolvedSchemaProperties": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/zonification/bioclimatic-zone/resolvedProperties.json",
+      "sourceFiles": "https://maytetoscano.github.io/bblocks-bioclima/_sources/zonification/bioclimatic-zone/",
       "validationPassed": true,
       "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/zonification/bioclimatic-zone/",
       "documentation": {
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/zonification/bioclimatic-zone/index.json"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/json-full/bioclima/zonification/bioclimatic-zone/index.json"
         },
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/zonification/bioclimatic-zone/index.md"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/build/generateddocs/markdown/bioclima/zonification/bioclimatic-zone/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.zonification.bioclimatic-zone"
+          "url": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.zonification.bioclimatic-zone"
         }
       },
       "@id": "bblocks://ogc.bioclima.zonification.bioclimatic-zone",
@@ -2421,7 +2421,7 @@
       "rdfData": [],
       "isProfileOf": null,
       "skos:topConceptOf": {
-        "@id": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/"
+        "@id": "https://maytetoscano.github.io/bblocks-bioclima/"
       }
     }
   ],

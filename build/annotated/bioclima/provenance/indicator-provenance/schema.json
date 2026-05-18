@@ -4,7 +4,7 @@
   "title": "Indicator Provenance",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.json"
+      "$ref": "https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/provenance/ebv-provenance/schema.json"
     },
     {
       "type": "object",

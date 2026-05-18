@@ -133,7 +133,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 $id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.ebv.vap-coniferous/schema.yaml
 title: VAP Coniferous Finland metadata record
 allOf:
-- $ref: https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.yaml
+- $ref: https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/ebv-definition/schema.yaml
 - type: object
   properties:
     ebv_entity:
@@ -146,8 +146,8 @@ allOf:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.yaml)
+* YAML version: [schema.yaml](https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-coniferous/schema.json)
+* JSON version: [schema.json](https://maytetoscano.github.io/bblocks-bioclima/build/annotated/bioclima/ebv/vap-coniferous/schema.yaml)
 
 ## Sources
 

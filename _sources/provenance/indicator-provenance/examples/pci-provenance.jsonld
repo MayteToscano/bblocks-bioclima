@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "@vocab": "http://www.w3.org/ns/prov#"
+  },
+  "entity": "ogc.bioclima.indicator.pci/examples/pci-finland-2001-2018.covjson",
+  "wasDerivedFrom": [
+    "ogc.bioclima.ebv.vap-coniferous",
+    "ogc.bioclima.ebv.vap-deciduous"
+  ],
+  "wasGeneratedBy": {
+    "activity": "Compute PCI from VAP-DOY cubes",
+    "script": "https://maytetoscano.github.io/bblocks-bioclima/_sources/indicator/pci/code/compute.py",
+    "scriptVersion": "c970ce8dcb321e905a70d4afd42bb94183e8ec98",
+    "startedAtTime": "2024-11-01T12:00:00Z",
+    "endedAtTime": "2026-05-15T13:46:31Z",
+    "parameters": {
+      "coniferous_weight": 0.4,
+      "deciduous_weight": 0.6,
+      "trend_method": "ordinary-least-squares",
+      "min_valid_years": 8
+    },
+    "runId": "25921259629"
+  },
+  "wasAttributedTo": {
+    "agent": "github://maytetoscano/bblocks-bioclima/.github/workflows/recompute-indicators.yml",
+    "role": "Software agent"
+  }
+}

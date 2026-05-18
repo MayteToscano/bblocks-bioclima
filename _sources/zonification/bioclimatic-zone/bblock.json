@@ -1,0 +1,82 @@
+{
+  "itemIdentifier": "ogc.bioclima.zonification.bioclimatic-zone",
+  "name": "Bioclimatic Zonification from PCI",
+  "abstract": "Aggregated zonification derived from the PCI raster. The Python implementation (code/zonify.py) classifies every PCI pixel into one of four categories using published thresholds (stable, mild advance, strong advance, delay) and then groups spatially-contiguous pixels of the same category into a single MultiPolygon Feature with summary statistics (area, mean PCI, n pixels). This produces semantically-meaningful zones — not individual grid cells — and emits a GeoJSON FeatureCollection where every Feature carries the SKOS IRI of its category, the KMGBF targets it informs, and a provenance pointer to the upstream PCI bblock.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "datatype",
+  "register": "bioclima",
+  "group": "zonification",
+  "groupLabel": {
+    "en": "Bioclimatic Zonification",
+    "es": "Zonificación bioclimática",
+    "zh": "生物气候分区",
+    "ro": "Zonificare bioclimatică"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.zonification",
+    "ogc.bioclima.indicator.indicator-definition",
+    "ogc.bioclima.indicator.pci",
+    "ogc.bioclima.coveragejson.bioclima-coverage",
+    "ogc.bioclima.policy.policy-alignment",
+    "ogc.bioclima.provenance.indicator-provenance"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-zonification",
+    "zone",
+    "bioclimatic",
+    "geojson",
+    "aggregation"
+  ],
+  "links": [
+    {
+      "title": "Open zones in the viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=bioclimatic-zones",
+      "rel": "viewer-layer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Upstream indicator: PCI",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci",
+      "rel": "derived-from"
+    },
+    {
+      "title": "Family: Bioclimatic Zonification",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification",
+      "rel": "classified-under"
+    },
+    {
+      "title": "Ontology concept: zone-category",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category",
+      "rel": "described-by"
+    }
+  ],
+  "concept": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category"
+  ],
+  "sources": [
+    {
+      "title": "▶ Open this layer in the BioClima interactive map viewer",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=bioclimatic-zones"
+    },
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (zonification)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification"
+    }
+  ]
+}

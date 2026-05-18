@@ -1,0 +1,27 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.provenance.ebv-provenance/schema.yaml"
+title: "EBV Provenance"
+type: object
+required: [entity, wasGeneratedBy, wasAttributedTo]
+properties:
+  entity:
+    type: string
+    format: iri
+  wasDerivedFrom:
+    type: array
+    items: { type: string, format: iri }
+  wasGeneratedBy:
+    type: object
+    required: [activity, startedAtTime, endedAtTime]
+    properties:
+      activity:      { type: string }
+      startedAtTime: { type: string, format: date-time }
+      endedAtTime:   { type: string, format: date-time }
+      hadPlan:       { type: string, format: iri }
+  wasAttributedTo:
+    type: object
+    required: [agent]
+    properties:
+      agent:        { type: string }
+      role:         { type: string }
+      organization: { type: string }

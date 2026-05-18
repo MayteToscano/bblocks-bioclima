@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@vocab": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/",
+    "indicator": { "@id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/refersTo", "@type": "@id" },
+    "target":    { "@type": "@id" }
+  },
+  "indicator": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category",
+  "indicatorBblock": "ogc.bioclima.zonification.bioclimatic-zone",
+  "alignments": [
+    {
+      "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+      "targetBblock": "ogc.bioclima.policy.kmgbf-target",
+      "relationship": "informs",
+      "evidenceStrength": "direct",
+      "justification": {
+        "en": "Bioclimatic zones delineate areas with homogeneous phenological behaviour, which is precisely the kind of spatial input integrated, biodiversity-inclusive planning needs.",
+        "es": "Las zonas bioclimáticas delimitan áreas con comportamiento fenológico homogéneo, exactamente la información espacial que la planificación integrada e inclusiva con la biodiversidad necesita.",
+        "zh": "生物气候区划定具有同质物候行为的区域,正是综合且包容生物多样性的规划所需的空间输入。",
+        "ro": "Zonele bioclimatice delimitează arii cu comportament fenologic omogen, exact tipul de informație spațială necesară planificării integrate, inclusive pentru biodiversitate."
+      }
+    },
+    {
+      "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+      "targetBblock": "ogc.bioclima.policy.kmgbf-target",
+      "relationship": "measures-progress-on",
+      "evidenceStrength": "direct",
+      "justification": {
+        "en": "The proportion and area of 'strong advance' and 'delay' zones is a direct, auditable indicator of how climate change is reshaping boreal phenology.",
+        "es": "La proporción y superficie de zonas de 'adelanto fuerte' y 'retraso' es un indicador directo y auditable de cómo el cambio climático reformula la fenología boreal.",
+        "zh": "“强烈提前”与“延迟”区域的比例和面积是气候变化重塑北方物候的直接、可审计指标。",
+        "ro": "Proporția și suprafața zonelor de avans puternic și întârziere sunt indicatori direcți și auditabili ai modului în care schimbările climatice modelează fenologia boreală."
+      }
+    }
+  ]
+}

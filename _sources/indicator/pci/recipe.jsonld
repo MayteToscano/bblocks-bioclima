@@ -1,0 +1,78 @@
+{
+  "id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+  "label": {
+    "en": "Phenological Change Indicator",
+    "es": "Indicador de cambio fenológico",
+    "zh": "物候变化指标",
+    "ro": "Indicator al schimbării fenologice"
+  },
+  "definition": {
+    "en": "Composite indicator describing how vegetation phenology has changed over the analysis window. Exposed as a ParameterGroup of four per-pixel parameters: trend (Theil-Sen), anomaly (recent vs baseline), changepoint_year (Pettitt) and changepoint_pvalue.",
+    "es": "Indicador compuesto que describe cómo ha cambiado la fenología vegetal en la ventana de análisis. Expuesto como un ParameterGroup de cuatro parámetros por píxel: trend (Theil-Sen), anomaly (reciente vs línea base), changepoint_year (Pettitt) y changepoint_pvalue.",
+    "zh": "描述分析窗口内植被物候变化的复合指标,以四个像素级参数构成的 ParameterGroup 形式公开:trend(Theil-Sen)、anomaly(近期与基线对比)、changepoint_year(Pettitt)和 changepoint_pvalue。",
+    "ro": "Indicator compus care descrie modul în care a evoluat fenologia vegetală în fereastra de analiză. Expus ca un ParameterGroup de patru parametri per pixel: trend (Theil-Sen), anomaly (recent vs bază), changepoint_year (Pettitt) și changepoint_pvalue."
+  },
+  "parameterGroup": {
+    "id":      "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+    "members": ["trend", "anomaly", "changepoint_year", "changepoint_pvalue"]
+  },
+  "parametersDefinition": {
+    "trend": {
+      "observedProperty": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend",
+      "method": "Theil-Sen median slope per pixel",
+      "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/days-per-year"
+    },
+    "anomaly": {
+      "observedProperty": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-anomaly",
+      "method": "mean(year > baseline_end) - mean(year <= baseline_end)",
+      "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/day-of-year"
+    },
+    "changepoint_year": {
+      "observedProperty": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-changepoint-year",
+      "method": "Pettitt non-parametric change-point test (argmax |U|)",
+      "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/year"
+    },
+    "changepoint_pvalue": {
+      "observedProperty": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-changepoint-pvalue",
+      "method": "p ≈ 2 * exp(-6 K^2 / (T^3 + T^2))",
+      "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/dimensionless"
+    }
+  },
+  "inputs": [
+    {
+      "role": "coniferous_series",
+      "ebv": "ogc.bioclima.ebv.vap-coniferous",
+      "constraint": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest",
+      "minYears": 10
+    },
+    {
+      "role": "deciduous_series",
+      "ebv": "ogc.bioclima.ebv.vap-deciduous",
+      "constraint": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/deciduous-vegetation",
+      "minYears": 10
+    }
+  ],
+  "parameters": {
+    "coniferous_weight":  0.4,
+    "deciduous_weight":   0.6,
+    "trend_method":       "theil-sen",
+    "changepoint_method": "pettitt",
+    "baseline_end":       2010,
+    "min_valid_years":    8
+  },
+  "implementation": {
+    "language":   "python",
+    "entrypoint": "compute.py#compute_pci",
+    "version":    "0.3.0",
+    "requirements": "requirements.txt"
+  },
+  "output": {
+    "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/days-per-year",
+    "format": "CoverageJSON (ParameterGroup)"
+  },
+  "policyAlignment": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/sdg-15"
+  ]
+}

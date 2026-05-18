@@ -1,0 +1,8 @@
+- title: Minimal BioClima Coverage
+  content: |
+    A small 3×3×2 grid showing the required structure of a BioClima coverage.
+    Note the `observedProperty.id` pointing to the BioClima ontology and the
+    multilingual labels.
+  snippets:
+    - language: json
+      ref: examples/minimal-coverage.covjson

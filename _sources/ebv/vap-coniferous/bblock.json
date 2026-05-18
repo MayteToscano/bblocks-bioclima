@@ -1,0 +1,86 @@
+{
+  "itemIdentifier": "ogc.bioclima.ebv.vap-coniferous",
+  "name": "VAP Coniferous Finland 2001-2018",
+  "abstract": "Concrete EBV dataset: yearly maps of the start of the Vegetation Active Period in coniferous forests of Finland, 2001-2018, derived from MODIS Fractional Snow Cover. Packaged as a CoverageJSON document conformant to the bioclima-coverage profile. This is one of the two input EBVs consumed by the Phenological Change Indicator (PCI).",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "datatype",
+  "register": "bioclima",
+  "group": "ebv",
+  "groupLabel": {
+    "en": "EBVs (Essential Biodiversity Variables)",
+    "es": "EBVs (Variables Esenciales de Biodiversidad)",
+    "zh": "基本生物多样性变量(EBV)",
+    "ro": "EBV (Variabile esențiale de biodiversitate)"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.ebv",
+    "ogc.bioclima.ebv.ebv-definition",
+    "ogc.bioclima.coveragejson.bioclima-coverage",
+    "ogc.bioclima.provenance.ebv-provenance"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-ebv",
+    "dataset",
+    "vap",
+    "coniferous",
+    "finland"
+  ],
+  "links": [
+    {
+      "title": "Open this layer in the viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-coniferous",
+      "rel": "viewer-layer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Phenological Change Indicator (PCI) — derived",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci",
+      "rel": "derived-indicator"
+    },
+    {
+      "title": "Family: EBVs (Essential Biodiversity Variables)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv",
+      "rel": "classified-under"
+    },
+    {
+      "title": "Ontology concept: vap_doy",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+      "rel": "described-by"
+    },
+    {
+      "title": "Ontology concept: coniferous-forest",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest",
+      "rel": "described-by"
+    }
+  ],
+  "concept": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest"
+  ],
+  "sources": [
+    {
+      "title": "▶ Open this layer in the BioClima interactive map viewer",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-coniferous"
+    },
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (ebv)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv"
+    }
+  ]
+}

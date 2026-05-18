@@ -1,0 +1,67 @@
+{
+  "itemIdentifier": "ogc.bioclima.provenance.indicator-provenance",
+  "name": "Indicator Provenance (W3C PROV)",
+  "abstract": "PROV-O record for a computed indicator: references the EBV inputs by bblock ID, the Python implementation by URL, the exact git commit hash and the GitHub Actions run id. This makes every PCI value re-derivable from raw observations.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "provenance",
+  "groupLabel": {
+    "en": "Provenance",
+    "es": "Provenance / Trazabilidad",
+    "zh": "出处与溯源",
+    "ro": "Proveniență"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.provenance",
+    "ogc.bioclima.provenance.ebv-provenance",
+    "ogc.bioclima.indicator.indicator-definition"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-provenance",
+    "prov-o",
+    "lineage",
+    "indicator-provenance",
+    "git"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Reference: bblock-prov-schema-x",
+      "href": "https://github.com/ogcincubator/bblock-prov-schema-x",
+      "rel": "reference"
+    },
+    {
+      "title": "Family: Provenance",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance",
+      "rel": "classified-under"
+    }
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (provenance)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance"
+    }
+  ]
+}

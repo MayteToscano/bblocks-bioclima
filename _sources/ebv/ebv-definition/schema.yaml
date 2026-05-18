@@ -1,0 +1,130 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.ebv.ebv-definition/schema.yaml"
+title: "EBV Definition (generic)"
+description: |
+  Inventory schema for an Essential Biodiversity Variable dataset, modelled
+  after the GeoBON portal record. Concrete EBVs (e.g. vap-coniferous) provide
+  this metadata plus the CoverageJSON data inside their examples/ folder.
+
+type: object
+required:
+  - id
+  - title
+  - doi
+  - ebv
+  - ebv_entity
+  - ebv_metric
+  - geospatial
+  - time_coverage
+  - license
+  - creator
+properties:
+  id:
+    type: string
+  naming_authority:
+    type: string
+  title:
+    type: object
+    required: [en]
+    properties:
+      en: { type: string }
+      es: { type: string }
+      zh: { type: string }
+      ro: { type: string }
+  product_version:
+    type: string
+  doi:
+    type: string
+  date_created:
+    type: string
+    format: date
+  date_issued:
+    type: string
+    format: date
+  summary:
+    type: object
+    required: [en]
+  keywords:
+    type: array
+    items: { type: string }
+  references:
+    type: array
+    items: { type: string }
+  source:
+    type: string
+  license:
+    type: string
+    format: iri
+  creator:
+    type: object
+    required: [name, institution]
+    properties:
+      name:        { type: string }
+      email:       { type: string, format: email }
+      institution: { type: string }
+  ebv:
+    type: object
+    required: [ebv_class, ebv_name]
+    properties:
+      ebv_class:
+        type: string
+        format: iri
+      ebv_name:
+        type: string
+        format: iri
+  ebv_entity:
+    type: object
+    required: [ebv_entity_type]
+    properties:
+      ebv_entity_type:
+        type: string
+        format: iri
+      ebv_entity_scope:
+        type: string
+      ebv_entity_names:
+        type: array
+        items: { type: string }
+  ebv_metric:
+    type: object
+    additionalProperties:
+      type: object
+      required: [standard_name, long_name, units]
+      properties:
+        standard_name:
+          type: object
+        long_name:
+          type: object
+        units:
+          type: string
+          format: iri
+  geospatial:
+    type: object
+    required: [crs, lat_min, lat_max, lon_min, lon_max]
+    properties:
+      crs:            { type: string }
+      lat_resolution: { type: string }
+      lon_resolution: { type: string }
+      lat_min:        { type: number }
+      lat_max:        { type: number }
+      lon_min:        { type: number }
+      lon_max:        { type: number }
+      scope:          { type: string }
+      description:    { type: string }
+  time_coverage:
+    type: object
+    required: [start, end]
+    properties:
+      resolution: { type: string }
+      start:      { type: string, format: date }
+      end:        { type: string, format: date }
+  ebv_domain:
+    type: array
+    items: { type: string }
+  comment:
+    type: string
+  dataset:
+    type: object
+    properties:
+      coverage:
+        type: string
+        description: Relative path to the CoverageJSON file inside the block

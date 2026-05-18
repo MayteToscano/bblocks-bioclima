@@ -1,0 +1,68 @@
+{
+  "id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/zonification/bioclimatic-zone",
+  "label": {
+    "en": "Bioclimatic zonification (from PCI)",
+    "es": "Zonificación bioclimática (desde PCI)",
+    "zh": "生物气候分区(基于 PCI)",
+    "ro": "Zonificare bioclimatică (din PCI)"
+  },
+  "definition": {
+    "en": "Aggregated polygons of contiguous pixels that share the same PCI category. The four categories follow published thresholds in days/year of vegetation active period onset.",
+    "es": "Polígonos agregados de píxeles contiguos que comparten la misma categoría de PCI. Las cuatro categorías siguen umbrales publicados en días/año de inicio del periodo activo de vegetación.",
+    "zh": "由相邻像素聚合而成的多边形,共享相同 PCI 类别。四个类别遵循已发布的植被活动期开始日变化阈值(天/年)。",
+    "ro": "Poligoane agregate de pixeli adiacenți care împărtășesc aceeași categorie PCI. Cele patru categorii urmează praguri publicate în zile/an pentru începutul perioadei active a vegetației."
+  },
+  "inputs": [
+    {
+      "role": "pci_raster",
+      "ebv": "ogc.bioclima.indicator.pci",
+      "constraint": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+      "minYears": 10
+    }
+  ],
+  "parameters": {
+    "thresholds": {
+      "strong_advance": { "min": null, "max": -0.5 },
+      "mild_advance":   { "min": -0.5, "max": -0.2 },
+      "stable":         { "min": -0.2, "max":  0.2 },
+      "delay":          { "min":  0.2, "max": null }
+    },
+    "connectivity": "4-connected",
+    "min_pixels":   4
+  },
+  "implementation": {
+    "language":   "python",
+    "entrypoint": "code/zonify.py#zonify",
+    "version":    "0.2.0",
+    "requirements": "code/requirements.txt"
+  },
+  "output": {
+    "unit":   "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/categorical",
+    "format": "GeoJSON FeatureCollection"
+  },
+  "policyAlignment": [
+    {
+      "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+      "relationship": "informs",
+      "evidenceStrength": "direct",
+      "justification": {
+        "en": "Bioclimatic zones delineate areas where phenology is changing in similar ways, supporting integrated biodiversity-inclusive spatial planning.",
+        "es": "Las zonas bioclimáticas delimitan áreas donde la fenología cambia de manera similar, apoyando la planificación espacial integrada e inclusiva de la biodiversidad."
+      }
+    },
+    {
+      "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+      "relationship": "measures-progress-on",
+      "evidenceStrength": "direct",
+      "justification": {
+        "en": "The proportion and area of strong-advance / delay zones tracks the spatial fingerprint of climate-change impacts on biodiversity.",
+        "es": "La proporción y superficie de zonas de adelanto fuerte / retraso refleja la huella espacial del impacto climático sobre la biodiversidad."
+      }
+    },
+    {
+      "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/sdg-15",
+      "relationship": "supports-reporting-on",
+      "evidenceStrength": "indirect"
+    }
+  ]
+}

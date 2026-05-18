@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@vocab": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/",
+    "skos":   "http://www.w3.org/2004/02/skos/core#",
+    "label":      { "@id": "skos:prefLabel", "@container": "@language" },
+    "definition": { "@id": "skos:definition", "@container": "@language" }
+  },
+  "id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+  "targetNumber": 1,
+  "label": {
+    "en": "Spatial planning",
+    "es": "Planificación espacial",
+    "zh": "空间规划",
+    "ro": "Planificare spațială"
+  },
+  "definition": {
+    "en": "Ensure that all areas are under participatory, integrated and biodiversity-inclusive spatial planning and/or effective management processes addressing land- and sea-use change by 2030.",
+    "es": "Garantizar que para 2030 todas las áreas estén bajo procesos de planificación espacial participativa, integrada e inclusiva con la biodiversidad y/o procesos efectivos de gestión que aborden los cambios de uso de la tierra y el mar.",
+    "zh": "确保到 2030 年所有区域都纳入参与式、综合且包容生物多样性的空间规划和/或有效管理流程,解决土地与海洋利用变化问题。",
+    "ro": "Asigurarea că, până în 2030, toate zonele se află sub procese participative, integrate și inclusive pentru biodiversitate de planificare spațială și/sau gestionare eficientă a schimbărilor de utilizare a terenurilor și mărilor."
+  },
+  "deadline": "2030-12-31",
+  "keyIndicators": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category"
+  ],
+  "informedBy": [
+    {
+      "bblock":       "ogc.bioclima.zonification.bioclimatic-zone",
+      "relationship": "informs",
+      "evidenceStrength": "direct"
+    }
+  ],
+  "source": "https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf"
+}

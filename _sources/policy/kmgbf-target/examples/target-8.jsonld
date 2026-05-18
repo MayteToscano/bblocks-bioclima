@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@vocab": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/",
+    "skos":   "http://www.w3.org/2004/02/skos/core#",
+    "label":      { "@id": "skos:prefLabel", "@container": "@language" },
+    "definition": { "@id": "skos:definition", "@container": "@language" }
+  },
+  "id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+  "targetNumber": 8,
+  "label": {
+    "en": "Climate change adaptation",
+    "es": "Adaptación al cambio climático",
+    "zh": "气候变化适应",
+    "ro": "Adaptare la schimbările climatice"
+  },
+  "definition": {
+    "en": "Minimize the impact of climate change on biodiversity through mitigation, adaptation and disaster risk reduction actions, including through nature-based solutions and/or ecosystem-based approaches.",
+    "es": "Minimizar el impacto del cambio climático sobre la biodiversidad mediante acciones de mitigación, adaptación y reducción del riesgo de desastres, incluso mediante soluciones basadas en la naturaleza y/o enfoques basados en los ecosistemas.",
+    "zh": "通过减缓、适应和减少灾害风险的行动,包括基于自然的解决方案和/或基于生态系统的方法,尽量减少气候变化对生物多样性的影响。",
+    "ro": "Minimizarea impactului schimbărilor climatice asupra biodiversității prin acțiuni de atenuare, adaptare și reducere a riscului de dezastre, inclusiv prin soluții bazate pe natură și/sau abordări bazate pe ecosisteme."
+  },
+  "deadline": "2030-12-31",
+  "keyIndicators": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-strong-advance",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-delay"
+  ],
+  "informedBy": [
+    {
+      "bblock":       "ogc.bioclima.indicator.pci",
+      "relationship": "measures-progress-on",
+      "evidenceStrength": "direct"
+    },
+    {
+      "bblock":       "ogc.bioclima.zonification.bioclimatic-zone",
+      "relationship": "measures-progress-on",
+      "evidenceStrength": "direct"
+    }
+  ],
+  "source": "https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf"
+}

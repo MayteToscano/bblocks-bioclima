@@ -1,0 +1,95 @@
+{
+  "itemIdentifier": "ogc.bioclima.indicator.pci",
+  "name": "Phenological Change Indicator (PCI)",
+  "abstract": "Composite indicator of phenological change. PCI is published as a single CoverageJSON with a ParameterGroup of four parameters per pixel: trend (Theil-Sen slope of VAP day-of-year over the analysis window), anomaly (recent-vs-baseline mean difference), changepoint_year (Pettitt test) and changepoint_pvalue. Every parameter declares its observedProperty in the Bioclima ontology, so an analyst clicking a pixel in the viewer can navigate to the formal definition of each component. The bundle ships with code/compute.py and a worked example for Finland 2001-2018, and declares a formal policy alignment with KMGBF Target 8 and SDG 15.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "datatype",
+  "register": "bioclima",
+  "group": "indicator",
+  "groupLabel": {
+    "en": "Spatial Indicators",
+    "es": "Indicadores espaciales",
+    "zh": "空间指标",
+    "ro": "Indicatori spațiali"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.indicator",
+    "ogc.bioclima.indicator.indicator-definition",
+    "ogc.bioclima.ebv.vap-coniferous",
+    "ogc.bioclima.ebv.vap-deciduous",
+    "ogc.bioclima.coveragejson.bioclima-coverage",
+    "ogc.bioclima.provenance.indicator-provenance",
+    "ogc.bioclima.policy.policy-alignment"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-indicator",
+    "pci",
+    "phenology",
+    "trend",
+    "anomaly",
+    "changepoint"
+  ],
+  "links": [
+    {
+      "title": "Open PCI in the viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=pci",
+      "rel": "viewer-layer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Bioclimatic zones derived from PCI",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.zonification.bioclimatic-zone",
+      "rel": "derived-zonification"
+    },
+    {
+      "title": "Policy alignment record for PCI",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/policy-alignment/examples/pci-alignment.jsonld",
+      "rel": "policy-alignment"
+    },
+    {
+      "title": "Family: Spatial Indicators",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator",
+      "rel": "classified-under"
+    },
+    {
+      "title": "Ontology concept: pci",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+      "rel": "described-by"
+    },
+    {
+      "title": "Ontology concept: pci-trend",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend",
+      "rel": "described-by"
+    }
+  ],
+  "concept": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend"
+  ],
+  "sources": [
+    {
+      "title": "▶ Open this layer in the BioClima interactive map viewer",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=pci"
+    },
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (indicator)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator"
+    }
+  ]
+}

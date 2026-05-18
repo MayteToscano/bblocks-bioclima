@@ -1,0 +1,54 @@
+{
+  "itemIdentifier": "ogc.bioclima.indicator",
+  "name": "Spatial Indicators",
+  "abstract": "Family block for spatial indicators. It groups the generic indicator recipe and concrete indicators derived from EBV datasets, including the Phenological Change Indicator.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "model",
+  "register": "bioclima",
+  "group": "indicator",
+  "groupLabel": {
+    "en": "Spatial Indicators",
+    "es": "Indicadores espaciales",
+    "zh": "空间指标",
+    "ro": "Indicatori spațiali"
+  },
+  "version": "0.1.0",
+  "highlighted": true,
+  "tags": [
+    "family-indicator",
+    "family",
+    "classification"
+  ],
+  "links": [
+    {
+      "title": "Interactive map viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Classified BioClima registry",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator",
+      "rel": "registry-index"
+    },
+    {
+      "title": "OGC Building Blocks viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator",
+      "rel": "ogc-bblocks-viewer"
+    }
+  ],
+  "seeAlso": [
+    "ogc.bioclima.indicator.indicator-definition",
+    "ogc.bioclima.indicator.pci"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (indicator)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator"
+    }
+  ]
+}

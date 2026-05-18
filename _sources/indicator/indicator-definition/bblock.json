@@ -1,0 +1,66 @@
+{
+  "itemIdentifier": "ogc.bioclima.indicator.indicator-definition",
+  "name": "Spatial Indicator Definition (generic)",
+  "abstract": "Generic recipe-style schema for a spatial biodiversity indicator: declares EBV inputs, parameters, output unit, implementation entry point (Python script and version) and policy alignment. Concrete indicators such as the Phenological Change Indicator (PCI) and the Bioclimatic Zonification follow this template. The schema enforces an explicit link to KMGBF/SDG targets so every indicator is auditable end-to-end.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "indicator",
+  "groupLabel": {
+    "en": "Spatial Indicators",
+    "es": "Indicadores espaciales",
+    "zh": "空间指标",
+    "ro": "Indicatori spațiali"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.indicator",
+    "ogc.bioclima.coveragejson.bioclima-coverage",
+    "ogc.bioclima.ebv.ebv-definition",
+    "ogc.bioclima.policy.policy-alignment"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-indicator",
+    "template",
+    "indicator-definition"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Reference pattern: bblocks-seadots",
+      "href": "https://github.com/ogcincubator/bblocks-seadots",
+      "rel": "reference"
+    },
+    {
+      "title": "Family: Spatial Indicators",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator",
+      "rel": "classified-under"
+    }
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (indicator)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator"
+    }
+  ]
+}

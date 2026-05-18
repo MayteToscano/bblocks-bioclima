@@ -1,0 +1,45 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.policy.policy-alignment/schema.yaml"
+title: "Policy Alignment"
+description: |
+  Forward link from an indicator to one or more KMGBF/SDG targets. The reverse
+  link from a target back to the indicators that inform it is held in the
+  `informedBy` array of the kmgbf-target block. Together they make the
+  indicator ↔ policy relationship bidirectionally navigable in the viewer and
+  in static lookups.
+type: object
+required: [indicator, alignments]
+properties:
+  indicator:
+    type: string
+    format: iri
+    description: SKOS concept IRI of the indicator (ontology level).
+  indicatorBblock:
+    type: string
+    description: Building-block identifier of the indicator (ogc.bioclima.indicator.<id>).
+  alignments:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required: [target, relationship]
+      properties:
+        target:
+          type: string
+          format: iri
+        targetBblock:
+          type: string
+          description: Building-block identifier of the target record (typically `ogc.bioclima.policy.kmgbf-target`).
+        relationship:
+          enum: [informs, measures-progress-on, triggers-action-for, supports-reporting-on]
+        evidenceStrength:
+          enum: [direct, indirect, contextual]
+        justification:
+          type: object
+          description: Multilingual rationale; at minimum `en` should be present.
+          required: [en]
+          properties:
+            en: { type: string }
+            es: { type: string }
+            zh: { type: string }
+            ro: { type: string }

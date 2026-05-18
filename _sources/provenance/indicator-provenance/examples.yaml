@@ -1,0 +1,5 @@
+- title: PCI provenance
+  content: Provenance record for the PCI computation.
+  snippets:
+    - language: json
+      ref: examples/pci-provenance.jsonld

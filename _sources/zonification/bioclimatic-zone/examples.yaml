@@ -1,0 +1,5 @@
+- title: Bioclimatic zones for Finland 2001-2018
+  content: GeoJSON FeatureCollection produced by code/zonify.py from the PCI raster.
+  snippets:
+    - language: json
+      ref: examples/finland-zones-2001-2018.geojson

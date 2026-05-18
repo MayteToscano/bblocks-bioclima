@@ -1,0 +1,49 @@
+{
+  "id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+  "label": {
+    "en": "Phenological Change Indicator",
+    "es": "Indicador de cambio fenológico",
+    "zh": "物候变化指标",
+    "ro": "Indicator al schimbării fenologice"
+  },
+  "definition": {
+    "en": "Rate of change of vegetation active period onset, computed as the weighted mean of per-pixel linear trends for coniferous and deciduous forests.",
+    "es": "Tasa de cambio del inicio del periodo activo de vegetación, calculada como la media ponderada de tendencias lineales por píxel para coníferas y caducifolios.",
+    "zh": "植被活动期开始日期的变化率,计算为针叶林和落叶林每像素线性趋势的加权平均值。",
+    "ro": "Rata de schimbare a începutului perioadei active a vegetației, calculată ca medie ponderată a tendințelor liniare per pixel pentru păduri de conifere și foioase."
+  },
+  "inputs": [
+    {
+      "role": "coniferous_series",
+      "ebv": "ogc.bioclima.ebv.vap-coniferous",
+      "constraint": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest",
+      "minYears": 10
+    },
+    {
+      "role": "deciduous_series",
+      "ebv": "ogc.bioclima.ebv.vap-deciduous",
+      "constraint": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/deciduous-vegetation",
+      "minYears": 10
+    }
+  ],
+  "parameters": {
+    "coniferous_weight": 0.4,
+    "deciduous_weight": 0.6,
+    "trend_method": "ordinary-least-squares",
+    "min_valid_years": 8
+  },
+  "implementation": {
+    "language": "python",
+    "entrypoint": "compute.py#compute_pci",
+    "version": "1.0.0",
+    "requirements": "requirements.txt"
+  },
+  "output": {
+    "unit": "https://maytetoscano.github.io/bblocks-bioclima/ontology/units/days-per-year",
+    "format": "CoverageJSON"
+  },
+  "policyAlignment": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/sdg-15"
+  ]
+}

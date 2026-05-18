@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@vocab": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/",
+    "indicator": { "@id": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/refersTo", "@type": "@id" },
+    "target":    { "@type": "@id" }
+  },
+  "indicator": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+  "indicatorBblock": "ogc.bioclima.indicator.pci",
+  "alignments": [
+    {
+      "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+      "targetBblock": "ogc.bioclima.policy.kmgbf-target",
+      "relationship": "measures-progress-on",
+      "evidenceStrength": "direct",
+      "justification": {
+        "en": "Earlier or later onset of the growing season is a primary ecological signal of climate-change pressure on boreal ecosystems; PCI quantifies that shift directly per pixel.",
+        "es": "El adelanto o retraso del inicio del periodo vegetativo es una señal ecológica primaria de la presión del cambio climático sobre los ecosistemas boreales; el PCI lo cuantifica directamente por píxel.",
+        "zh": "生长季开始的提前或延迟是气候变化对北方生态系统压力的主要生态信号;PCI 直接量化每个像素的这种变化。",
+        "ro": "Avansul sau întârzierea începutului sezonului de creștere este un semnal ecologic principal al presiunii schimbărilor climatice asupra ecosistemelor boreale; PCI cuantifică direct această schimbare la nivel de pixel."
+      }
+    },
+    {
+      "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+      "targetBblock": "ogc.bioclima.policy.kmgbf-target",
+      "relationship": "informs",
+      "evidenceStrength": "indirect",
+      "justification": {
+        "en": "Where PCI is significant, planning needs to internalise the bioclimatic gradient; the indicator informs participatory spatial planning decisions.",
+        "es": "Donde el PCI es significativo, la planificación debe internalizar el gradiente bioclimático; el indicador informa decisiones de planificación espacial participativa.",
+        "zh": "在 PCI 显著的区域,规划需要将生物气候梯度纳入考虑;该指标可为参与式空间规划决策提供依据。",
+        "ro": "Acolo unde PCI este semnificativ, planificarea trebuie să integreze gradientul bioclimatic; indicatorul informează deciziile de planificare spațială participativă."
+      }
+    },
+    {
+      "target": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/sdg-15",
+      "relationship": "supports-reporting-on",
+      "evidenceStrength": "contextual",
+      "justification": {
+        "en": "Phenological monitoring is widely accepted as part of the evidence base for SDG 15 reporting on the integrity of terrestrial ecosystems.",
+        "es": "El seguimiento fenológico está ampliamente aceptado como parte de la base de evidencia para los informes del ODS 15 sobre la integridad de los ecosistemas terrestres.",
+        "zh": "物候监测被广泛接受为 SDG 15 关于陆地生态系统完整性报告的证据基础的一部分。",
+        "ro": "Monitorizarea fenologică este larg acceptată ca parte din baza de dovezi pentru raportarea ODD 15 privind integritatea ecosistemelor terestre."
+      }
+    }
+  ]
+}

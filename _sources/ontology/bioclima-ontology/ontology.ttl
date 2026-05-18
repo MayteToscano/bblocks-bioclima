@@ -1,0 +1,284 @@
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix sosa:     <http://www.w3.org/ns/sosa/> .
+@prefix bioclima: <https://maytetoscano.github.io/bblocks-bioclima/ontology/> .
+@prefix ebv:      <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/> .
+@prefix ind:      <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/> .
+@prefix units:    <https://maytetoscano.github.io/bblocks-bioclima/ontology/units/> .
+@prefix ent:      <https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/> .
+@prefix pol:      <https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/> .
+
+###############################################################################
+# Ontology metadata
+###############################################################################
+
+bioclima: a owl:Ontology ;
+    dcterms:title       "BioClima Ontology"@en ,
+                        "Ontología BioClima"@es ,
+                        "BioClima 本体"@zh ,
+                        "Ontologia BioClima"@ro ;
+    dcterms:description "Multilingual SKOS vocabulary for the BioClima OGC building blocks register: EBVs, indicators, units, entity types and policies."@en ;
+    dcterms:license     <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:versionInfo     "0.1.0" .
+
+bioclima:ebv-scheme       a skos:ConceptScheme ; dcterms:title "EBV vocabulary"@en .
+bioclima:indicator-scheme a skos:ConceptScheme ; dcterms:title "Indicator vocabulary"@en .
+bioclima:units-scheme     a skos:ConceptScheme ; dcterms:title "Units vocabulary"@en .
+bioclima:entity-scheme    a skos:ConceptScheme ; dcterms:title "Entity types vocabulary"@en .
+bioclima:policy-scheme    a skos:ConceptScheme ; dcterms:title "Policy vocabulary"@en .
+
+###############################################################################
+# EBV CLASSES
+###############################################################################
+
+ebv:ecosystem-functioning a skos:Concept ;
+    skos:inScheme bioclima:ebv-scheme ;
+    skos:prefLabel "Ecosystem functioning"@en , "Funcionamiento del ecosistema"@es ,
+                   "生态系统功能"@zh , "Funcționarea ecosistemului"@ro ;
+    skos:definition "EBV class covering ecosystem-level processes such as productivity, phenology and disturbance regimes."@en ,
+                    "Clase de EBV que cubre procesos a nivel de ecosistema como productividad, fenología y regímenes de perturbación."@es ,
+                    "涵盖生态系统层面过程的 EBV 类别,例如生产力、物候和扰动机制。"@zh ,
+                    "Clasă de EBV care acoperă procesele la nivel de ecosistem precum productivitatea, fenologia și regimurile de perturbare."@ro .
+
+ebv:ecosystem-phenology a skos:Concept ;
+    skos:inScheme bioclima:ebv-scheme ;
+    skos:broader ebv:ecosystem-functioning ;
+    skos:prefLabel "Ecosystem phenology"@en , "Fenología del ecosistema"@es ,
+                   "生态系统物候"@zh , "Fenologia ecosistemului"@ro ;
+    skos:definition "Timing of cyclic and seasonal natural phenomena in ecosystems, including the start, peak and end of the growing season."@en ,
+                    "Calendario de los fenómenos naturales cíclicos y estacionales en los ecosistemas, incluyendo el inicio, pico y fin del periodo vegetativo."@es ,
+                    "生态系统中周期性和季节性自然现象的时序,包括生长季的开始、高峰和结束。"@zh ,
+                    "Calendarul fenomenelor naturale ciclice și sezoniere din ecosisteme, inclusiv începutul, vârful și sfârșitul sezonului de creștere."@ro .
+
+ebv:vap_doy a skos:Concept, sosa:ObservableProperty ;
+    skos:inScheme bioclima:ebv-scheme ;
+    skos:broader ebv:ecosystem-phenology ;
+    skos:prefLabel "Start of VAP (Day of Year)"@en ,
+                   "Inicio del periodo activo de vegetación (día del año)"@es ,
+                   "植被活动期开始(年积日)"@zh ,
+                   "Începutul perioadei active a vegetației (ziua din an)"@ro ;
+    skos:definition "Integer day of year marking the start of the Vegetation Active Period, derived from MODIS Fractional Snow Cover or NDWI time series."@en ,
+                    "Día del año, expresado como entero, que marca el inicio del Periodo Activo de Vegetación, derivado de series temporales de cobertura fraccional de nieve MODIS o NDWI."@es ,
+                    "标记植被活动期开始的整数年积日,源自 MODIS 分数雪盖或 NDWI 时间序列。"@zh ,
+                    "Ziua întreagă din an care marchează începutul perioadei active a vegetației, derivată din seriile temporale ale acoperirii fracționate cu zăpadă MODIS sau NDWI."@ro ;
+    dcterms:source <https://doi.org/10.1016/j.rse.2013.09.022> .
+
+###############################################################################
+# INDICATORS
+###############################################################################
+
+ind:pci a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:prefLabel "Phenological Change Indicator"@en ,
+                   "Indicador de cambio fenológico"@es ,
+                   "物候变化指标"@zh ,
+                   "Indicator al schimbării fenologice"@ro ;
+    skos:definition "Rate of change of vegetation active period onset, computed as the weighted mean of per-pixel linear trends for coniferous and deciduous forests over the analysis window."@en ,
+                    "Tasa de cambio del inicio del periodo activo de vegetación, calculada como la media ponderada de tendencias lineales por píxel para bosques de coníferas y caducifolios durante la ventana de análisis."@es ,
+                    "植被活动期开始日期的变化率,计算为分析窗口内针叶林和落叶林每像素线性趋势的加权平均值。"@zh ,
+                    "Rata de schimbare a începutului perioadei active a vegetației, calculată ca medie ponderată a tendințelor liniare per pixel pentru pădurile de conifere și foioase în fereastra de analiză."@ro .
+
+ind:zone-stable a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:prefLabel "Stable phenology zone"@en , "Zona de fenología estable"@es ,
+                   "物候稳定区"@zh , "Zonă cu fenologie stabilă"@ro ;
+    skos:definition "Zone where absolute PCI is below 0.2 days/year, indicating no significant trend in growing-season onset."@en ,
+                    "Zona donde el PCI absoluto es inferior a 0,2 días/año, lo que indica que no hay tendencia significativa en el inicio del periodo vegetativo."@es ,
+                    "PCI 绝对值低于每年 0.2 天的区域,表明生长季开始无显著趋势。"@zh ,
+                    "Zonă în care PCI absolut este sub 0,2 zile/an, indicând nicio tendință semnificativă în debutul sezonului de creștere."@ro .
+
+ind:zone-mild-advance a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:prefLabel "Mild phenological advance"@en , "Adelanto fenológico leve"@es ,
+                   "物候轻微提前"@zh , "Avans fenologic ușor"@ro ;
+    skos:definition "Zone where PCI is between -0.5 and -0.2 days/year, indicating a moderate earlier onset of the growing season."@en ,
+                    "Zona donde el PCI está entre -0,5 y -0,2 días/año, lo que indica un adelanto moderado en el inicio del periodo vegetativo."@es ,
+                    "PCI 介于每年 -0.5 至 -0.2 天的区域,表明生长季开始有中等程度的提前。"@zh ,
+                    "Zonă în care PCI este între -0,5 și -0,2 zile/an, indicând o avansare moderată a începutului sezonului de creștere."@ro .
+
+ind:zone-strong-advance a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:prefLabel "Strong phenological advance"@en , "Adelanto fenológico fuerte"@es ,
+                   "物候强烈提前"@zh , "Avans fenologic puternic"@ro ;
+    skos:definition "Zone where PCI is below -0.5 days/year, indicating a strong shift towards earlier growing-season onset."@en ,
+                    "Zona donde el PCI es inferior a -0,5 días/año, lo que indica un fuerte cambio hacia un inicio más temprano del periodo vegetativo."@es ,
+                    "PCI 低于每年 -0.5 天的区域,表明生长季开始向更早时间发生强烈偏移。"@zh ,
+                    "Zonă în care PCI este sub -0,5 zile/an, indicând o schimbare puternică spre un început mai timpuriu al sezonului de creștere."@ro .
+
+ind:zone-delay a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:prefLabel "Phenological delay zone"@en , "Zona de retraso fenológico"@es ,
+                   "物候延迟区"@zh , "Zonă cu întârziere fenologică"@ro ;
+    skos:definition "Zone where PCI is above 0.2 days/year, indicating a later onset of the growing season."@en ,
+                    "Zona donde el PCI es superior a 0,2 días/año, lo que indica un inicio más tardío del periodo vegetativo."@es ,
+                    "PCI 高于每年 0.2 天的区域,表明生长季开始时间推迟。"@zh ,
+                    "Zonă în care PCI este peste 0,2 zile/an, indicând un început mai târziu al sezonului de creștere."@ro .
+
+###############################################################################
+# UNITS
+###############################################################################
+
+units:day-of-year a skos:Concept ;
+    skos:inScheme bioclima:units-scheme ;
+    skos:prefLabel "Day of year"@en , "Día del año"@es , "年积日"@zh , "Ziua din an"@ro ;
+    skos:definition "Integer 1-366 representing a calendar day position within a year."@en ,
+                    "Entero 1-366 que representa la posición del día calendario dentro del año."@es ,
+                    "整数 1-366,表示年内的日历日位置。"@zh ,
+                    "Întreg 1-366 care reprezintă poziția zilei calendaristice în cadrul anului."@ro ;
+    skos:notation "DOY" .
+
+units:days-per-year a skos:Concept ;
+    skos:inScheme bioclima:units-scheme ;
+    skos:prefLabel "Days per year"@en , "Días por año"@es , "天每年"@zh , "Zile pe an"@ro ;
+    skos:definition "Rate expressed as a number of days change accumulating per calendar year. Used for phenological trends."@en ,
+                    "Tasa expresada como número de días de cambio acumulado por año calendario. Se utiliza para tendencias fenológicas."@es ,
+                    "以每个日历年累积的天数变化表示的速率。用于物候趋势。"@zh ,
+                    "Rată exprimată ca număr de zile de schimbare acumulată pe an calendaristic. Folosită pentru tendințele fenologice."@ro ;
+    skos:notation "d/yr" .
+
+###############################################################################
+# ENTITY TYPES
+###############################################################################
+
+ent:ecosystems a skos:Concept ;
+    skos:inScheme bioclima:entity-scheme ;
+    skos:prefLabel "Ecosystems"@en , "Ecosistemas"@es , "生态系统"@zh , "Ecosisteme"@ro ;
+    skos:definition "Entity type covering ecosystem-level observable units."@en ,
+                    "Tipo de entidad que cubre las unidades observables a nivel de ecosistema."@es ,
+                    "涵盖生态系统层面可观测单元的实体类型。"@zh ,
+                    "Tip de entitate care acoperă unitățile observabile la nivel de ecosistem."@ro .
+
+ent:coniferous-forest a skos:Concept ;
+    skos:inScheme bioclima:entity-scheme ;
+    skos:broader ent:ecosystems ;
+    skos:prefLabel "Coniferous forest"@en , "Bosque de coníferas"@es ,
+                   "针叶林"@zh , "Pădure de conifere"@ro ;
+    skos:definition "Forest dominated by evergreen needle-leaved trees (spruce, pine, fir)."@en ,
+                    "Bosque dominado por árboles perennifolios de hoja acicular (abeto, pino)."@es ,
+                    "以常绿针叶树(云杉、松、冷杉)为主的森林。"@zh ,
+                    "Pădure dominată de arbori cu frunze aciforme veșnic verzi (molid, pin, brad)."@ro .
+
+ent:deciduous-vegetation a skos:Concept ;
+    skos:inScheme bioclima:entity-scheme ;
+    skos:broader ent:ecosystems ;
+    skos:prefLabel "Deciduous vegetation"@en , "Vegetación caducifolia"@es ,
+                   "落叶植被"@zh , "Vegetație foioasă"@ro ;
+    skos:definition "Vegetation where leaves are shed during a part of the year, including birch and other broadleaved trees."@en ,
+                    "Vegetación en la que las hojas se desprenden durante una parte del año, incluyendo abedul y otras frondosas."@es ,
+                    "在一年中的部分时间脱落叶子的植被,包括桦树和其他阔叶树。"@zh ,
+                    "Vegetație în care frunzele cad într-o parte a anului, inclusiv mesteacăn și alți arbori cu frunze late."@ro .
+
+###############################################################################
+# POLICY
+###############################################################################
+
+pol:kmgbf-target-1 a skos:Concept ;
+    skos:inScheme bioclima:policy-scheme ;
+    skos:prefLabel "KMGBF Target 1 - Spatial planning"@en ,
+                   "Meta 1 KMGBF - Planificación espacial"@es ,
+                   "昆蒙框架 目标1 - 空间规划"@zh ,
+                   "Țintă 1 KMGBF - Planificare spațială"@ro ;
+    skos:definition "Ensure all areas under participatory integrated biodiversity inclusive spatial planning by 2030."@en ,
+                    "Garantizar que todas las áreas estén bajo una planificación espacial participativa integrada e inclusiva de la biodiversidad para 2030."@es ,
+                    "确保到 2030 年所有区域都纳入参与式综合生物多样性包容性空间规划。"@zh ,
+                    "Asigurarea că toate zonele se află sub planificare spațială participativă integrată și inclusivă a biodiversității până în 2030."@ro .
+
+pol:kmgbf-target-8 a skos:Concept ;
+    skos:inScheme bioclima:policy-scheme ;
+    skos:prefLabel "KMGBF Target 8 - Climate change adaptation"@en ,
+                   "Meta 8 KMGBF - Adaptación al cambio climático"@es ,
+                   "昆蒙框架 目标8 - 气候变化适应"@zh ,
+                   "Țintă 8 KMGBF - Adaptare la schimbările climatice"@ro ;
+    skos:definition "Minimize the impact of climate change on biodiversity through mitigation, adaptation and disaster risk reduction actions."@en ,
+                    "Minimizar el impacto del cambio climático sobre la biodiversidad mediante acciones de mitigación, adaptación y reducción del riesgo de desastres."@es ,
+                    "通过减缓、适应和减少灾害风险的行动,尽量减少气候变化对生物多样性的影响。"@zh ,
+                    "Minimizarea impactului schimbărilor climatice asupra biodiversității prin acțiuni de atenuare, adaptare și reducere a riscului de dezastre."@ro .
+
+pol:sdg-15 a skos:Concept ;
+    skos:inScheme bioclima:policy-scheme ;
+    skos:prefLabel "SDG 15 - Life on Land"@en , "ODS 15 - Vida de ecosistemas terrestres"@es ,
+                   "可持续发展目标 15 - 陆地生物"@zh , "ODD 15 - Viața terestră"@ro ;
+    skos:definition "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, halt and reverse land degradation and halt biodiversity loss."@en ,
+                    "Proteger, restablecer y promover el uso sostenible de los ecosistemas terrestres, gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras y frenar la pérdida de biodiversidad."@es ,
+                    "保护、恢复和促进可持续利用陆地生态系统,可持续管理森林,防治荒漠化,制止和扭转土地退化,遏制生物多样性丧失。"@zh ,
+                    "Protejarea, refacerea și promovarea utilizării durabile a ecosistemelor terestre, gestionarea durabilă a pădurilor, combaterea deșertificării, oprirea și inversarea degradării terenurilor și oprirea pierderii biodiversității."@ro .
+
+units:year a skos:Concept ;
+    skos:inScheme bioclima:units-scheme ;
+    skos:prefLabel "Year"@en , "Año"@es , "年"@zh , "An"@ro ;
+    skos:definition "Calendar year used as the unit for changepoint dates and annual trend references."@en ,
+                    "Año calendario utilizado como unidad para fechas de punto de cambio y referencias de tendencia anual."@es ,
+                    "用于变化点日期和年度趋势参考的日历年单位。"@zh ,
+                    "An calendaristic folosit ca unitate pentru datele punctelor de schimbare și referințele tendințelor anuale."@ro ;
+    skos:notation "yr" .
+
+units:dimensionless a skos:Concept ;
+    skos:inScheme bioclima:units-scheme ;
+    skos:prefLabel "Dimensionless"@en , "Adimensional"@es , "无量纲"@zh , "Fără dimensiune"@ro ;
+    skos:definition "Unitless value, used for probabilities, p-values and normalized scores."@en ,
+                    "Valor sin unidad, utilizado para probabilidades, valores p y puntuaciones normalizadas."@es ,
+                    "无单位值,用于概率、p值和归一化分数。"@zh ,
+                    "Valoare fără unitate, folosită pentru probabilități, valori p și scoruri normalizate."@ro ;
+    skos:notation "—" .
+
+ind:pci-trend a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:broader ind:pci ;
+    skos:prefLabel "PCI — trend"@en , "PCI — tendencia"@es , "PCI — 趋势"@zh , "PCI — tendință"@ro ;
+    skos:definition "Theil-Sen slope of the per-pixel VAP day-of-year series. Negative values mean earlier onset; positive values mean later onset."@en ,
+                    "Pendiente Theil-Sen de la serie de día del año del inicio del VAP por píxel. Valores negativos significan inicio más temprano; valores positivos significan inicio más tardío."@es ,
+                    "每像素 VAP 年积日序列的 Theil-Sen 斜率。负值表示提前,正值表示推迟。"@zh ,
+                    "Panta Theil-Sen a seriei VAP (ziua din an) per pixel. Valorile negative indică un început mai timpuriu; valorile pozitive indică un început mai târziu."@ro .
+
+ind:pci-anomaly a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:broader ind:pci ;
+    skos:prefLabel "PCI — anomaly"@en , "PCI — anomalía"@es , "PCI — 异常"@zh , "PCI — anomalie"@ro ;
+    skos:definition "Mean VAP of the recent period (2011-2018) minus the baseline (2001-2010). Negative values mean recent onset earlier than baseline."@en ,
+                    "VAP medio del periodo reciente (2011-2018) menos la línea base (2001-2010). Los valores negativos indican un inicio reciente más temprano que la línea base."@es ,
+                    "近期(2011-2018)平均 VAP 减去基线(2001-2010)。负值表示近期早于基线。"@zh ,
+                    "VAP mediu recent (2011-2018) minus linia de bază (2001-2010). Valorile negative indică un început recent mai timpuriu decât baza."@ro .
+
+ind:pci-changepoint-year a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:broader ind:pci ;
+    skos:prefLabel "PCI — changepoint year (Pettitt)"@en , "PCI — año del punto de cambio (Pettitt)"@es , "PCI — 变点年份(Pettitt)"@zh , "PCI — anul punctului de schimbare (Pettitt)"@ro ;
+    skos:definition "Most probable year at which the per-pixel VAP series changes regime, detected by the Pettitt test."@en ,
+                    "Año más probable en el que la serie por píxel del VAP cambia de régimen, detectado por el test de Pettitt."@es ,
+                    "Pettitt 检验在该像素 VAP 序列中检测到的最可能的变点年份。"@zh ,
+                    "Anul cel mai probabil al schimbării de regim în seria VAP per pixel, detectat de testul Pettitt."@ro .
+
+ind:pci-changepoint-pvalue a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:broader ind:pci ;
+    skos:prefLabel "PCI — changepoint p-value"@en , "PCI — valor p del punto de cambio"@es , "PCI — 变点 p 值"@zh , "PCI — valoarea p a punctului de schimbare"@ro ;
+    skos:definition "Statistical significance of the changepoint detected by Pettitt's test. Values below 0.05 indicate evidence of a regime shift; values above 0.10 indicate weak evidence."@en ,
+                    "Significancia estadística del punto de cambio detectado por el test de Pettitt. Valores inferiores a 0,05 indican evidencia de cambio de régimen; valores superiores a 0,10 indican evidencia débil."@es ,
+                    "Pettitt 检验所检测变点的统计显著性。低于 0.05 表示有变点证据;高于 0.10 表示证据较弱。"@zh ,
+                    "Semnificația statistică a punctului de schimbare detectat de testul Pettitt. Valorile sub 0,05 indică o schimbare de regim; valorile peste 0,10 indică dovezi slabe."@ro .
+
+ind:pixel-count a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:prefLabel "Pixel count"@en , "Número de píxeles"@es , "像素数"@zh , "Număr de pixeli"@ro ;
+    skos:definition "Number of source raster pixels aggregated into the zone."@en ,
+                    "Número de píxeles de la malla raster agregados en la zona."@es ,
+                    "聚合到该区域的源栅格像素数。"@zh ,
+                    "Număr de pixeli sursă agregați în zonă."@ro .
+
+units:square-kilometre a skos:Concept ;
+    skos:inScheme bioclima:units-scheme ;
+    skos:prefLabel "Square kilometre"@en , "Kilómetro cuadrado"@es , "平方公里"@zh , "Kilometru pătrat"@ro ;
+    skos:definition "SI-derived unit of area. A spherical-cap approximation is used for cells in EPSG:4326."@en ,
+                    "Unidad de área derivada del SI. Para celdas en EPSG:4326 se usa una aproximación esférica."@es ,
+                    "国际单位制中的面积单位。对于 EPSG:4326 网格采用球面近似。"@zh ,
+                    "Unitate SI de arie. Pentru celule EPSG:4326 se folosește o aproximare sferică."@ro .
+
+ind:zone-category a skos:Concept ;
+    skos:inScheme bioclima:indicator-scheme ;
+    skos:prefLabel "Bioclimatic zone category"@en , "Categoría de zona bioclimática"@es , "生物气候区类别"@zh , "Categorie de zonă bioclimatică"@ro ;
+    skos:definition "Categorical label assigned to a contiguous bioclimatic zone derived from the PCI raster, such as stable, mild advance, strong advance or delay."@en ,
+                    "Etiqueta categórica asignada a una zona bioclimática contigua derivada del ráster PCI, como estable, adelanto leve, adelanto fuerte o retraso."@es ,
+                    "由 PCI 栅格派生的连通生物气候区的类别,例如稳定、轻微提前、强烈提前或延迟。"@zh ,
+                    "Etichetă categorială atribuită unei zone bioclimatice contigue derivate din rasterul PCI, precum stabilă, avans ușor, avans puternic sau întârziere."@ro .

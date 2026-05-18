@@ -1,0 +1,5 @@
+- title: PCI recipe
+  content: Recipe of the Phenological Change Indicator, conforming to this schema.
+  snippets:
+    - language: json
+      ref: examples/pci-recipe.jsonld

@@ -1,0 +1,81 @@
+{
+  "itemIdentifier": "ogc.bioclima.policy.policy-alignment",
+  "name": "Indicator ↔ Policy Alignment",
+  "abstract": "Schema describing how a Bioclima indicator aligns with a KMGBF target or an SDG goal. Every alignment record states a relationship type (informs, measures-progress-on, triggers-action-for, supports-reporting-on), an evidence strength (direct, indirect, contextual) and a multilingual justification. This block is the semantic bridge between gridded indicators (PCI, zonification) and the policy frameworks they support, and is what makes the register actionable for policy-makers.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "policy",
+  "groupLabel": {
+    "en": "Policy alignment",
+    "es": "Alineación con políticas",
+    "zh": "政策对齐",
+    "ro": "Aliniere cu politici"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.policy",
+    "ogc.bioclima.indicator.indicator-definition",
+    "ogc.bioclima.policy.kmgbf-target"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-policy",
+    "policy-alignment",
+    "kmgbf",
+    "sdg",
+    "bridge"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Reference pattern: bblocks-seadots",
+      "href": "https://github.com/ogcincubator/bblocks-seadots",
+      "rel": "reference"
+    },
+    {
+      "title": "Family: Policy alignment",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy",
+      "rel": "classified-under"
+    },
+    {
+      "title": "Ontology concept: kmgbf-target-8",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+      "rel": "described-by"
+    },
+    {
+      "title": "Ontology concept: pci",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+      "rel": "described-by"
+    }
+  ],
+  "concept": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (policy)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy"
+    }
+  ]
+}

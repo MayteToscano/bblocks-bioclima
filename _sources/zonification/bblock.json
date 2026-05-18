@@ -1,0 +1,53 @@
+{
+  "itemIdentifier": "ogc.bioclima.zonification",
+  "name": "Bioclimatic Zonification",
+  "abstract": "Family block for bioclimatic zonification. It groups polygon-based classification outputs derived from indicators and intended for decision-support use.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "model",
+  "register": "bioclima",
+  "group": "zonification",
+  "groupLabel": {
+    "en": "Bioclimatic Zonification",
+    "es": "Zonificación bioclimática",
+    "zh": "生物气候分区",
+    "ro": "Zonificare bioclimatică"
+  },
+  "version": "0.1.0",
+  "highlighted": true,
+  "tags": [
+    "family-zonification",
+    "family",
+    "classification"
+  ],
+  "links": [
+    {
+      "title": "Interactive map viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Classified BioClima registry",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification",
+      "rel": "registry-index"
+    },
+    {
+      "title": "OGC Building Blocks viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.zonification",
+      "rel": "ogc-bblocks-viewer"
+    }
+  ],
+  "seeAlso": [
+    "ogc.bioclima.zonification.bioclimatic-zone"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (zonification)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification"
+    }
+  ]
+}

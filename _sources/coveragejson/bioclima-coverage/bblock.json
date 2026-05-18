@@ -1,0 +1,76 @@
+{
+  "itemIdentifier": "ogc.bioclima.coveragejson.bioclima-coverage",
+  "name": "BioClima CoverageJSON profile",
+  "abstract": "Central CoverageJSON profile for the whole BioClima register. Every EBV dataset and every gridded indicator (PCI, zonification) is shipped as a CoverageJSON document that conforms to this profile. The profile fixes EPSG:4326 for spatial axes, allows an optional ISO 8601 temporal axis, and requires every parameter to declare an observedProperty.id resolvable in the BioClima ontology with labels in English, Spanish, Chinese and Romanian. This is the pivot block of the register: it connects raw geospatial encoding to ontology concepts and, downstream, to indicators and zonification.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "coveragejson",
+  "groupLabel": {
+    "en": "CoverageJSON / Bioclima Coverage",
+    "es": "CoverageJSON / Bioclima Coverage",
+    "zh": "CoverageJSON / Bioclima Coverage",
+    "ro": "CoverageJSON / Bioclima Coverage"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.coveragejson"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (coveragejson)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson"
+    },
+    {
+      "title": "CoverageJSON 1.0 specification",
+      "link": "https://covjson.org/spec/"
+    },
+    {
+      "title": "OGC 21-069r2 CoverageJSON Community Standard",
+      "link": "https://docs.ogc.org/cs/21-069r2/21-069r2.html"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-coveragejson",
+    "pivot",
+    "ogc",
+    "profile",
+    "schema"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Family: CoverageJSON / BioClima Coverage",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson",
+      "rel": "classified-under"
+    },
+    {
+      "title": "Ontology concept: vap_doy",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+      "rel": "described-by"
+    }
+  ],
+  "concept": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy"
+  ]
+}

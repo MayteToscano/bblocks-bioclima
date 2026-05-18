@@ -1,0 +1,10 @@
+- title: PCI policy alignment
+  content: How the PCI indicator aligns with KMGBF Targets 8 and 1, and with SDG 15. Each alignment carries a relationship type, an evidence-strength tag and a multilingual justification.
+  snippets:
+    - language: json
+      ref: examples/pci-alignment.jsonld
+- title: Bioclimatic zonification policy alignment
+  content: How the bioclimatic zonification informs participatory spatial planning (Target 1) and tracks climate adaptation (Target 8).
+  snippets:
+    - language: json
+      ref: examples/bioclimatic-zone-alignment.jsonld

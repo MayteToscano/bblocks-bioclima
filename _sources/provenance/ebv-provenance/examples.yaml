@@ -1,0 +1,5 @@
+- title: VAP coniferous provenance
+  content: Provenance record for the Finnish coniferous VAP EBV.
+  snippets:
+    - language: json
+      ref: examples/vap-coniferous-provenance.jsonld

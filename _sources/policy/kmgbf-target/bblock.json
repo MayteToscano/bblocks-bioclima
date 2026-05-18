@@ -1,0 +1,77 @@
+{
+  "itemIdentifier": "ogc.bioclima.policy.kmgbf-target",
+  "name": "Kunming-Montreal GBF Target",
+  "abstract": "Schema for a single target of the Kunming-Montreal Global Biodiversity Framework: target number, multilingual label and definition, deadline, key indicators. Concrete targets (e.g. Target 1, Target 8) are stored in the examples/ folder. Indicators reference these targets through the policy-alignment block.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "policy",
+  "groupLabel": {
+    "en": "Policy alignment",
+    "es": "Alineación con políticas",
+    "zh": "政策对齐",
+    "ro": "Aliniere cu politici"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.policy"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-policy",
+    "kmgbf",
+    "target"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Kunming-Montreal GBF decision text",
+      "href": "https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf",
+      "rel": "standard"
+    },
+    {
+      "title": "Family: Policy alignment",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy",
+      "rel": "classified-under"
+    },
+    {
+      "title": "Ontology concept: kmgbf-target-1",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+      "rel": "described-by"
+    },
+    {
+      "title": "Ontology concept: kmgbf-target-8",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+      "rel": "described-by"
+    }
+  ],
+  "concept": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (policy)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy"
+    }
+  ]
+}

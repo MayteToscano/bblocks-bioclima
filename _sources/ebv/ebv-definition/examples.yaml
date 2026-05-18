@@ -1,0 +1,5 @@
+- title: VAP Coniferous Finland metadata record
+  content: A concrete EBV metadata record that conforms to this schema.
+  snippets:
+    - language: json
+      ref: examples/vap-coniferous-metadata.jsonld

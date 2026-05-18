@@ -1,0 +1,12 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.ebv.vap-deciduous/schema.yaml"
+title: "VAP Deciduous Finland metadata record"
+allOf:
+  - $ref: "../ebv-definition/schema.yaml"
+  - type: object
+    properties:
+      ebv_entity:
+        type: object
+        properties:
+          ebv_entity_type:
+            const: "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/deciduous-vegetation"

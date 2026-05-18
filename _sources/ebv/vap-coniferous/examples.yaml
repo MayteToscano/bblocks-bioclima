@@ -1,0 +1,9 @@
+- title: GeoBON metadata record
+  content: |
+    GeoBON-style metadata describing the coniferous VAP EBV dataset.
+    The full CoverageJSON raster cube is kept in examples/ for the Bioclima viewer,
+    but it is not registered here as a validation example because this block's
+    schema validates the EBV metadata record.
+  snippets:
+    - language: json
+      ref: examples/metadata.jsonld

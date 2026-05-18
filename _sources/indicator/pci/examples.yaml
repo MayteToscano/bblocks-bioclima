@@ -1,0 +1,5 @@
+- title: PCI output for Finland 2001-2018
+  content: CoverageJSON output produced by code/compute.py from the two VAP EBVs.
+  snippets:
+    - language: json
+      ref: examples/pci-finland-2001-2018.covjson

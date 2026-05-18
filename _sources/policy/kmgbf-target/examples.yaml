@@ -1,0 +1,10 @@
+- title: KMGBF Target 8 - Climate change adaptation
+  content: Concrete target record with its key indicators back-linked (PCI and bioclimatic-zone) and the informedBy block listing the bblocks that produce evidence.
+  snippets:
+    - language: json
+      ref: examples/target-8.jsonld
+- title: KMGBF Target 1 - Spatial planning
+  content: Concrete target record back-linked to the bioclimatic-zone indicator, which delineates planning units relevant to participatory, integrated spatial planning.
+  snippets:
+    - language: json
+      ref: examples/target-1.jsonld

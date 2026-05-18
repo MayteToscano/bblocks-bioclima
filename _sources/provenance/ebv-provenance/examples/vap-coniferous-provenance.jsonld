@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "@vocab": "http://www.w3.org/ns/prov#"
+  },
+  "entity": "ogc.bioclima.ebv.vap-coniferous",
+  "wasDerivedFrom": [
+    "https://laadsweb.modaps.eosdis.nasa.gov/MODIS-Terra-L1B",
+    "https://en.ilmatieteenlaitos.fi/satellite-receiving-station-sodankyla"
+  ],
+  "wasGeneratedBy": {
+    "activity": "Derivation of Start-of-VAP from MODIS Fractional Snow Cover",
+    "startedAtTime": "2020-06-01T00:00:00Z",
+    "endedAtTime": "2020-11-04T00:00:00Z",
+    "hadPlan": "https://doi.org/10.1016/j.rse.2013.09.022"
+  },
+  "wasAttributedTo": {
+    "agent": "Kristin Böttcher",
+    "role": "Principal investigator",
+    "organization": "Finnish Environment Institute (SYKE)"
+  }
+}

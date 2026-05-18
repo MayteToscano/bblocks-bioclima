@@ -1,0 +1,49 @@
+################################################################################
+# BioClima OGC Building Blocks - register configuration
+# Read by ghcr.io/opengeospatial/bblocks-postprocess
+################################################################################
+
+# Identifier prefix appended in front of every block id derived from the
+# folder path inside _sources/. With prefix "ogc.bioclima." a block at
+# _sources/ebv/vap-coniferous becomes "ogc.bioclima.ebv.vap-coniferous".
+identifier-prefix: ogc.bioclima.
+
+# Register metadata
+name: BioClima OGC Building Blocks
+abstract: |
+  Interactive BioClima viewer: https://maytetoscano.github.io/bblocks-bioclima/viewer/
+
+  Register of OGC Building Blocks for Essential Biodiversity Variables (EBVs),
+  derived indicators, bioclimatic zonification, data provenance and policy
+  alignment with the Kunming-Montreal GBF. The pilot dataset is the Start of
+  Vegetation Active Period in Finland (2001-2018).
+
+description: |
+  **Interactive map viewer:** https://maytetoscano.github.io/bblocks-bioclima/viewer/
+
+  **Classified registry by family:** https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html
+
+  **OGC Building Blocks viewer:** https://maytetoscano.github.io/bblocks-bioclima/bblocks/
+
+  This register defines BioClima-specific building blocks on top of the
+  OGC CoverageJSON community standard. It includes:
+
+  - A profile of CoverageJSON for BioClima EBV datasets.
+  - Generic schemas for EBV records and indicator records.
+  - Concrete EBV datasets for Finnish coniferous and deciduous vegetation.
+  - The Phenological Change Indicator (PCI) and its bioclimatic zonification,
+    each with a Python implementation that the CI can re-run automatically.
+  - A multilingual SKOS/RDF ontology building block used by EBVs, indicators,
+    policy alignment, provenance and zonification records.
+  - W3C PROV-O provenance schemas for both EBVs and indicators.
+  - Policy alignment schemas linking indicators to Kunming-Montreal GBF
+    targets and SDG 15.
+
+# URLs exposed in register.json (preserved by bblocks-postprocess).
+viewer-url: https://maytetoscano.github.io/bblocks-bioclima/viewer/
+homepage:   https://bioclima.net/
+
+# Imports: pull in the OGC main register so we can $ref published bblocks
+# (e.g. ogc.geo.json-fg or PROV schema) without rewriting them.
+imports:
+  - default

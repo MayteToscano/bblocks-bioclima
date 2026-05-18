@@ -1,0 +1,72 @@
+{
+  "itemIdentifier": "ogc.bioclima.ebv.ebv-definition",
+  "name": "EBV Definition (generic)",
+  "abstract": "Generic schema describing an Essential Biodiversity Variable dataset following the GeoBON inventory model. Concrete EBVs (such as vap-coniferous and vap-deciduous) inherit this template and provide their actual CoverageJSON file (conformant to the central bioclima-coverage profile) inside their own examples/ folder. Every EBV record declares its observed property by IRI into the Bioclima ontology, so the same template scales to any biodiversity variable.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "ebv",
+  "groupLabel": {
+    "en": "EBVs (Essential Biodiversity Variables)",
+    "es": "EBVs (Variables Esenciales de Biodiversidad)",
+    "zh": "基本生物多样性变量(EBV)",
+    "ro": "EBV (Variabile esențiale de biodiversitate)"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.ebv",
+    "ogc.bioclima.coveragejson.bioclima-coverage"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-ebv",
+    "template",
+    "ebv-definition"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "GeoBON EBV portal model",
+      "href": "https://portal.geobon.org",
+      "rel": "source-model"
+    },
+    {
+      "title": "Family: EBVs (Essential Biodiversity Variables)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv",
+      "rel": "classified-under"
+    },
+    {
+      "title": "Ontology concept: ecosystem-phenology",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/ecosystem-phenology",
+      "rel": "described-by"
+    }
+  ],
+  "concept": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/ecosystem-phenology"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry — classified by family (ebv)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# Local/editor files
+.DS_Store
+__pycache__/
+*.pyc
+
+# OGC Building Blocks generated validation/test outputs.
+# These can become very large and must not be committed to GitHub.
+build/tests/
+build-local/
+*.validation_failed.txt
+_report.json
+
+# Temporary transform cache
+.transforms-sandbox/

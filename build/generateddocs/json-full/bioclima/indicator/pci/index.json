@@ -18,12 +18,12 @@
   "version": "0.2.0",
   "dependsOn": [
     "ogc.bioclima.ebv.vap-deciduous",
-    "ogc.bioclima.indicator.indicator-definition",
-    "ogc.bioclima.provenance.indicator-provenance",
+    "ogc.bioclima.policy.policy-alignment",
     "ogc.bioclima.ebv.vap-coniferous",
     "ogc.bioclima.coveragejson.bioclima-coverage",
+    "ogc.bioclima.provenance.indicator-provenance",
     "ogc.bioclima.indicator",
-    "ogc.bioclima.policy.policy-alignment"
+    "ogc.bioclima.indicator.indicator-definition"
   ],
   "maintainers": [
     {

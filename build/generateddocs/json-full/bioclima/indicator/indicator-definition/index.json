@@ -19,8 +19,8 @@
   "dependsOn": [
     "ogc.bioclima.policy.policy-alignment",
     "ogc.bioclima.coveragejson.bioclima-coverage",
-    "ogc.bioclima.indicator",
-    "ogc.bioclima.ebv.ebv-definition"
+    "ogc.bioclima.ebv.ebv-definition",
+    "ogc.bioclima.indicator"
   ],
   "maintainers": [
     {

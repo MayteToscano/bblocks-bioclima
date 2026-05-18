@@ -17,12 +17,12 @@
   },
   "version": "0.2.0",
   "dependsOn": [
-    "ogc.bioclima.indicator.indicator-definition",
+    "ogc.bioclima.policy.policy-alignment",
     "ogc.bioclima.provenance.indicator-provenance",
+    "ogc.bioclima.coveragejson.bioclima-coverage",
     "ogc.bioclima.indicator.pci",
     "ogc.bioclima.zonification",
-    "ogc.bioclima.coveragejson.bioclima-coverage",
-    "ogc.bioclima.policy.policy-alignment"
+    "ogc.bioclima.indicator.indicator-definition"
   ],
   "maintainers": [
     {

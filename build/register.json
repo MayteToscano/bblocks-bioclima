@@ -1,0 +1,1787 @@
+{
+  "name": "BioClima OGC Building Blocks",
+  "abstract": "Interactive BioClima viewer: https://maytetoscano.github.io/bblocks-bioclima/viewer/\n\nRegister of OGC Building Blocks for Essential Biodiversity Variables (EBVs),\nderived indicators, bioclimatic zonification, data provenance and policy\nalignment with the Kunming-Montreal GBF. The pilot dataset is the Start of\nVegetation Active Period in Finland (2001-2018).\n",
+  "description": "**Interactive map viewer:** https://maytetoscano.github.io/bblocks-bioclima/viewer/\n\n**Classified registry by family:** https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html\n\n**OGC Building Blocks viewer:** https://maytetoscano.github.io/bblocks-bioclima/bblocks/\n\nThis register defines BioClima-specific building blocks on top of the\nOGC CoverageJSON community standard. It includes:\n\n- A profile of CoverageJSON for BioClima EBV datasets.\n- Generic schemas for EBV records and indicator records.\n- Concrete EBV datasets for Finnish coniferous and deciduous vegetation.\n- The Phenological Change Indicator (PCI) and its bioclimatic zonification,\n  each with a Python implementation that the CI can re-run automatically.\n- A multilingual SKOS/RDF ontology building block used by EBVs, indicators,\n  policy alignment, provenance and zonification records.\n- W3C PROV-O provenance schemas for both EBVs and indicators.\n- Policy alignment schemas linking indicators to Kunming-Montreal GBF\n  targets and SDG 15.\n",
+  "modified": "2026-05-18T07:31:05.313165",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"6b01f188cc614cc2e65f4bf86a2623f98f101dfd",
+      "shortCommitId": "\"6b01f1",
+      "date": "2026-05-12T22:31:51+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitHubRepository": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/",
+  "baseURL": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/",
+  "viewerURL": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks",
+  "validationReport": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/report.html",
+  "validationReportJson": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "ogc.bioclima.coveragejson",
+      "name": "CoverageJSON / BioClima Coverage",
+      "abstract": "Family block for the BioClima CoverageJSON profile. It groups the reusable CoverageJSON constraints used by EBV datasets, derived indicators and zonification outputs.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "model",
+      "register": "bioclima",
+      "group": "coveragejson",
+      "groupLabel": {
+        "en": "CoverageJSON / BioClima Coverage",
+        "es": "CoverageJSON / BioClima Coverage",
+        "zh": "CoverageJSON / BioClima Coverage",
+        "ro": "CoverageJSON / BioClima Coverage"
+      },
+      "version": "0.1.0",
+      "highlighted": true,
+      "tags": [
+        "family-coveragejson",
+        "family",
+        "classification"
+      ],
+      "links": [
+        {
+          "title": "Interactive map viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Classified BioClima registry",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson",
+          "rel": "registry-index"
+        },
+        {
+          "title": "OGC Building Blocks viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.coveragejson",
+          "rel": "ogc-bblocks-viewer"
+        }
+      ],
+      "seeAlso": [
+        "ogc.bioclima.coveragejson.bioclima-coverage"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (coveragejson)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/coveragejson/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/coveragejson/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/coveragejson/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.coveragejson"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.ebv",
+      "name": "EBVs (Essential Biodiversity Variables)",
+      "abstract": "Family block for Essential Biodiversity Variables. It groups the generic EBV definition block and concrete EBV datasets published as BioClima CoverageJSON.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "model",
+      "register": "bioclima",
+      "group": "ebv",
+      "groupLabel": {
+        "en": "EBVs (Essential Biodiversity Variables)",
+        "es": "EBVs (Variables Esenciales de Biodiversidad)",
+        "zh": "\u57fa\u672c\u751f\u7269\u591a\u6837\u6027\u53d8\u91cf(EBV)",
+        "ro": "EBV (Variabile esen\u021biale de biodiversitate)"
+      },
+      "version": "0.1.0",
+      "highlighted": true,
+      "tags": [
+        "family-ebv",
+        "family",
+        "classification"
+      ],
+      "links": [
+        {
+          "title": "Interactive map viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Classified BioClima registry",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv",
+          "rel": "registry-index"
+        },
+        {
+          "title": "OGC Building Blocks viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ebv",
+          "rel": "ogc-bblocks-viewer"
+        }
+      ],
+      "seeAlso": [
+        "ogc.bioclima.ebv.ebv-definition",
+        "ogc.bioclima.ebv.vap-coniferous",
+        "ogc.bioclima.ebv.vap-deciduous"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (ebv)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.indicator",
+      "name": "Spatial Indicators",
+      "abstract": "Family block for spatial indicators. It groups the generic indicator recipe and concrete indicators derived from EBV datasets, including the Phenological Change Indicator.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "model",
+      "register": "bioclima",
+      "group": "indicator",
+      "groupLabel": {
+        "en": "Spatial Indicators",
+        "es": "Indicadores espaciales",
+        "zh": "\u7a7a\u95f4\u6307\u6807",
+        "ro": "Indicatori spa\u021biali"
+      },
+      "version": "0.1.0",
+      "highlighted": true,
+      "tags": [
+        "family-indicator",
+        "family",
+        "classification"
+      ],
+      "links": [
+        {
+          "title": "Interactive map viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Classified BioClima registry",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator",
+          "rel": "registry-index"
+        },
+        {
+          "title": "OGC Building Blocks viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator",
+          "rel": "ogc-bblocks-viewer"
+        }
+      ],
+      "seeAlso": [
+        "ogc.bioclima.indicator.indicator-definition",
+        "ogc.bioclima.indicator.pci"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (indicator)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.ontology",
+      "name": "Ontology",
+      "abstract": "Family block for semantic resources. It groups the BioClima SKOS/RDF ontology and the dereferenceable ontology concept pages used by the viewer and the building blocks.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "model",
+      "register": "bioclima",
+      "group": "ontology",
+      "groupLabel": {
+        "en": "Ontology",
+        "es": "Ontolog\u00eda",
+        "zh": "\u672c\u4f53",
+        "ro": "Ontologie"
+      },
+      "version": "0.1.0",
+      "highlighted": true,
+      "tags": [
+        "family-ontology",
+        "family",
+        "classification"
+      ],
+      "links": [
+        {
+          "title": "Interactive map viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Classified BioClima registry",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology",
+          "rel": "registry-index"
+        },
+        {
+          "title": "OGC Building Blocks viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ontology",
+          "rel": "ogc-bblocks-viewer"
+        },
+        {
+          "title": "Dereferenceable BioClima ontology landing page",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/",
+          "rel": "ontology"
+        }
+      ],
+      "seeAlso": [
+        "ogc.bioclima.ontology.bioclima-ontology"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (ontology)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology"
+        }
+      ],
+      "shaclShapes": {},
+      "ontology": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/ontology.ttl",
+      "dateOfLastChange": "2024-11-01",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ontology/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ontology/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ontology"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.policy",
+      "name": "Policy alignment",
+      "abstract": "Family block for policy alignment resources. It groups policy targets and mappings between indicators, evidence and reporting frameworks.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "model",
+      "register": "bioclima",
+      "group": "policy",
+      "groupLabel": {
+        "en": "Policy alignment",
+        "es": "Alineaci\u00f3n con pol\u00edticas",
+        "zh": "\u653f\u7b56\u5bf9\u9f50",
+        "ro": "Aliniere cu politici"
+      },
+      "version": "0.1.0",
+      "highlighted": true,
+      "tags": [
+        "family-policy",
+        "family",
+        "classification"
+      ],
+      "links": [
+        {
+          "title": "Interactive map viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Classified BioClima registry",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy",
+          "rel": "registry-index"
+        },
+        {
+          "title": "OGC Building Blocks viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.policy",
+          "rel": "ogc-bblocks-viewer"
+        }
+      ],
+      "seeAlso": [
+        "ogc.bioclima.policy.kmgbf-target",
+        "ogc.bioclima.policy.policy-alignment"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (policy)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.provenance",
+      "name": "Provenance",
+      "abstract": "Family block for provenance resources. It groups W3C PROV-O lineage records for EBV inputs and indicator outputs.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "model",
+      "register": "bioclima",
+      "group": "provenance",
+      "groupLabel": {
+        "en": "Provenance",
+        "es": "Provenance / Trazabilidad",
+        "zh": "\u51fa\u5904\u4e0e\u6eaf\u6e90",
+        "ro": "Provenien\u021b\u0103"
+      },
+      "version": "0.1.0",
+      "highlighted": true,
+      "tags": [
+        "family-provenance",
+        "family",
+        "classification"
+      ],
+      "links": [
+        {
+          "title": "Interactive map viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Classified BioClima registry",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance",
+          "rel": "registry-index"
+        },
+        {
+          "title": "OGC Building Blocks viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.provenance",
+          "rel": "ogc-bblocks-viewer"
+        }
+      ],
+      "seeAlso": [
+        "ogc.bioclima.provenance.ebv-provenance",
+        "ogc.bioclima.provenance.indicator-provenance"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (provenance)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.zonification",
+      "name": "Bioclimatic Zonification",
+      "abstract": "Family block for bioclimatic zonification. It groups polygon-based classification outputs derived from indicators and intended for decision-support use.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "model",
+      "register": "bioclima",
+      "group": "zonification",
+      "groupLabel": {
+        "en": "Bioclimatic Zonification",
+        "es": "Zonificaci\u00f3n bioclim\u00e1tica",
+        "zh": "\u751f\u7269\u6c14\u5019\u5206\u533a",
+        "ro": "Zonificare bioclimatic\u0103"
+      },
+      "version": "0.1.0",
+      "highlighted": true,
+      "tags": [
+        "family-zonification",
+        "family",
+        "classification"
+      ],
+      "links": [
+        {
+          "title": "Interactive map viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Classified BioClima registry",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification",
+          "rel": "registry-index"
+        },
+        {
+          "title": "OGC Building Blocks viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.zonification",
+          "rel": "ogc-bblocks-viewer"
+        }
+      ],
+      "seeAlso": [
+        "ogc.bioclima.zonification.bioclimatic-zone"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (zonification)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/zonification/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/zonification/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/zonification/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.zonification"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.coveragejson.bioclima-coverage",
+      "name": "BioClima CoverageJSON profile",
+      "abstract": "Central CoverageJSON profile for the whole BioClima register. Every EBV dataset and every gridded indicator (PCI, zonification) is shipped as a CoverageJSON document that conforms to this profile. The profile fixes EPSG:4326 for spatial axes, allows an optional ISO 8601 temporal axis, and requires every parameter to declare an observedProperty.id resolvable in the BioClima ontology with labels in English, Spanish, Chinese and Romanian. This is the pivot block of the register: it connects raw geospatial encoding to ontology concepts and, downstream, to indicators and zonification.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "schema",
+      "register": "bioclima",
+      "group": "coveragejson",
+      "groupLabel": {
+        "en": "CoverageJSON / Bioclima Coverage",
+        "es": "CoverageJSON / Bioclima Coverage",
+        "zh": "CoverageJSON / Bioclima Coverage",
+        "ro": "CoverageJSON / Bioclima Coverage"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.coveragejson"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (coveragejson)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson"
+        },
+        {
+          "title": "CoverageJSON 1.0 specification",
+          "link": "https://covjson.org/spec/"
+        },
+        {
+          "title": "OGC 21-069r2 CoverageJSON Community Standard",
+          "link": "https://docs.ogc.org/cs/21-069r2/21-069r2.html"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-coveragejson",
+        "pivot",
+        "ogc",
+        "profile",
+        "schema"
+      ],
+      "links": [
+        {
+          "title": "Bioclima interactive viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Family: CoverageJSON / BioClima Coverage",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson",
+          "rel": "classified-under"
+        },
+        {
+          "title": "Ontology concept: vap_doy",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+          "rel": "described-by"
+        }
+      ],
+      "concept": [
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy"
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/coveragejson/bioclima-coverage/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/coveragejson/bioclima-coverage/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/coveragejson/bioclima-coverage/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/coveragejson/bioclima-coverage/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/coveragejson/bioclima-coverage/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/coveragejson/bioclima-coverage/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/coveragejson/bioclima-coverage/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/coveragejson/bioclima-coverage/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.coveragejson.bioclima-coverage"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.ontology.bioclima-ontology",
+      "name": "BioClima ontology",
+      "abstract": "Semantic model for the BioClima register. It defines the concepts used by EBVs, spatial indicators, policy alignment records, provenance records and bioclimatic zonification categories.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "model",
+      "register": "bioclima",
+      "group": "ontology",
+      "groupLabel": {
+        "en": "Ontology",
+        "es": "Ontolog\u00eda",
+        "zh": "\u672c\u4f53",
+        "ro": "Ontologie"
+      },
+      "version": "0.1.0",
+      "links": [
+        {
+          "title": "BioClima interactive viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "BioClima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "BioClima ontology in Turtle",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/bioclima-ontology.ttl",
+          "rel": "ontology"
+        },
+        {
+          "title": "BioClima SHACL shapes",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/shapes.shacl",
+          "rel": "validation"
+        },
+        {
+          "title": "Family: Ontology",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology",
+          "rel": "classified-under"
+        }
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (ontology)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology"
+        },
+        {
+          "title": "BioClima ontology in Turtle",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/ontology/bioclima-ontology.ttl"
+        },
+        {
+          "title": "BioClima SHACL shapes",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/ontology/shapes.shacl"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-ontology",
+        "skos",
+        "rdf",
+        "semantic-model",
+        "vocabulary"
+      ],
+      "dependsOn": [
+        "ogc.bioclima.ontology"
+      ],
+      "shaclShapes": {
+        "ogc.bioclima.ontology.bioclima-ontology": [
+          "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/shapes.shacl"
+        ]
+      },
+      "ontology": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/bioclima-ontology/ontology.ttl",
+      "dateOfLastChange": "2024-11-01",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ontology/bioclima-ontology/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ontology/bioclima-ontology/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ontology.bioclima-ontology"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.policy.kmgbf-target",
+      "name": "Kunming-Montreal GBF Target",
+      "abstract": "Schema for a single target of the Kunming-Montreal Global Biodiversity Framework: target number, multilingual label and definition, deadline, key indicators. Concrete targets (e.g. Target 1, Target 8) are stored in the examples/ folder. Indicators reference these targets through the policy-alignment block.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "schema",
+      "register": "bioclima",
+      "group": "policy",
+      "groupLabel": {
+        "en": "Policy alignment",
+        "es": "Alineaci\u00f3n con pol\u00edticas",
+        "zh": "\u653f\u7b56\u5bf9\u9f50",
+        "ro": "Aliniere cu politici"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.policy"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-policy",
+        "kmgbf",
+        "target"
+      ],
+      "links": [
+        {
+          "title": "Bioclima interactive viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Kunming-Montreal GBF decision text",
+          "href": "https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf",
+          "rel": "standard"
+        },
+        {
+          "title": "Family: Policy alignment",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy",
+          "rel": "classified-under"
+        },
+        {
+          "title": "Ontology concept: kmgbf-target-1",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+          "rel": "described-by"
+        },
+        {
+          "title": "Ontology concept: kmgbf-target-8",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+          "rel": "described-by"
+        }
+      ],
+      "concept": [
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1",
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (policy)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/kmgbf-target/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/kmgbf-target/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/policy/kmgbf-target/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/kmgbf-target/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/kmgbf-target/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy.kmgbf-target"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.ebv.ebv-definition",
+      "name": "EBV Definition (generic)",
+      "abstract": "Generic schema describing an Essential Biodiversity Variable dataset following the GeoBON inventory model. Concrete EBVs (such as vap-coniferous and vap-deciduous) inherit this template and provide their actual CoverageJSON file (conformant to the central bioclima-coverage profile) inside their own examples/ folder. Every EBV record declares its observed property by IRI into the Bioclima ontology, so the same template scales to any biodiversity variable.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "schema",
+      "register": "bioclima",
+      "group": "ebv",
+      "groupLabel": {
+        "en": "EBVs (Essential Biodiversity Variables)",
+        "es": "EBVs (Variables Esenciales de Biodiversidad)",
+        "zh": "\u57fa\u672c\u751f\u7269\u591a\u6837\u6027\u53d8\u91cf(EBV)",
+        "ro": "EBV (Variabile esen\u021biale de biodiversitate)"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.ebv",
+        "ogc.bioclima.coveragejson.bioclima-coverage"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-ebv",
+        "template",
+        "ebv-definition"
+      ],
+      "links": [
+        {
+          "title": "Bioclima interactive viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "GeoBON EBV portal model",
+          "href": "https://portal.geobon.org",
+          "rel": "source-model"
+        },
+        {
+          "title": "Family: EBVs (Essential Biodiversity Variables)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv",
+          "rel": "classified-under"
+        },
+        {
+          "title": "Ontology concept: ecosystem-phenology",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/ecosystem-phenology",
+          "rel": "described-by"
+        }
+      ],
+      "concept": [
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/ecosystem-phenology"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (ebv)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/ebv-definition/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/ebv-definition/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/ebv/ebv-definition/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/ebv-definition/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/ebv-definition/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.ebv-definition"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.indicator.indicator-definition",
+      "name": "Spatial Indicator Definition (generic)",
+      "abstract": "Generic recipe-style schema for a spatial biodiversity indicator: declares EBV inputs, parameters, output unit, implementation entry point (Python script and version) and policy alignment. Concrete indicators such as the Phenological Change Indicator (PCI) and the Bioclimatic Zonification follow this template. The schema enforces an explicit link to KMGBF/SDG targets so every indicator is auditable end-to-end.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "schema",
+      "register": "bioclima",
+      "group": "indicator",
+      "groupLabel": {
+        "en": "Spatial Indicators",
+        "es": "Indicadores espaciales",
+        "zh": "\u7a7a\u95f4\u6307\u6807",
+        "ro": "Indicatori spa\u021biali"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.ebv.ebv-definition",
+        "ogc.bioclima.policy.policy-alignment",
+        "ogc.bioclima.coveragejson.bioclima-coverage",
+        "ogc.bioclima.indicator"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-indicator",
+        "template",
+        "indicator-definition"
+      ],
+      "links": [
+        {
+          "title": "Bioclima interactive viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Reference pattern: bblocks-seadots",
+          "href": "https://github.com/ogcincubator/bblocks-seadots",
+          "rel": "reference"
+        },
+        {
+          "title": "Family: Spatial Indicators",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator",
+          "rel": "classified-under"
+        }
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (indicator)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/indicator-definition/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/indicator-definition/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/indicator-definition/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/indicator-definition/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/indicator-definition/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/indicator/indicator-definition/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/indicator-definition/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/indicator-definition/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator.indicator-definition"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.provenance.ebv-provenance",
+      "name": "EBV Provenance (W3C PROV)",
+      "abstract": "PROV-O encoded lineage for an EBV dataset: raw satellite input(s), processing activity, agent, methodology citation. Inspired by the bblock-prov-schema-x reference pattern: every Bioclima EBV must carry a provenance record so downstream indicators inherit the chain of custody.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "schema",
+      "register": "bioclima",
+      "group": "provenance",
+      "groupLabel": {
+        "en": "Provenance",
+        "es": "Provenance / Trazabilidad",
+        "zh": "\u51fa\u5904\u4e0e\u6eaf\u6e90",
+        "ro": "Provenien\u021b\u0103"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.provenance",
+        "ogc.bioclima.ebv.ebv-definition"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-provenance",
+        "prov-o",
+        "lineage",
+        "ebv-provenance"
+      ],
+      "links": [
+        {
+          "title": "Bioclima interactive viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Reference: bblock-prov-schema-x",
+          "href": "https://github.com/ogcincubator/bblock-prov-schema-x",
+          "rel": "reference"
+        },
+        {
+          "title": "W3C PROV-O recommendation",
+          "href": "https://www.w3.org/TR/prov-o/",
+          "rel": "standard"
+        },
+        {
+          "title": "Family: Provenance",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance",
+          "rel": "classified-under"
+        }
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (provenance)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/ebv-provenance/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/ebv-provenance/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/provenance/ebv-provenance/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/ebv-provenance/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/ebv-provenance/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance.ebv-provenance"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.policy.policy-alignment",
+      "name": "Indicator \u2194 Policy Alignment",
+      "abstract": "Schema describing how a Bioclima indicator aligns with a KMGBF target or an SDG goal. Every alignment record states a relationship type (informs, measures-progress-on, triggers-action-for, supports-reporting-on), an evidence strength (direct, indirect, contextual) and a multilingual justification. This block is the semantic bridge between gridded indicators (PCI, zonification) and the policy frameworks they support, and is what makes the register actionable for policy-makers.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "schema",
+      "register": "bioclima",
+      "group": "policy",
+      "groupLabel": {
+        "en": "Policy alignment",
+        "es": "Alineaci\u00f3n con pol\u00edticas",
+        "zh": "\u653f\u7b56\u5bf9\u9f50",
+        "ro": "Aliniere cu politici"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.indicator.indicator-definition",
+        "ogc.bioclima.policy",
+        "ogc.bioclima.policy.kmgbf-target"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-policy",
+        "policy-alignment",
+        "kmgbf",
+        "sdg",
+        "bridge"
+      ],
+      "links": [
+        {
+          "title": "Bioclima interactive viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Reference pattern: bblocks-seadots",
+          "href": "https://github.com/ogcincubator/bblocks-seadots",
+          "rel": "reference"
+        },
+        {
+          "title": "Family: Policy alignment",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy",
+          "rel": "classified-under"
+        },
+        {
+          "title": "Ontology concept: kmgbf-target-8",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+          "rel": "described-by"
+        },
+        {
+          "title": "Ontology concept: pci",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+          "rel": "described-by"
+        }
+      ],
+      "concept": [
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci"
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (policy)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/policy-alignment/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/policy-alignment/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/policy/policy-alignment/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/policy-alignment/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/policy-alignment/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy.policy-alignment"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.ebv.vap-coniferous",
+      "name": "VAP Coniferous Finland 2001-2018",
+      "abstract": "Concrete EBV dataset: yearly maps of the start of the Vegetation Active Period in coniferous forests of Finland, 2001-2018, derived from MODIS Fractional Snow Cover. Packaged as a CoverageJSON document conformant to the bioclima-coverage profile. This is one of the two input EBVs consumed by the Phenological Change Indicator (PCI).",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "datatype",
+      "register": "bioclima",
+      "group": "ebv",
+      "groupLabel": {
+        "en": "EBVs (Essential Biodiversity Variables)",
+        "es": "EBVs (Variables Esenciales de Biodiversidad)",
+        "zh": "\u57fa\u672c\u751f\u7269\u591a\u6837\u6027\u53d8\u91cf(EBV)",
+        "ro": "EBV (Variabile esen\u021biale de biodiversitate)"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.provenance.ebv-provenance",
+        "ogc.bioclima.ebv.ebv-definition",
+        "ogc.bioclima.ebv",
+        "ogc.bioclima.coveragejson.bioclima-coverage"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-ebv",
+        "dataset",
+        "vap",
+        "coniferous",
+        "finland"
+      ],
+      "links": [
+        {
+          "title": "Open this layer in the viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-coniferous",
+          "rel": "viewer-layer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Phenological Change Indicator (PCI) \u2014 derived",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci",
+          "rel": "derived-indicator"
+        },
+        {
+          "title": "Family: EBVs (Essential Biodiversity Variables)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv",
+          "rel": "classified-under"
+        },
+        {
+          "title": "Ontology concept: vap_doy",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+          "rel": "described-by"
+        },
+        {
+          "title": "Ontology concept: coniferous-forest",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest",
+          "rel": "described-by"
+        }
+      ],
+      "concept": [
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest"
+      ],
+      "sources": [
+        {
+          "title": "\u25b6 Open this layer in the BioClima interactive map viewer",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-coniferous"
+        },
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (ebv)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-coniferous/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-coniferous/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/ebv/vap-coniferous/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/vap-coniferous/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/vap-coniferous/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.vap-coniferous"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.ebv.vap-deciduous",
+      "name": "VAP Deciduous Finland 2001-2018",
+      "abstract": "Concrete EBV dataset: yearly maps of the start of the Vegetation Active Period in deciduous vegetation of Finland, 2001-2018, derived from MODIS NDWI. Packaged as a CoverageJSON document conformant to the bioclima-coverage profile. This is one of the two input EBVs consumed by the Phenological Change Indicator (PCI).",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "datatype",
+      "register": "bioclima",
+      "group": "ebv",
+      "groupLabel": {
+        "en": "EBVs (Essential Biodiversity Variables)",
+        "es": "EBVs (Variables Esenciales de Biodiversidad)",
+        "zh": "\u57fa\u672c\u751f\u7269\u591a\u6837\u6027\u53d8\u91cf(EBV)",
+        "ro": "EBV (Variabile esen\u021biale de biodiversitate)"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.provenance.ebv-provenance",
+        "ogc.bioclima.ebv.ebv-definition",
+        "ogc.bioclima.ebv",
+        "ogc.bioclima.coveragejson.bioclima-coverage"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-ebv",
+        "dataset",
+        "vap",
+        "deciduous",
+        "finland"
+      ],
+      "links": [
+        {
+          "title": "Open this layer in the viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-deciduous",
+          "rel": "viewer-layer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Phenological Change Indicator (PCI) \u2014 derived",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci",
+          "rel": "derived-indicator"
+        },
+        {
+          "title": "Family: EBVs (Essential Biodiversity Variables)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv",
+          "rel": "classified-under"
+        },
+        {
+          "title": "Ontology concept: vap_doy",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+          "rel": "described-by"
+        },
+        {
+          "title": "Ontology concept: deciduous-vegetation",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/deciduous-vegetation",
+          "rel": "described-by"
+        }
+      ],
+      "concept": [
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy",
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/deciduous-vegetation"
+      ],
+      "sources": [
+        {
+          "title": "\u25b6 Open this layer in the BioClima interactive map viewer",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-deciduous"
+        },
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (ebv)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-deciduous/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-deciduous/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-deciduous/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-deciduous/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/vap-deciduous/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/ebv/vap-deciduous/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/vap-deciduous/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/vap-deciduous/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.vap-deciduous"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.provenance.indicator-provenance",
+      "name": "Indicator Provenance (W3C PROV)",
+      "abstract": "PROV-O record for a computed indicator: references the EBV inputs by bblock ID, the Python implementation by URL, the exact git commit hash and the GitHub Actions run id. This makes every PCI value re-derivable from raw observations.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "schema",
+      "register": "bioclima",
+      "group": "provenance",
+      "groupLabel": {
+        "en": "Provenance",
+        "es": "Provenance / Trazabilidad",
+        "zh": "\u51fa\u5904\u4e0e\u6eaf\u6e90",
+        "ro": "Provenien\u021b\u0103"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.provenance.ebv-provenance",
+        "ogc.bioclima.provenance",
+        "ogc.bioclima.indicator.indicator-definition"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-provenance",
+        "prov-o",
+        "lineage",
+        "indicator-provenance",
+        "git"
+      ],
+      "links": [
+        {
+          "title": "Bioclima interactive viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+          "rel": "viewer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Reference: bblock-prov-schema-x",
+          "href": "https://github.com/ogcincubator/bblock-prov-schema-x",
+          "rel": "reference"
+        },
+        {
+          "title": "Family: Provenance",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance",
+          "rel": "classified-under"
+        }
+      ],
+      "sources": [
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (provenance)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/indicator-provenance/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/indicator-provenance/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/provenance/indicator-provenance/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/indicator-provenance/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/indicator-provenance/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance.indicator-provenance"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.indicator.pci",
+      "name": "Phenological Change Indicator (PCI)",
+      "abstract": "Composite indicator of phenological change. PCI is published as a single CoverageJSON with a ParameterGroup of four parameters per pixel: trend (Theil-Sen slope of VAP day-of-year over the analysis window), anomaly (recent-vs-baseline mean difference), changepoint_year (Pettitt test) and changepoint_pvalue. Every parameter declares its observedProperty in the Bioclima ontology, so an analyst clicking a pixel in the viewer can navigate to the formal definition of each component. The bundle ships with code/compute.py and a worked example for Finland 2001-2018, and declares a formal policy alignment with KMGBF Target 8 and SDG 15.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "datatype",
+      "register": "bioclima",
+      "group": "indicator",
+      "groupLabel": {
+        "en": "Spatial Indicators",
+        "es": "Indicadores espaciales",
+        "zh": "\u7a7a\u95f4\u6307\u6807",
+        "ro": "Indicatori spa\u021biali"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.indicator",
+        "ogc.bioclima.ebv.vap-deciduous",
+        "ogc.bioclima.ebv.vap-coniferous",
+        "ogc.bioclima.indicator.indicator-definition",
+        "ogc.bioclima.coveragejson.bioclima-coverage",
+        "ogc.bioclima.provenance.indicator-provenance",
+        "ogc.bioclima.policy.policy-alignment"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-indicator",
+        "pci",
+        "phenology",
+        "trend",
+        "anomaly",
+        "changepoint"
+      ],
+      "links": [
+        {
+          "title": "Open PCI in the viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=pci",
+          "rel": "viewer-layer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Bioclimatic zones derived from PCI",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.zonification.bioclimatic-zone",
+          "rel": "derived-zonification"
+        },
+        {
+          "title": "Policy alignment record for PCI",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/policy-alignment/examples/pci-alignment.jsonld",
+          "rel": "policy-alignment"
+        },
+        {
+          "title": "Family: Spatial Indicators",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator",
+          "rel": "classified-under"
+        },
+        {
+          "title": "Ontology concept: pci",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+          "rel": "described-by"
+        },
+        {
+          "title": "Ontology concept: pci-trend",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend",
+          "rel": "described-by"
+        }
+      ],
+      "concept": [
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend"
+      ],
+      "sources": [
+        {
+          "title": "\u25b6 Open this layer in the BioClima interactive map viewer",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=pci"
+        },
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (indicator)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/pci/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/pci/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/pci/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/pci/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/indicator/pci/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/indicator/pci/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/pci/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/pci/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator.pci"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bioclima.zonification.bioclimatic-zone",
+      "name": "Bioclimatic Zonification from PCI",
+      "abstract": "Aggregated zonification derived from the PCI raster. The Python implementation (code/zonify.py) classifies every PCI pixel into one of four categories using published thresholds (stable, mild advance, strong advance, delay) and then groups spatially-contiguous pixels of the same category into a single MultiPolygon Feature with summary statistics (area, mean PCI, n pixels). This produces semantically-meaningful zones \u2014 not individual grid cells \u2014 and emits a GeoJSON FeatureCollection where every Feature carries the SKOS IRI of its category, the KMGBF targets it informs, and a provenance pointer to the upstream PCI bblock.",
+      "status": "under-development",
+      "dateTimeAddition": "2024-11-01T00:00:00Z",
+      "itemClass": "datatype",
+      "register": "bioclima",
+      "group": "zonification",
+      "groupLabel": {
+        "en": "Bioclimatic Zonification",
+        "es": "Zonificaci\u00f3n bioclim\u00e1tica",
+        "zh": "\u751f\u7269\u6c14\u5019\u5206\u533a",
+        "ro": "Zonificare bioclimatic\u0103"
+      },
+      "version": "0.2.0",
+      "dependsOn": [
+        "ogc.bioclima.zonification",
+        "ogc.bioclima.indicator.pci",
+        "ogc.bioclima.provenance.indicator-provenance",
+        "ogc.bioclima.indicator.indicator-definition",
+        "ogc.bioclima.coveragejson.bioclima-coverage",
+        "ogc.bioclima.policy.policy-alignment"
+      ],
+      "maintainers": [
+        {
+          "name": "BioClima Project",
+          "email": "maite.toscano@upm.es"
+        }
+      ],
+      "tags": [
+        "family-zonification",
+        "zone",
+        "bioclimatic",
+        "geojson",
+        "aggregation"
+      ],
+      "links": [
+        {
+          "title": "Open zones in the viewer",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=bioclimatic-zones",
+          "rel": "viewer-layer"
+        },
+        {
+          "title": "Bioclima registry index (by family)",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+          "rel": "registry-index"
+        },
+        {
+          "title": "Upstream indicator: PCI",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci",
+          "rel": "derived-from"
+        },
+        {
+          "title": "Family: Bioclimatic Zonification",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification",
+          "rel": "classified-under"
+        },
+        {
+          "title": "Ontology concept: zone-category",
+          "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category",
+          "rel": "described-by"
+        }
+      ],
+      "concept": [
+        "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category"
+      ],
+      "sources": [
+        {
+          "title": "\u25b6 Open this layer in the BioClima interactive map viewer",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=bioclimatic-zones"
+        },
+        {
+          "title": "BioClima interactive map viewer (all layers)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+        },
+        {
+          "title": "BioClima registry \u2014 classified by family (zonification)",
+          "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2024-11-01",
+      "schema": {
+        "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/zonification/bioclimatic-zone/schema.yaml",
+        "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/zonification/bioclimatic-zone/schema.json"
+      },
+      "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/zonification/bioclimatic-zone/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/zonification/bioclimatic-zone/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/zonification/bioclimatic-zone/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/zonification/bioclimatic-zone/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/zonification/bioclimatic-zone/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/zonification/bioclimatic-zone/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.zonification.bioclimatic-zone"
+        }
+      }
+    }
+  ],
+  "remoteCacheDir": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ]
+}

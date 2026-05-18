@@ -1,0 +1,65 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.ebv",
+  "name": "EBVs (Essential Biodiversity Variables)",
+  "abstract": "Family block for Essential Biodiversity Variables. It groups the generic EBV definition block and concrete EBV datasets published as BioClima CoverageJSON.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "model",
+  "register": "bioclima",
+  "group": "ebv",
+  "groupLabel": {
+    "en": "EBVs (Essential Biodiversity Variables)",
+    "es": "EBVs (Variables Esenciales de Biodiversidad)",
+    "zh": "\u57fa\u672c\u751f\u7269\u591a\u6837\u6027\u53d8\u91cf(EBV)",
+    "ro": "EBV (Variabile esen\u021biale de biodiversitate)"
+  },
+  "version": "0.1.0",
+  "highlighted": true,
+  "tags": [
+    "family-ebv",
+    "family",
+    "classification"
+  ],
+  "links": [
+    {
+      "title": "Interactive map viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Classified BioClima registry",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv",
+      "rel": "registry-index"
+    },
+    {
+      "title": "OGC Building Blocks viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ebv",
+      "rel": "ogc-bblocks-viewer"
+    }
+  ],
+  "seeAlso": [
+    "ogc.bioclima.ebv.ebv-definition",
+    "ogc.bioclima.ebv.vap-coniferous",
+    "ogc.bioclima.ebv.vap-deciduous"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (ebv)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2024-11-01",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ebv/",
+  "validationPassed": true,
+  "description": "# EBVs (Essential Biodiversity Variables)\n\nFamily block for Essential Biodiversity Variables. It groups the generic EBV definition block and concrete EBV datasets published as BioClima CoverageJSON.\n\n## Where this appears\n\n- Interactive map viewer: <https://maytetoscano.github.io/bblocks-bioclima/viewer/>\n- Classified register by family: <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv>\n- OGC Building Blocks viewer: <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ebv>\n\n## Blocks in this family\n\n- `ogc.bioclima.ebv.ebv-definition`\n- `ogc.bioclima.ebv.vap-coniferous`\n- `ogc.bioclima.ebv.vap-deciduous`\n",
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/ebv"
+}

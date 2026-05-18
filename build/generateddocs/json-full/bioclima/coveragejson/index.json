@@ -1,0 +1,63 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.coveragejson",
+  "name": "CoverageJSON / BioClima Coverage",
+  "abstract": "Family block for the BioClima CoverageJSON profile. It groups the reusable CoverageJSON constraints used by EBV datasets, derived indicators and zonification outputs.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "model",
+  "register": "bioclima",
+  "group": "coveragejson",
+  "groupLabel": {
+    "en": "CoverageJSON / BioClima Coverage",
+    "es": "CoverageJSON / BioClima Coverage",
+    "zh": "CoverageJSON / BioClima Coverage",
+    "ro": "CoverageJSON / BioClima Coverage"
+  },
+  "version": "0.1.0",
+  "highlighted": true,
+  "tags": [
+    "family-coveragejson",
+    "family",
+    "classification"
+  ],
+  "links": [
+    {
+      "title": "Interactive map viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Classified BioClima registry",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson",
+      "rel": "registry-index"
+    },
+    {
+      "title": "OGC Building Blocks viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.coveragejson",
+      "rel": "ogc-bblocks-viewer"
+    }
+  ],
+  "seeAlso": [
+    "ogc.bioclima.coveragejson.bioclima-coverage"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (coveragejson)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2024-11-01",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/coveragejson/",
+  "validationPassed": true,
+  "description": "# CoverageJSON / BioClima Coverage\n\nFamily block for the BioClima CoverageJSON profile. It groups the reusable CoverageJSON constraints used by EBV datasets, derived indicators and zonification outputs.\n\n## Where this appears\n\n- Interactive map viewer: <https://maytetoscano.github.io/bblocks-bioclima/viewer/>\n- Classified register by family: <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson>\n- OGC Building Blocks viewer: <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.coveragejson>\n\n## Blocks in this family\n\n- `ogc.bioclima.coveragejson.bioclima-coverage`\n",
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/coveragejson"
+}

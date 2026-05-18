@@ -1,0 +1,101 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.provenance.ebv-provenance",
+  "name": "EBV Provenance (W3C PROV)",
+  "abstract": "PROV-O encoded lineage for an EBV dataset: raw satellite input(s), processing activity, agent, methodology citation. Inspired by the bblock-prov-schema-x reference pattern: every Bioclima EBV must carry a provenance record so downstream indicators inherit the chain of custody.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "provenance",
+  "groupLabel": {
+    "en": "Provenance",
+    "es": "Provenance / Trazabilidad",
+    "zh": "\u51fa\u5904\u4e0e\u6eaf\u6e90",
+    "ro": "Provenien\u021b\u0103"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.provenance",
+    "ogc.bioclima.ebv.ebv-definition"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-provenance",
+    "prov-o",
+    "lineage",
+    "ebv-provenance"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Reference: bblock-prov-schema-x",
+      "href": "https://github.com/ogcincubator/bblock-prov-schema-x",
+      "rel": "reference"
+    },
+    {
+      "title": "W3C PROV-O recommendation",
+      "href": "https://www.w3.org/TR/prov-o/",
+      "rel": "standard"
+    },
+    {
+      "title": "Family: Provenance",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance",
+      "rel": "classified-under"
+    }
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (provenance)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2024-11-01",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/ebv-provenance/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/ebv-provenance/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/provenance/ebv-provenance/",
+  "description": "# EBV Provenance (W3C PROV)\n\nPROV-O record describing the lineage of an EBV dataset: raw inputs (satellite acquisitions), processing activity, agent and methodology citation.\n",
+  "examples": [
+    {
+      "title": "VAP coniferous provenance",
+      "content": "Provenance record for the Finnish coniferous VAP EBV.",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/ebv-provenance/examples/vap-coniferous-provenance.jsonld",
+          "code": "{\n  \"@context\": {\n    \"@vocab\": \"http://www.w3.org/ns/prov#\"\n  },\n  \"entity\": \"ogc.bioclima.ebv.vap-coniferous\",\n  \"wasDerivedFrom\": [\n    \"https://laadsweb.modaps.eosdis.nasa.gov/MODIS-Terra-L1B\",\n    \"https://en.ilmatieteenlaitos.fi/satellite-receiving-station-sodankyla\"\n  ],\n  \"wasGeneratedBy\": {\n    \"activity\": \"Derivation of Start-of-VAP from MODIS Fractional Snow Cover\",\n    \"startedAtTime\": \"2020-06-01T00:00:00Z\",\n    \"endedAtTime\": \"2020-11-04T00:00:00Z\",\n    \"hadPlan\": \"https://doi.org/10.1016/j.rse.2013.09.022\"\n  },\n  \"wasAttributedTo\": {\n    \"agent\": \"Kristin B\u00f6ttcher\",\n    \"role\": \"Principal investigator\",\n    \"organization\": \"Finnish Environment Institute (SYKE)\"\n  }\n}",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/bioclima/provenance/ebv-provenance/example_1_1.json"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.provenance.ebv-provenance/schema.yaml\ntitle: EBV Provenance\ntype: object\nrequired:\n- entity\n- wasGeneratedBy\n- wasAttributedTo\nproperties:\n  entity:\n    type: string\n    format: iri\n  wasDerivedFrom:\n    type: array\n    items:\n      type: string\n      format: iri\n  wasGeneratedBy:\n    type: object\n    required:\n    - activity\n    - startedAtTime\n    - endedAtTime\n    properties:\n      activity:\n        type: string\n      startedAtTime:\n        type: string\n        format: date-time\n      endedAtTime:\n        type: string\n        format: date-time\n      hadPlan:\n        type: string\n        format: iri\n  wasAttributedTo:\n    type: object\n    required:\n    - agent\n    properties:\n      agent:\n        type: string\n      role:\n        type: string\n      organization:\n        type: string\n",
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/provenance/ebv-provenance"
+}

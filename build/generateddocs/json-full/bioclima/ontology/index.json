@@ -1,0 +1,69 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.ontology",
+  "name": "Ontology",
+  "abstract": "Family block for semantic resources. It groups the BioClima SKOS/RDF ontology and the dereferenceable ontology concept pages used by the viewer and the building blocks.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "model",
+  "register": "bioclima",
+  "group": "ontology",
+  "groupLabel": {
+    "en": "Ontology",
+    "es": "Ontolog\u00eda",
+    "zh": "\u672c\u4f53",
+    "ro": "Ontologie"
+  },
+  "version": "0.1.0",
+  "highlighted": true,
+  "tags": [
+    "family-ontology",
+    "family",
+    "classification"
+  ],
+  "links": [
+    {
+      "title": "Interactive map viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Classified BioClima registry",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology",
+      "rel": "registry-index"
+    },
+    {
+      "title": "OGC Building Blocks viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ontology",
+      "rel": "ogc-bblocks-viewer"
+    },
+    {
+      "title": "Dereferenceable BioClima ontology landing page",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/",
+      "rel": "ontology"
+    }
+  ],
+  "seeAlso": [
+    "ogc.bioclima.ontology.bioclima-ontology"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (ontology)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology"
+    }
+  ],
+  "shaclShapes": {},
+  "ontology": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/ontology.ttl",
+  "dateOfLastChange": "2024-11-01",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/",
+  "validationPassed": true,
+  "description": "# Ontology\n\nFamily block for semantic resources. It groups the BioClima SKOS/RDF ontology and the dereferenceable ontology concept pages used by the viewer and the building blocks.\n\n## Where this appears\n\n- Interactive map viewer: <https://maytetoscano.github.io/bblocks-bioclima/viewer/>\n- Classified register by family: <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology>\n- OGC Building Blocks viewer: <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ontology>\n\n## Blocks in this family\n\n- `ogc.bioclima.ontology.bioclima-ontology`\n",
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/ontology"
+}

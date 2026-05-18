@@ -1,0 +1,35 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.zonification.bioclimatic-zone/schema.yaml
+title: Bioclimatic zonification
+type: object
+required:
+- type
+- features
+properties:
+  type:
+    const: FeatureCollection
+  features:
+    type: array
+    items:
+      type: object
+      required:
+      - type
+      - geometry
+      - properties
+      properties:
+        type:
+          const: Feature
+        geometry:
+          type: object
+        properties:
+          type: object
+          required:
+          - category
+          properties:
+            category:
+              type: string
+              format: iri
+            pci_value:
+              type: number
+  metadata:
+    type: object

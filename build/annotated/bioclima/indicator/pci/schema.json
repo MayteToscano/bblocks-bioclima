@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.indicator.pci/schema.yaml",
+  "title": "PCI \u2014 Phenological Change Indicator (4-parameter ParameterGroup)",
+  "description": "Schema of a PCI CoverageJSON output. The PCI is a composite indicator\nencoded as a ParameterGroup of four per-pixel parameters:\n  - trend              (Theil-Sen slope, days/year)\n  - anomaly            (mean recent - mean baseline, days)\n  - changepoint_year   (Pettitt argmax, year)\n  - changepoint_pvalue (Pettitt p-value approximation, dimensionless)\nConforms to ogc.bioclima.coveragejson.bioclima-coverage.\n",
+  "type": "object",
+  "required": [
+    "type",
+    "domain",
+    "parameters",
+    "ranges",
+    "parameterGroups"
+  ],
+  "properties": {
+    "type": {
+      "const": "Coverage"
+    },
+    "domain": {
+      "type": "object"
+    },
+    "parameters": {
+      "type": "object",
+      "required": [
+        "trend",
+        "anomaly",
+        "changepoint_year",
+        "changepoint_pvalue"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "trend": {
+          "$ref": "#/$defs/Parameter"
+        },
+        "anomaly": {
+          "$ref": "#/$defs/Parameter"
+        },
+        "changepoint_year": {
+          "$ref": "#/$defs/Parameter"
+        },
+        "changepoint_pvalue": {
+          "$ref": "#/$defs/Parameter"
+        }
+      }
+    },
+    "ranges": {
+      "type": "object",
+      "required": [
+        "trend",
+        "anomaly",
+        "changepoint_year",
+        "changepoint_pvalue"
+      ]
+    },
+    "parameterGroups": {
+      "type": "array",
+      "minItems": 1,
+      "contains": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "members"
+        ],
+        "properties": {
+          "id": {
+            "const": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci"
+          },
+          "type": {
+            "const": "ParameterGroup"
+          },
+          "members": {
+            "type": "array",
+            "minItems": 4,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "trend",
+                "anomaly",
+                "changepoint_year",
+                "changepoint_pvalue"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "Parameter": {
+      "type": "object",
+      "required": [
+        "type",
+        "observedProperty",
+        "unit"
+      ],
+      "properties": {
+        "type": {
+          "const": "Parameter"
+        },
+        "observedProperty": {
+          "type": "object",
+          "required": [
+            "id",
+            "label"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "iri",
+              "pattern": "^https://maytetoscano\\.github\\.io/bblocks-bioclima/ontology/indicator/(pci|pci-.+)$"
+            },
+            "label": {
+              "type": "object",
+              "required": [
+                "en"
+              ]
+            }
+          }
+        },
+        "unit": {
+          "type": "object",
+          "required": [
+            "id",
+            "symbol"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "iri"
+            },
+            "symbol": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

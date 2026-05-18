@@ -1,0 +1,98 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.provenance.indicator-provenance",
+  "name": "Indicator Provenance (W3C PROV)",
+  "abstract": "PROV-O record for a computed indicator: references the EBV inputs by bblock ID, the Python implementation by URL, the exact git commit hash and the GitHub Actions run id. This makes every PCI value re-derivable from raw observations.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "provenance",
+  "groupLabel": {
+    "en": "Provenance",
+    "es": "Provenance / Trazabilidad",
+    "zh": "\u51fa\u5904\u4e0e\u6eaf\u6e90",
+    "ro": "Provenien\u021b\u0103"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.provenance.ebv-provenance",
+    "ogc.bioclima.provenance",
+    "ogc.bioclima.indicator.indicator-definition"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-provenance",
+    "prov-o",
+    "lineage",
+    "indicator-provenance",
+    "git"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Reference: bblock-prov-schema-x",
+      "href": "https://github.com/ogcincubator/bblock-prov-schema-x",
+      "rel": "reference"
+    },
+    {
+      "title": "Family: Provenance",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance",
+      "rel": "classified-under"
+    }
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (provenance)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2024-11-01",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/indicator-provenance/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/indicator-provenance/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/provenance/indicator-provenance/",
+  "description": "# Indicator Provenance\n\nPROV-O record for a computed indicator. Captures the input EBV bblocks, the implementation script URL, its git commit hash, the GitHub Actions run id and the numerical parameters used. Generated automatically by `recompute-indicators.yml`.\n",
+  "examples": [
+    {
+      "title": "PCI provenance",
+      "content": "Provenance record for the PCI computation.",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/indicator-provenance/examples/pci-provenance.jsonld",
+          "code": "{\n  \"@context\": {\n    \"@vocab\": \"http://www.w3.org/ns/prov#\"\n  },\n  \"entity\": \"ogc.bioclima.indicator.pci/examples/pci-finland-2001-2018.covjson\",\n  \"wasDerivedFrom\": [\n    \"ogc.bioclima.ebv.vap-coniferous\",\n    \"ogc.bioclima.ebv.vap-deciduous\"\n  ],\n  \"wasGeneratedBy\": {\n    \"activity\": \"Compute PCI from VAP-DOY cubes\",\n    \"script\": \"https://maytetoscano.github.io/bblocks-bioclima/_sources/indicator/pci/code/compute.py\",\n    \"scriptVersion\": \"c970ce8dcb321e905a70d4afd42bb94183e8ec98\",\n    \"startedAtTime\": \"2024-11-01T12:00:00Z\",\n    \"endedAtTime\": \"2026-05-15T13:46:31Z\",\n    \"parameters\": {\n      \"coniferous_weight\": 0.4,\n      \"deciduous_weight\": 0.6,\n      \"trend_method\": \"ordinary-least-squares\",\n      \"min_valid_years\": 8\n    },\n    \"runId\": \"25921259629\"\n  },\n  \"wasAttributedTo\": {\n    \"agent\": \"github://maytetoscano/bblocks-bioclima/.github/workflows/recompute-indicators.yml\",\n    \"role\": \"Software agent\"\n  }\n}",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/bioclima/provenance/indicator-provenance/example_1_1.json"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.provenance.indicator-provenance/schema.yaml\ntitle: Indicator Provenance\nallOf:\n- $ref: https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml\n- type: object\n  properties:\n    wasGeneratedBy:\n      type: object\n      required:\n      - script\n      - scriptVersion\n      properties:\n        script:\n          type: string\n          format: iri\n        scriptVersion:\n          type: string\n        runId:\n          type: string\n        parameters:\n          type: object\n",
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/provenance/indicator-provenance"
+}

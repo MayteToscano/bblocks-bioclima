@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.ebv.vap-coniferous/schema.yaml",
+  "title": "VAP Coniferous Finland metadata record",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "ebv_entity": {
+          "type": "object",
+          "properties": {
+            "ebv_entity_type": {
+              "const": "https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.ontology.bioclima-ontology",
+  "name": "BioClima ontology",
+  "abstract": "Semantic model for the BioClima register. It defines the concepts used by EBVs, spatial indicators, policy alignment records, provenance records and bioclimatic zonification categories.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "model",
+  "register": "bioclima",
+  "group": "ontology",
+  "groupLabel": {
+    "en": "Ontology",
+    "es": "Ontolog\u00eda",
+    "zh": "\u672c\u4f53",
+    "ro": "Ontologie"
+  },
+  "version": "0.1.0",
+  "links": [
+    {
+      "title": "BioClima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "BioClima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "BioClima ontology in Turtle",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/bioclima-ontology.ttl",
+      "rel": "ontology"
+    },
+    {
+      "title": "BioClima SHACL shapes",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/shapes.shacl",
+      "rel": "validation"
+    },
+    {
+      "title": "Family: Ontology",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology",
+      "rel": "classified-under"
+    }
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (ontology)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology"
+    },
+    {
+      "title": "BioClima ontology in Turtle",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/ontology/bioclima-ontology.ttl"
+    },
+    {
+      "title": "BioClima SHACL shapes",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/ontology/shapes.shacl"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-ontology",
+    "skos",
+    "rdf",
+    "semantic-model",
+    "vocabulary"
+  ],
+  "dependsOn": [
+    "ogc.bioclima.ontology"
+  ],
+  "shaclShapes": {
+    "ogc.bioclima.ontology.bioclima-ontology": [
+      "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/shapes.shacl"
+    ]
+  },
+  "ontology": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/bioclima-ontology/ontology.ttl",
+  "dateOfLastChange": "2024-11-01",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/",
+  "validationPassed": true,
+  "description": "# BioClima ontology\n\nThis building block publishes the semantic model used by the BioClima register.\n\nIt defines the concepts referenced by EBVs, observed properties, spatial indicators, policy-alignment records, provenance records and bioclimatic zonification categories. The concepts are expressed in RDF/SKOS and supported by SHACL shapes.\n",
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/ontology/bioclima-ontology"
+}

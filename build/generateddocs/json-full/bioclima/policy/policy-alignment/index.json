@@ -1,0 +1,124 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.policy.policy-alignment",
+  "name": "Indicator \u2194 Policy Alignment",
+  "abstract": "Schema describing how a Bioclima indicator aligns with a KMGBF target or an SDG goal. Every alignment record states a relationship type (informs, measures-progress-on, triggers-action-for, supports-reporting-on), an evidence strength (direct, indirect, contextual) and a multilingual justification. This block is the semantic bridge between gridded indicators (PCI, zonification) and the policy frameworks they support, and is what makes the register actionable for policy-makers.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "bioclima",
+  "group": "policy",
+  "groupLabel": {
+    "en": "Policy alignment",
+    "es": "Alineaci\u00f3n con pol\u00edticas",
+    "zh": "\u653f\u7b56\u5bf9\u9f50",
+    "ro": "Aliniere cu politici"
+  },
+  "version": "0.2.0",
+  "dependsOn": [
+    "ogc.bioclima.indicator.indicator-definition",
+    "ogc.bioclima.policy",
+    "ogc.bioclima.policy.kmgbf-target"
+  ],
+  "maintainers": [
+    {
+      "name": "BioClima Project",
+      "email": "maite.toscano@upm.es"
+    }
+  ],
+  "tags": [
+    "family-policy",
+    "policy-alignment",
+    "kmgbf",
+    "sdg",
+    "bridge"
+  ],
+  "links": [
+    {
+      "title": "Bioclima interactive viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Bioclima registry index (by family)",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html",
+      "rel": "registry-index"
+    },
+    {
+      "title": "Reference pattern: bblocks-seadots",
+      "href": "https://github.com/ogcincubator/bblocks-seadots",
+      "rel": "reference"
+    },
+    {
+      "title": "Family: Policy alignment",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy",
+      "rel": "classified-under"
+    },
+    {
+      "title": "Ontology concept: kmgbf-target-8",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+      "rel": "described-by"
+    },
+    {
+      "title": "Ontology concept: pci",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci",
+      "rel": "described-by"
+    }
+  ],
+  "concept": [
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8",
+    "https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (policy)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2024-11-01",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/policy-alignment/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/policy-alignment/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/MayteToscano/bblocks-bioclima/blob/main/../../tmp/bblocks-tests/bioclima/policy/policy-alignment/",
+  "description": "# Indicator to Policy Alignment\n\nDeclares how an indicator aligns with one or more policy targets, with a relationship type, evidence strength and multilingual justification.\n\n## Relationship types\n\n- `measures-progress-on`\n- `informs`\n- `triggers-action-for`\n- `supports-reporting-on`\n",
+  "examples": [
+    {
+      "title": "PCI policy alignment",
+      "content": "How the PCI indicator aligns with KMGBF Targets 8 and 1, and with SDG 15. Each alignment carries a relationship type, an evidence-strength tag and a multilingual justification.",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/policy-alignment/examples/pci-alignment.jsonld",
+          "code": "{\n  \"@context\": {\n    \"@vocab\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/\",\n    \"indicator\": { \"@id\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/refersTo\", \"@type\": \"@id\" },\n    \"target\":    { \"@type\": \"@id\" }\n  },\n  \"indicator\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci\",\n  \"indicatorBblock\": \"ogc.bioclima.indicator.pci\",\n  \"alignments\": [\n    {\n      \"target\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8\",\n      \"targetBblock\": \"ogc.bioclima.policy.kmgbf-target\",\n      \"relationship\": \"measures-progress-on\",\n      \"evidenceStrength\": \"direct\",\n      \"justification\": {\n        \"en\": \"Earlier or later onset of the growing season is a primary ecological signal of climate-change pressure on boreal ecosystems; PCI quantifies that shift directly per pixel.\",\n        \"es\": \"El adelanto o retraso del inicio del periodo vegetativo es una se\u00f1al ecol\u00f3gica primaria de la presi\u00f3n del cambio clim\u00e1tico sobre los ecosistemas boreales; el PCI lo cuantifica directamente por p\u00edxel.\",\n        \"zh\": \"\u751f\u957f\u5b63\u5f00\u59cb\u7684\u63d0\u524d\u6216\u5ef6\u8fdf\u662f\u6c14\u5019\u53d8\u5316\u5bf9\u5317\u65b9\u751f\u6001\u7cfb\u7edf\u538b\u529b\u7684\u4e3b\u8981\u751f\u6001\u4fe1\u53f7;PCI \u76f4\u63a5\u91cf\u5316\u6bcf\u4e2a\u50cf\u7d20\u7684\u8fd9\u79cd\u53d8\u5316\u3002\",\n        \"ro\": \"Avansul sau \u00eent\u00e2rzierea \u00eenceputului sezonului de cre\u0219tere este un semnal ecologic principal al presiunii schimb\u0103rilor climatice asupra ecosistemelor boreale; PCI cuantific\u0103 direct aceast\u0103 schimbare la nivel de pixel.\"\n      }\n    },\n    {\n      \"target\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1\",\n      \"targetBblock\": \"ogc.bioclima.policy.kmgbf-target\",\n      \"relationship\": \"informs\",\n      \"evidenceStrength\": \"indirect\",\n      \"justification\": {\n        \"en\": \"Where PCI is significant, planning needs to internalise the bioclimatic gradient; the indicator informs participatory spatial planning decisions.\",\n        \"es\": \"Donde el PCI es significativo, la planificaci\u00f3n debe internalizar el gradiente bioclim\u00e1tico; el indicador informa decisiones de planificaci\u00f3n espacial participativa.\",\n        \"zh\": \"\u5728 PCI \u663e\u8457\u7684\u533a\u57df,\u89c4\u5212\u9700\u8981\u5c06\u751f\u7269\u6c14\u5019\u68af\u5ea6\u7eb3\u5165\u8003\u8651;\u8be5\u6307\u6807\u53ef\u4e3a\u53c2\u4e0e\u5f0f\u7a7a\u95f4\u89c4\u5212\u51b3\u7b56\u63d0\u4f9b\u4f9d\u636e\u3002\",\n        \"ro\": \"Acolo unde PCI este semnificativ, planificarea trebuie s\u0103 integreze gradientul bioclimatic; indicatorul informeaz\u0103 deciziile de planificare spa\u021bial\u0103 participativ\u0103.\"\n      }\n    },\n    {\n      \"target\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/sdg-15\",\n      \"relationship\": \"supports-reporting-on\",\n      \"evidenceStrength\": \"contextual\",\n      \"justification\": {\n        \"en\": \"Phenological monitoring is widely accepted as part of the evidence base for SDG 15 reporting on the integrity of terrestrial ecosystems.\",\n        \"es\": \"El seguimiento fenol\u00f3gico est\u00e1 ampliamente aceptado como parte de la base de evidencia para los informes del ODS 15 sobre la integridad de los ecosistemas terrestres.\",\n        \"zh\": \"\u7269\u5019\u76d1\u6d4b\u88ab\u5e7f\u6cdb\u63a5\u53d7\u4e3a SDG 15 \u5173\u4e8e\u9646\u5730\u751f\u6001\u7cfb\u7edf\u5b8c\u6574\u6027\u62a5\u544a\u7684\u8bc1\u636e\u57fa\u7840\u7684\u4e00\u90e8\u5206\u3002\",\n        \"ro\": \"Monitorizarea fenologic\u0103 este larg acceptat\u0103 ca parte din baza de dovezi pentru raportarea ODD 15 privind integritatea ecosistemelor terestre.\"\n      }\n    }\n  ]\n}\n",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/bioclima/policy/policy-alignment/example_1_1.json"
+        }
+      ]
+    },
+    {
+      "title": "Bioclimatic zonification policy alignment",
+      "content": "How the bioclimatic zonification informs participatory spatial planning (Target 1) and tracks climate adaptation (Target 8).",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/policy-alignment/examples/bioclimatic-zone-alignment.jsonld",
+          "code": "{\n  \"@context\": {\n    \"@vocab\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/\",\n    \"indicator\": { \"@id\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/refersTo\", \"@type\": \"@id\" },\n    \"target\":    { \"@type\": \"@id\" }\n  },\n  \"indicator\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category\",\n  \"indicatorBblock\": \"ogc.bioclima.zonification.bioclimatic-zone\",\n  \"alignments\": [\n    {\n      \"target\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1\",\n      \"targetBblock\": \"ogc.bioclima.policy.kmgbf-target\",\n      \"relationship\": \"informs\",\n      \"evidenceStrength\": \"direct\",\n      \"justification\": {\n        \"en\": \"Bioclimatic zones delineate areas with homogeneous phenological behaviour, which is precisely the kind of spatial input integrated, biodiversity-inclusive planning needs.\",\n        \"es\": \"Las zonas bioclim\u00e1ticas delimitan \u00e1reas con comportamiento fenol\u00f3gico homog\u00e9neo, exactamente la informaci\u00f3n espacial que la planificaci\u00f3n integrada e inclusiva con la biodiversidad necesita.\",\n        \"zh\": \"\u751f\u7269\u6c14\u5019\u533a\u5212\u5b9a\u5177\u6709\u540c\u8d28\u7269\u5019\u884c\u4e3a\u7684\u533a\u57df,\u6b63\u662f\u7efc\u5408\u4e14\u5305\u5bb9\u751f\u7269\u591a\u6837\u6027\u7684\u89c4\u5212\u6240\u9700\u7684\u7a7a\u95f4\u8f93\u5165\u3002\",\n        \"ro\": \"Zonele bioclimatice delimiteaz\u0103 arii cu comportament fenologic omogen, exact tipul de informa\u021bie spa\u021bial\u0103 necesar\u0103 planific\u0103rii integrate, inclusive pentru biodiversitate.\"\n      }\n    },\n    {\n      \"target\": \"https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8\",\n      \"targetBblock\": \"ogc.bioclima.policy.kmgbf-target\",\n      \"relationship\": \"measures-progress-on\",\n      \"evidenceStrength\": \"direct\",\n      \"justification\": {\n        \"en\": \"The proportion and area of 'strong advance' and 'delay' zones is a direct, auditable indicator of how climate change is reshaping boreal phenology.\",\n        \"es\": \"La proporci\u00f3n y superficie de zonas de 'adelanto fuerte' y 'retraso' es un indicador directo y auditable de c\u00f3mo el cambio clim\u00e1tico reformula la fenolog\u00eda boreal.\",\n        \"zh\": \"\u201c\u5f3a\u70c8\u63d0\u524d\u201d\u4e0e\u201c\u5ef6\u8fdf\u201d\u533a\u57df\u7684\u6bd4\u4f8b\u548c\u9762\u79ef\u662f\u6c14\u5019\u53d8\u5316\u91cd\u5851\u5317\u65b9\u7269\u5019\u7684\u76f4\u63a5\u3001\u53ef\u5ba1\u8ba1\u6307\u6807\u3002\",\n        \"ro\": \"Propor\u021bia \u0219i suprafa\u021ba zonelor de avans puternic \u0219i \u00eent\u00e2rziere sunt indicatori direc\u021bi \u0219i auditabili ai modului \u00een care schimb\u0103rile climatice modeleaz\u0103 fenologia boreal\u0103.\"\n      }\n    }\n  ]\n}\n",
+          "url": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/bioclima/policy/policy-alignment/example_2_1.json"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.policy.policy-alignment/schema.yaml\ntitle: Policy Alignment\ndescription: \"Forward link from an indicator to one or more KMGBF/SDG targets. The\n  reverse\\nlink from a target back to the indicators that inform it is held in the\\n`informedBy`\n  array of the kmgbf-target block. Together they make the\\nindicator \\u2194 policy\n  relationship bidirectionally navigable in the viewer and\\nin static lookups.\\n\"\ntype: object\nrequired:\n- indicator\n- alignments\nproperties:\n  indicator:\n    type: string\n    format: iri\n    description: SKOS concept IRI of the indicator (ontology level).\n  indicatorBblock:\n    type: string\n    description: Building-block identifier of the indicator (ogc.bioclima.indicator.<id>).\n  alignments:\n    type: array\n    minItems: 1\n    items:\n      type: object\n      required:\n      - target\n      - relationship\n      properties:\n        target:\n          type: string\n          format: iri\n        targetBblock:\n          type: string\n          description: Building-block identifier of the target record (typically `ogc.bioclima.policy.kmgbf-target`).\n        relationship:\n          enum:\n          - informs\n          - measures-progress-on\n          - triggers-action-for\n          - supports-reporting-on\n        evidenceStrength:\n          enum:\n          - direct\n          - indirect\n          - contextual\n        justification:\n          type: object\n          description: Multilingual rationale; at minimum `en` should be present.\n          required:\n          - en\n          properties:\n            en:\n              type: string\n            es:\n              type: string\n            zh:\n              type: string\n            ro:\n              type: string\n",
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/policy/policy-alignment"
+}

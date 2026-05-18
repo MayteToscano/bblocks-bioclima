@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.indicator.indicator-definition/schema.yaml",
+  "title": "Indicator Definition (generic)",
+  "type": "object",
+  "required": [
+    "id",
+    "label",
+    "definition",
+    "inputs",
+    "implementation",
+    "output"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "label": {
+      "type": "object",
+      "required": [
+        "en"
+      ]
+    },
+    "definition": {
+      "type": "object",
+      "required": [
+        "en"
+      ]
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "ebv"
+        ],
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "ebv": {
+            "type": "string",
+            "format": "iri"
+          },
+          "constraint": {
+            "type": "string",
+            "format": "iri"
+          },
+          "minYears": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "implementation": {
+      "type": "object",
+      "required": [
+        "language",
+        "entrypoint",
+        "version"
+      ],
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "entrypoint": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "requirements": {
+          "type": "string"
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "unit"
+      ],
+      "properties": {
+        "unit": {
+          "type": "string",
+          "format": "iri"
+        },
+        "format": {
+          "type": "string"
+        }
+      }
+    },
+    "policyAlignment": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.provenance.indicator-provenance/schema.yaml
+title: Indicator Provenance
+allOf:
+- $ref: https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml
+- type: object
+  properties:
+    wasGeneratedBy:
+      type: object
+      required:
+      - script
+      - scriptVersion
+      properties:
+        script:
+          type: string
+          format: iri
+        scriptVersion:
+          type: string
+        runId:
+          type: string
+        parameters:
+          type: object

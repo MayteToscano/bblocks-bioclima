@@ -1,0 +1,64 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.provenance",
+  "name": "Provenance",
+  "abstract": "Family block for provenance resources. It groups W3C PROV-O lineage records for EBV inputs and indicator outputs.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "model",
+  "register": "bioclima",
+  "group": "provenance",
+  "groupLabel": {
+    "en": "Provenance",
+    "es": "Provenance / Trazabilidad",
+    "zh": "\u51fa\u5904\u4e0e\u6eaf\u6e90",
+    "ro": "Provenien\u021b\u0103"
+  },
+  "version": "0.1.0",
+  "highlighted": true,
+  "tags": [
+    "family-provenance",
+    "family",
+    "classification"
+  ],
+  "links": [
+    {
+      "title": "Interactive map viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Classified BioClima registry",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance",
+      "rel": "registry-index"
+    },
+    {
+      "title": "OGC Building Blocks viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.provenance",
+      "rel": "ogc-bblocks-viewer"
+    }
+  ],
+  "seeAlso": [
+    "ogc.bioclima.provenance.ebv-provenance",
+    "ogc.bioclima.provenance.indicator-provenance"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (provenance)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2024-11-01",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/provenance/",
+  "validationPassed": true,
+  "description": "# Provenance\n\nFamily block for provenance resources. It groups W3C PROV-O lineage records for EBV inputs and indicator outputs.\n\n## Where this appears\n\n- Interactive map viewer: <https://maytetoscano.github.io/bblocks-bioclima/viewer/>\n- Classified register by family: <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance>\n- OGC Building Blocks viewer: <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.provenance>\n\n## Blocks in this family\n\n- `ogc.bioclima.provenance.ebv-provenance`\n- `ogc.bioclima.provenance.indicator-provenance`\n",
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/provenance"
+}

@@ -1,0 +1,1064 @@
+@prefix bblocks: <https://www.opengis.net/def/bblocks/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <http://www.w3.org/ns/oa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix schema: <https://schema.org/> .
+@prefix shacl: <https://www.w3.org/TR/shacl/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<bblocks://ogc.bioclima.zonification.bioclimatic-zone> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Datatype ;
+    rdfs:label "Bioclimatic Zonification from PCI" ;
+    dct:abstract "Aggregated zonification derived from the PCI raster. The Python implementation (code/zonify.py) classifies every PCI pixel into one of four categories using published thresholds (stable, mild advance, strong advance, delay) and then groups spatially-contiguous pixels of the same category into a single MultiPolygon Feature with summary statistics (area, mean PCI, n pixels). This produces semantically-meaningful zones — not individual grid cells — and emits a GeoJSON FeatureCollection where every Feature carries the SKOS IRI of its category, the KMGBF targets it informs, and a provenance pointer to the upstream PCI bblock."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.zonification.bioclimatic-zone> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/zonification/bioclimatic-zone/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/zonification/bioclimatic-zone/index.json> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=bioclimatic-zones>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification> ;
+    skos:closeMatch <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Bioclimatic Zonification from PCI" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "aggregation",
+        "bioclimatic",
+        "family-zonification",
+        "geojson",
+        "zone" ;
+    prof:hasResource [ rdfs:label "Family: Bioclimatic Zonification" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification> ],
+        [ rdfs:label "Ontology concept: zone-category" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/zone-category> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/zonification/bioclimatic-zone/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/zonification/bioclimatic-zone/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Upstream indicator: PCI" ;
+            ns1:relation <http://www.iana.org/assignments/relation/derived-from> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci> ],
+        [ rdfs:label "Open zones in the viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer-layer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=bioclimatic-zones> ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.coveragejson.bioclima-coverage>,
+        <bblocks://ogc.bioclima.indicator.indicator-definition>,
+        <bblocks://ogc.bioclima.indicator.pci>,
+        <bblocks://ogc.bioclima.policy.policy-alignment>,
+        <bblocks://ogc.bioclima.provenance.indicator-provenance>,
+        <bblocks://ogc.bioclima.zonification> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://covjson.org/spec/> rdfs:label "CoverageJSON 1.0 specification" .
+
+<https://docs.ogc.org/cs/21-069r2/21-069r2.html> rdfs:label "OGC 21-069r2 CoverageJSON Community Standard" .
+
+<https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:Neb3734271e784ee4a27858b814e15108 ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2026-05-18T07:31:07.139223"^^xsd:dateTime ;
+            prov:startedAtTime "2026-05-18T07:31:06.805999"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+                [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:7852004f7a243da02b9f923927508809620e5074" ;
+                    rdfs:seeAlso <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/register.json> ] ;
+            prov:wasAssociatedWith _:Neb3734271e784ee4a27858b814e15108 ] .
+
+<bblocks://ogc.bioclima.coveragejson> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "CoverageJSON / BioClima Coverage" ;
+    dct:abstract "Family block for the BioClima CoverageJSON profile. It groups the reusable CoverageJSON constraints used by EBV datasets, derived indicators and zonification outputs."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.coveragejson> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/coveragejson/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/coveragejson/index.json> ] ;
+    dct:hasVersion "0.1.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "CoverageJSON / BioClima Coverage" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "classification",
+        "family",
+        "family-coveragejson" ;
+    prof:hasResource [ rdfs:label "Interactive map viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ rdfs:label "Classified BioClima registry" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson> ],
+        [ rdfs:label "OGC Building Blocks viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ogc-bblocks-viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.coveragejson> ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.ebv.vap-coniferous> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Datatype ;
+    rdfs:label "VAP Coniferous Finland 2001-2018" ;
+    dct:abstract "Concrete EBV dataset: yearly maps of the start of the Vegetation Active Period in coniferous forests of Finland, 2001-2018, derived from MODIS Fractional Snow Cover. Packaged as a CoverageJSON document conformant to the bioclima-coverage profile. This is one of the two input EBVs consumed by the Phenological Change Indicator (PCI)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/vap-coniferous/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.vap-coniferous> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/vap-coniferous/index.md> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-coniferous>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> ;
+    skos:closeMatch <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy>,
+        <https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "VAP Coniferous Finland 2001-2018" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "coniferous",
+        "dataset",
+        "family-ebv",
+        "finland",
+        "vap" ;
+    prof:hasResource [ rdfs:label "Family: EBVs (Essential Biodiversity Variables)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> ],
+        [ rdfs:label "Open this layer in the viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer-layer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-coniferous> ],
+        [ rdfs:label "Ontology concept: vap_doy" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy> ],
+        [ rdfs:label "Ontology concept: coniferous-forest" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/coniferous-forest> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-coniferous/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ rdfs:label "Phenological Change Indicator (PCI) — derived" ;
+            ns1:relation <http://www.iana.org/assignments/relation/derived-indicator> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.coveragejson.bioclima-coverage>,
+        <bblocks://ogc.bioclima.ebv>,
+        <bblocks://ogc.bioclima.ebv.ebv-definition>,
+        <bblocks://ogc.bioclima.provenance.ebv-provenance> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.ebv.vap-deciduous> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Datatype ;
+    rdfs:label "VAP Deciduous Finland 2001-2018" ;
+    dct:abstract "Concrete EBV dataset: yearly maps of the start of the Vegetation Active Period in deciduous vegetation of Finland, 2001-2018, derived from MODIS NDWI. Packaged as a CoverageJSON document conformant to the bioclima-coverage profile. This is one of the two input EBVs consumed by the Phenological Change Indicator (PCI)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/vap-deciduous/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.vap-deciduous> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/vap-deciduous/index.json> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-deciduous>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> ;
+    skos:closeMatch <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy>,
+        <https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/deciduous-vegetation> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "VAP Deciduous Finland 2001-2018" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "dataset",
+        "deciduous",
+        "family-ebv",
+        "finland",
+        "vap" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-deciduous/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Phenological Change Indicator (PCI) — derived" ;
+            ns1:relation <http://www.iana.org/assignments/relation/derived-indicator> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator.pci> ],
+        [ rdfs:label "Ontology concept: deciduous-vegetation" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/entity/deciduous-vegetation> ],
+        [ rdfs:label "Ontology concept: vap_doy" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy> ],
+        [ rdfs:label "Open this layer in the viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer-layer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-deciduous> ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ rdfs:label "Family: EBVs (Essential Biodiversity Variables)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/vap-deciduous/schema.json> ;
+            prof:hasRole role:schema ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.coveragejson.bioclima-coverage>,
+        <bblocks://ogc.bioclima.ebv>,
+        <bblocks://ogc.bioclima.ebv.ebv-definition>,
+        <bblocks://ogc.bioclima.provenance.ebv-provenance> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.indicator.pci> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Datatype ;
+    rdfs:label "Phenological Change Indicator (PCI)" ;
+    dct:abstract "Composite indicator of phenological change. PCI is published as a single CoverageJSON with a ParameterGroup of four parameters per pixel: trend (Theil-Sen slope of VAP day-of-year over the analysis window), anomaly (recent-vs-baseline mean difference), changepoint_year (Pettitt test) and changepoint_pvalue. Every parameter declares its observedProperty in the Bioclima ontology, so an analyst clicking a pixel in the viewer can navigate to the formal definition of each component. The bundle ships with code/compute.py and a worked example for Finland 2001-2018, and declares a formal policy alignment with KMGBF Target 8 and SDG 15."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator.pci> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/pci/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/pci/index.md> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=pci>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator> ;
+    skos:closeMatch <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci>,
+        <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Phenological Change Indicator (PCI)" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "anomaly",
+        "changepoint",
+        "family-indicator",
+        "pci",
+        "phenology",
+        "trend" ;
+    prof:hasResource [ rdfs:label "Bioclimatic zones derived from PCI" ;
+            ns1:relation <http://www.iana.org/assignments/relation/derived-zonification> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.zonification.bioclimatic-zone> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/pci/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Ontology concept: pci" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci> ],
+        [ rdfs:label "Open PCI in the viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer-layer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=pci> ],
+        [ rdfs:label "Policy alignment record for PCI" ;
+            ns1:relation <http://www.iana.org/assignments/relation/policy-alignment> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/_sources/policy/policy-alignment/examples/pci-alignment.jsonld> ],
+        [ rdfs:label "Ontology concept: pci-trend" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci-trend> ],
+        [ rdfs:label "Family: Spatial Indicators" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator> ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/pci/schema.json> ;
+            prof:hasRole role:schema ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.coveragejson.bioclima-coverage>,
+        <bblocks://ogc.bioclima.ebv.vap-coniferous>,
+        <bblocks://ogc.bioclima.ebv.vap-deciduous>,
+        <bblocks://ogc.bioclima.indicator>,
+        <bblocks://ogc.bioclima.indicator.indicator-definition>,
+        <bblocks://ogc.bioclima.policy.policy-alignment>,
+        <bblocks://ogc.bioclima.provenance.indicator-provenance> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.ontology> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "Ontology" ;
+    dct:abstract "Family block for semantic resources. It groups the BioClima SKOS/RDF ontology and the dereferenceable ontology concept pages used by the viewer and the building blocks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ontology/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ontology/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ontology> ] ;
+    dct:hasVersion "0.1.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Ontology" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "classification",
+        "family",
+        "family-ontology" ;
+    prof:hasResource [ rdfs:label "OGC Building Blocks viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ogc-bblocks-viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ontology> ],
+        [ rdfs:label "Interactive map viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/ontology.ttl> ;
+            prof:hasRole role:specification ],
+        [ rdfs:label "Dereferenceable BioClima ontology landing page" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ontology> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/> ],
+        [ rdfs:label "Classified BioClima registry" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology> ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.ontology.bioclima-ontology> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "BioClima ontology" ;
+    dct:abstract "Semantic model for the BioClima register. It defines the concepts used by EBVs, spatial indicators, policy alignment records, provenance records and bioclimatic zonification categories."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ontology/bioclima-ontology/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ontology.bioclima-ontology> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ontology/bioclima-ontology/index.md> ] ;
+    dct:hasVersion "0.1.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/ontology/bioclima-ontology.ttl>,
+        <https://maytetoscano.github.io/bblocks-bioclima/ontology/shapes.shacl>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "BioClima ontology" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "family-ontology",
+        "rdf",
+        "semantic-model",
+        "skos",
+        "vocabulary" ;
+    prof:hasResource [ rdfs:label "Family: Ontology" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology> ],
+        [ dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ontology/bioclima-ontology/ontology.ttl> ;
+            prof:hasRole role:specification ],
+        [ rdfs:label "BioClima interactive viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ rdfs:label "BioClima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ rdfs:label "BioClima SHACL shapes" ;
+            ns1:relation <http://www.iana.org/assignments/relation/validation> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/shapes.shacl> ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.bioclima.ontology.bioclima-ontology> ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/ontology/bioclima-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ rdfs:label "BioClima ontology in Turtle" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ontology> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/bioclima-ontology.ttl> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.ontology> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.policy.kmgbf-target> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Kunming-Montreal GBF Target" ;
+    dct:abstract "Schema for a single target of the Kunming-Montreal Global Biodiversity Framework: target number, multilingual label and definition, deadline, key indicators. Concrete targets (e.g. Target 1, Target 8) are stored in the examples/ folder. Indicators reference these targets through the policy-alignment block."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/kmgbf-target/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy.kmgbf-target> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/kmgbf-target/index.json> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy> ;
+    skos:closeMatch <https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1>,
+        <https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Kunming-Montreal GBF Target" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "family-policy",
+        "kmgbf",
+        "target" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.json> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Ontology concept: kmgbf-target-1" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-1> ],
+        [ rdfs:label "Kunming-Montreal GBF decision text" ;
+            ns1:relation <http://www.iana.org/assignments/relation/standard> ;
+            ns2:hasTarget <https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf> ],
+        [ rdfs:label "Bioclima interactive viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/kmgbf-target/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Ontology concept: kmgbf-target-8" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8> ],
+        [ rdfs:label "Family: Policy alignment" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.policy> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.zonification> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "Bioclimatic Zonification" ;
+    dct:abstract "Family block for bioclimatic zonification. It groups polygon-based classification outputs derived from indicators and intended for decision-support use."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/zonification/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.zonification> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/zonification/index.md> ] ;
+    dct:hasVersion "0.1.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Bioclimatic Zonification" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "classification",
+        "family",
+        "family-zonification" ;
+    prof:hasResource [ rdfs:label "OGC Building Blocks viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ogc-bblocks-viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.zonification> ],
+        [ rdfs:label "Interactive map viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ rdfs:label "Classified BioClima registry" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification> ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://maytetoscano.github.io/bblocks-bioclima/ontology/bioclima-ontology.ttl> rdfs:label "BioClima ontology in Turtle" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/ontology/shapes.shacl> rdfs:label "BioClima SHACL shapes" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=bioclimatic-zones> rdfs:label "▶ Open this layer in the BioClima interactive map viewer" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=pci> rdfs:label "▶ Open this layer in the BioClima interactive map viewer" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-coniferous> rdfs:label "▶ Open this layer in the BioClima interactive map viewer" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/?layer=vap-deciduous> rdfs:label "▶ Open this layer in the BioClima interactive map viewer" .
+
+<bblocks://ogc.bioclima.indicator> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "Spatial Indicators" ;
+    dct:abstract "Family block for spatial indicators. It groups the generic indicator recipe and concrete indicators derived from EBV datasets, including the Phenological Change Indicator."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator> ] ;
+    dct:hasVersion "0.1.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Spatial Indicators" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "classification",
+        "family",
+        "family-indicator" ;
+    prof:hasResource [ rdfs:label "OGC Building Blocks viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ogc-bblocks-viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.indicator> ],
+        [ rdfs:label "Classified BioClima registry" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator> ],
+        [ rdfs:label "Interactive map viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.policy> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "Policy alignment" ;
+    dct:abstract "Family block for policy alignment resources. It groups policy targets and mappings between indicators, evidence and reporting frameworks."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/index.md> ] ;
+    dct:hasVersion "0.1.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Policy alignment" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "classification",
+        "family",
+        "family-policy" ;
+    prof:hasResource [ rdfs:label "OGC Building Blocks viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ogc-bblocks-viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.policy> ],
+        [ rdfs:label "Classified BioClima registry" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy> ],
+        [ rdfs:label "Interactive map viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.provenance> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "Provenance" ;
+    dct:abstract "Family block for provenance resources. It groups W3C PROV-O lineage records for EBV inputs and indicator outputs."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance> ] ;
+    dct:hasVersion "0.1.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Provenance" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "classification",
+        "family",
+        "family-provenance" ;
+    prof:hasResource [ rdfs:label "Classified BioClima registry" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance> ],
+        [ rdfs:label "OGC Building Blocks viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ogc-bblocks-viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.provenance> ],
+        [ rdfs:label "Interactive map viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.provenance.indicator-provenance> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Indicator Provenance (W3C PROV)" ;
+    dct:abstract "PROV-O record for a computed indicator: references the EBV inputs by bblock ID, the Python implementation by URL, the exact git commit hash and the GitHub Actions run id. This makes every PCI value re-derivable from raw observations."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/indicator-provenance/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/indicator-provenance/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance.indicator-provenance> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Indicator Provenance (W3C PROV)" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "family-provenance",
+        "git",
+        "indicator-provenance",
+        "lineage",
+        "prov-o" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Family: Provenance" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance> ],
+        [ rdfs:label "Reference: bblock-prov-schema-x" ;
+            ns1:relation <http://www.iana.org/assignments/relation/reference> ;
+            ns2:hasTarget <https://github.com/ogcincubator/bblock-prov-schema-x> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/indicator-provenance/schema.json> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ rdfs:label "Bioclima interactive viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.indicator.indicator-definition>,
+        <bblocks://ogc.bioclima.provenance>,
+        <bblocks://ogc.bioclima.provenance.ebv-provenance> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.ebv> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "EBVs (Essential Biodiversity Variables)" ;
+    dct:abstract "Family block for Essential Biodiversity Variables. It groups the generic EBV definition block and concrete EBV datasets published as BioClima CoverageJSON."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/index.md> ] ;
+    dct:hasVersion "0.1.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "EBVs (Essential Biodiversity Variables)" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "classification",
+        "family",
+        "family-ebv" ;
+    prof:hasResource [ rdfs:label "Interactive map viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ rdfs:label "OGC Building Blocks viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/ogc-bblocks-viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.ebv> ],
+        [ rdfs:label "Classified BioClima registry" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.policy.policy-alignment> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Indicator ↔ Policy Alignment" ;
+    dct:abstract "Schema describing how a Bioclima indicator aligns with a KMGBF target or an SDG goal. Every alignment record states a relationship type (informs, measures-progress-on, triggers-action-for, supports-reporting-on), an evidence strength (direct, indirect, contextual) and a multilingual justification. This block is the semantic bridge between gridded indicators (PCI, zonification) and the policy frameworks they support, and is what makes the register actionable for policy-makers."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/policy/policy-alignment/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.policy.policy-alignment> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/policy/policy-alignment/index.json> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy> ;
+    skos:closeMatch <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci>,
+        <https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Indicator ↔ Policy Alignment" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "bridge",
+        "family-policy",
+        "kmgbf",
+        "policy-alignment",
+        "sdg" ;
+    prof:hasResource [ rdfs:label "Family: Policy alignment" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy> ],
+        [ rdfs:label "Ontology concept: pci" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/indicator/pci> ],
+        [ rdfs:label "Bioclima interactive viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/schema.json> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ rdfs:label "Reference pattern: bblocks-seadots" ;
+            ns1:relation <http://www.iana.org/assignments/relation/reference> ;
+            ns2:hasTarget <https://github.com/ogcincubator/bblocks-seadots> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/policy/policy-alignment/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Ontology concept: kmgbf-target-8" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/policy/kmgbf-target-8> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.indicator.indicator-definition>,
+        <bblocks://ogc.bioclima.policy>,
+        <bblocks://ogc.bioclima.policy.kmgbf-target> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.provenance.ebv-provenance> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "EBV Provenance (W3C PROV)" ;
+    dct:abstract "PROV-O encoded lineage for an EBV dataset: raw satellite input(s), processing activity, agent, methodology citation. Inspired by the bblock-prov-schema-x reference pattern: every Bioclima EBV must carry a provenance record so downstream indicators inherit the chain of custody."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/provenance/ebv-provenance/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.provenance.ebv-provenance> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/provenance/ebv-provenance/index.md> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "EBV Provenance (W3C PROV)" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "ebv-provenance",
+        "family-provenance",
+        "lineage",
+        "prov-o" ;
+    prof:hasResource [ rdfs:label "W3C PROV-O recommendation" ;
+            ns1:relation <http://www.iana.org/assignments/relation/standard> ;
+            ns2:hasTarget <https://www.w3.org/TR/prov-o/> ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ rdfs:label "Family: Provenance" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/provenance/ebv-provenance/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Reference: bblock-prov-schema-x" ;
+            ns1:relation <http://www.iana.org/assignments/relation/reference> ;
+            ns2:hasTarget <https://github.com/ogcincubator/bblock-prov-schema-x> ],
+        [ rdfs:label "Bioclima interactive viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.ebv.ebv-definition>,
+        <bblocks://ogc.bioclima.provenance> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson> rdfs:label "BioClima registry — classified by family (coveragejson)" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ontology> rdfs:label "BioClima registry — classified by family (ontology)" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-zonification> rdfs:label "BioClima registry — classified by family (zonification)" .
+
+<bblocks://ogc.bioclima.ebv.ebv-definition> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "EBV Definition (generic)" ;
+    dct:abstract "Generic schema describing an Essential Biodiversity Variable dataset following the GeoBON inventory model. Concrete EBVs (such as vap-coniferous and vap-deciduous) inherit this template and provide their actual CoverageJSON file (conformant to the central bioclima-coverage profile) inside their own examples/ folder. Every EBV record declares its observed property by IRI into the Bioclima ontology, so the same template scales to any biodiversity variable."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/ebv/ebv-definition/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.ebv.ebv-definition> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/ebv/ebv-definition/index.json> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> ;
+    skos:closeMatch <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/ecosystem-phenology> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "EBV Definition (generic)" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "ebv-definition",
+        "family-ebv",
+        "template" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Family: EBVs (Essential Biodiversity Variables)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> ],
+        [ rdfs:label "Ontology concept: ecosystem-phenology" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/ecosystem-phenology> ],
+        [ rdfs:label "Bioclima interactive viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ rdfs:label "GeoBON EBV portal model" ;
+            ns1:relation <http://www.iana.org/assignments/relation/source-model> ;
+            ns2:hasTarget <https://portal.geobon.org> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/ebv/ebv-definition/schema.json> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.coveragejson.bioclima-coverage>,
+        <bblocks://ogc.bioclima.ebv> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bioclima.indicator.indicator-definition> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Spatial Indicator Definition (generic)" ;
+    dct:abstract "Generic recipe-style schema for a spatial biodiversity indicator: declares EBV inputs, parameters, output unit, implementation entry point (Python script and version) and policy alignment. Concrete indicators such as the Phenological Change Indicator (PCI) and the Bioclimatic Zonification follow this template. The schema enforces an explicit link to KMGBF/SDG targets so every indicator is auditable end-to-end."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/indicator/indicator-definition/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.indicator.indicator-definition> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/indicator/indicator-definition/index.md> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "Spatial Indicator Definition (generic)" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "family-indicator",
+        "indicator-definition",
+        "template" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/indicator-definition/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ rdfs:label "Family: Spatial Indicators" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator> ],
+        [ rdfs:label "Reference pattern: bblocks-seadots" ;
+            ns1:relation <http://www.iana.org/assignments/relation/reference> ;
+            ns2:hasTarget <https://github.com/ogcincubator/bblocks-seadots> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/indicator/indicator-definition/schema.json> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "Bioclima interactive viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.coveragejson.bioclima-coverage>,
+        <bblocks://ogc.bioclima.ebv.ebv-definition>,
+        <bblocks://ogc.bioclima.indicator>,
+        <bblocks://ogc.bioclima.policy.policy-alignment> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-indicator> rdfs:label "BioClima registry — classified by family (indicator)" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy> rdfs:label "BioClima registry — classified by family (policy)" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-provenance> rdfs:label "BioClima registry — classified by family (provenance)" .
+
+<bblocks://ogc.bioclima.coveragejson.bioclima-coverage> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "BioClima CoverageJSON profile" ;
+    dct:abstract "Central CoverageJSON profile for the whole BioClima register. Every EBV dataset and every gridded indicator (PCI, zonification) is shipped as a CoverageJSON document that conforms to this profile. The profile fixes EPSG:4326 for spatial axes, allows an optional ISO 8601 temporal axis, and requires every parameter to declare an observedProperty.id resolvable in the BioClima ontology with labels in English, Spanish, Chinese and Romanian. This is the pivot block of the register: it connects raw geospatial encoding to ontology concepts and, downstream, to indicators and zonification."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2024-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks/bblock/ogc.bioclima.coveragejson.bioclima-coverage> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/json-full/bioclima/coveragejson/bioclima-coverage/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/generateddocs/markdown/bioclima/coveragejson/bioclima-coverage/index.md> ] ;
+    dct:hasVersion "0.2.0" ;
+    dct:modified "2024-11-01"^^xsd:date ;
+    dct:source <https://covjson.org/spec/>,
+        <https://docs.ogc.org/cs/21-069r2/21-069r2.html>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/>,
+        <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson> ;
+    skos:closeMatch <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy> ;
+    skos:inScheme <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    skos:prefLabel "BioClima CoverageJSON profile" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> ;
+    dcat:keyword "family-coveragejson",
+        "ogc",
+        "pivot",
+        "profile",
+        "schema" ;
+    prof:hasResource [ rdfs:label "Bioclima registry index (by family)" ;
+            ns1:relation <http://www.iana.org/assignments/relation/registry-index> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html> ],
+        [ rdfs:label "Family: CoverageJSON / BioClima Coverage" ;
+            ns1:relation <http://www.iana.org/assignments/relation/classified-under> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-coveragejson> ],
+        [ rdfs:label "Bioclima interactive viewer" ;
+            ns1:relation <http://www.iana.org/assignments/relation/viewer> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/viewer/> ],
+        [ rdfs:label "Ontology concept: vap_doy" ;
+            ns1:relation <http://www.iana.org/assignments/relation/described-by> ;
+            ns2:hasTarget <https://maytetoscano.github.io/bblocks-bioclima/ontology/ebv/vap_doy> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/coveragejson/bioclima-coverage/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/annotated/bioclima/coveragejson/bioclima-coverage/schema.yaml> ;
+            prof:hasRole role:schema ] ;
+    bblocks:dependsOn <bblocks://ogc.bioclima.coveragejson> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-ebv> rdfs:label "BioClima registry — classified by family (ebv)" .
+
+<https://maytetoscano.github.io/bblocks-bioclima/viewer/> rdfs:label "BioClima interactive map viewer (all layers)" .
+
+<https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/> a skos:ConceptScheme,
+        dcat:Catalog,
+        bblocks:BBlocksRegister ;
+    rdfs:label "Building Blocks - BioClima OGC Building Blocks" ;
+    dct:abstract """Interactive BioClima viewer: https://maytetoscano.github.io/bblocks-bioclima/viewer/
+
+Register of OGC Building Blocks for Essential Biodiversity Variables (EBVs),
+derived indicators, bioclimatic zonification, data provenance and policy
+alignment with the Kunming-Montreal GBF. The pilot dataset is the Start of
+Vegetation Active Period in Finland (2001-2018).
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:description """**Interactive map viewer:** https://maytetoscano.github.io/bblocks-bioclima/viewer/
+
+**Classified registry by family:** https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html
+
+**OGC Building Blocks viewer:** https://maytetoscano.github.io/bblocks-bioclima/bblocks/
+
+This register defines BioClima-specific building blocks on top of the
+OGC CoverageJSON community standard. It includes:
+
+- A profile of CoverageJSON for BioClima EBV datasets.
+- Generic schemas for EBV records and indicator records.
+- Concrete EBV datasets for Finnish coniferous and deciduous vegetation.
+- The Phenological Change Indicator (PCI) and its bioclimatic zonification,
+  each with a Python implementation that the CI can re-run automatically.
+- A multilingual SKOS/RDF ontology building block used by EBVs, indicators,
+  policy alignment, provenance and zonification records.
+- W3C PROV-O provenance schemas for both EBVs and indicators.
+- Policy alignment schemas linking indicators to Kunming-Montreal GBF
+  targets and SDG 15.
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:modified "2026-05-18T07:31:05.313165"^^xsd:dateTime ;
+    owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
+    skos:hasTopConcept <bblocks://ogc.bioclima.coveragejson>,
+        <bblocks://ogc.bioclima.coveragejson.bioclima-coverage>,
+        <bblocks://ogc.bioclima.ebv>,
+        <bblocks://ogc.bioclima.ebv.ebv-definition>,
+        <bblocks://ogc.bioclima.ebv.vap-coniferous>,
+        <bblocks://ogc.bioclima.ebv.vap-deciduous>,
+        <bblocks://ogc.bioclima.indicator>,
+        <bblocks://ogc.bioclima.indicator.indicator-definition>,
+        <bblocks://ogc.bioclima.indicator.pci>,
+        <bblocks://ogc.bioclima.ontology>,
+        <bblocks://ogc.bioclima.ontology.bioclima-ontology>,
+        <bblocks://ogc.bioclima.policy>,
+        <bblocks://ogc.bioclima.policy.kmgbf-target>,
+        <bblocks://ogc.bioclima.policy.policy-alignment>,
+        <bblocks://ogc.bioclima.provenance>,
+        <bblocks://ogc.bioclima.provenance.ebv-provenance>,
+        <bblocks://ogc.bioclima.provenance.indicator-provenance>,
+        <bblocks://ogc.bioclima.zonification>,
+        <bblocks://ogc.bioclima.zonification.bioclimatic-zone> ;
+    skos:prefLabel "Building Blocks - BioClima OGC Building Blocks" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/bblocks.jsonld> ],
+        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/bblocks.ttl> ],
+        [ rdfs:label "This Building Blocks Register in JSON format" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/build/register.json> ] ;
+    foaf:homepage <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/bblocks> ;
+    bblocks:hasValidationReport <https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/../../tmp/bblocks-tests/report.html> .
+
+_:Neb3734271e784ee4a27858b814e15108 a prov:Agent,
+        schema:SoftwareApplication ;
+    rdfs:label "OGC-NA tools" ;
+    dct:hasVersion "0.5.28" ;
+    rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
+

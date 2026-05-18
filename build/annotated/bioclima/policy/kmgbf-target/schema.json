@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maytetoscano.github.io/bblocks-bioclima/bblock/ogc.bioclima.policy.kmgbf-target/schema.yaml",
+  "title": "KMGBF Target",
+  "type": "object",
+  "required": [
+    "id",
+    "targetNumber",
+    "label",
+    "definition"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "targetNumber": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 23
+    },
+    "label": {
+      "type": "object",
+      "required": [
+        "en"
+      ]
+    },
+    "definition": {
+      "type": "object",
+      "required": [
+        "en"
+      ]
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "keyIndicators": {
+      "description": "SKOS concept IRIs of the indicators (ontology-level) that this target uses\nas evidence. This is the back-link from the target to its indicators.\n",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    },
+    "informedBy": {
+      "description": "Building-block-level back-link: which BioClima building blocks produce the\nevidence for this target, with the same vocabulary as the policy-alignment\nblock (relationship type and evidence strength). Together with the forward\nlink in `policy-alignment`, this makes the indicator \u2194 target relationship\nbidirectionally discoverable.\n",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "bblock",
+          "relationship"
+        ],
+        "properties": {
+          "bblock": {
+            "type": "string",
+            "description": "BioClima building-block identifier of the contributing indicator."
+          },
+          "relationship": {
+            "enum": [
+              "informs",
+              "measures-progress-on",
+              "triggers-action-for",
+              "supports-reporting-on"
+            ]
+          },
+          "evidenceStrength": {
+            "enum": [
+              "direct",
+              "indirect",
+              "contextual"
+            ]
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "string",
+      "format": "iri"
+    }
+  }
+}

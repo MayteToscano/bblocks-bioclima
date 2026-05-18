@@ -1,0 +1,64 @@
+
+
+{
+  "itemIdentifier": "ogc.bioclima.policy",
+  "name": "Policy alignment",
+  "abstract": "Family block for policy alignment resources. It groups policy targets and mappings between indicators, evidence and reporting frameworks.",
+  "status": "under-development",
+  "dateTimeAddition": "2024-11-01T00:00:00Z",
+  "itemClass": "model",
+  "register": "bioclima",
+  "group": "policy",
+  "groupLabel": {
+    "en": "Policy alignment",
+    "es": "Alineaci\u00f3n con pol\u00edticas",
+    "zh": "\u653f\u7b56\u5bf9\u9f50",
+    "ro": "Aliniere cu politici"
+  },
+  "version": "0.1.0",
+  "highlighted": true,
+  "tags": [
+    "family-policy",
+    "family",
+    "classification"
+  ],
+  "links": [
+    {
+      "title": "Interactive map viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/",
+      "rel": "viewer"
+    },
+    {
+      "title": "Classified BioClima registry",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy",
+      "rel": "registry-index"
+    },
+    {
+      "title": "OGC Building Blocks viewer",
+      "href": "https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.policy",
+      "rel": "ogc-bblocks-viewer"
+    }
+  ],
+  "seeAlso": [
+    "ogc.bioclima.policy.kmgbf-target",
+    "ogc.bioclima.policy.policy-alignment"
+  ],
+  "sources": [
+    {
+      "title": "BioClima interactive map viewer (all layers)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/"
+    },
+    {
+      "title": "BioClima registry \u2014 classified by family (policy)",
+      "link": "https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2024-11-01",
+  "sourceFiles": "https://raw.githubusercontent.com/MayteToscano/bblocks-bioclima/undefined/_sources/policy/",
+  "validationPassed": true,
+  "description": "# Policy alignment\n\nFamily block for policy alignment resources. It groups policy targets and mappings between indicators, evidence and reporting frameworks.\n\n## Where this appears\n\n- Interactive map viewer: <https://maytetoscano.github.io/bblocks-bioclima/viewer/>\n- Classified register by family: <https://maytetoscano.github.io/bblocks-bioclima/viewer/registry.html#fam-policy>\n- OGC Building Blocks viewer: <https://maytetoscano.github.io/bblocks-bioclima/bblocks/bblock/ogc.bioclima.policy>\n\n## Blocks in this family\n\n- `ogc.bioclima.policy.kmgbf-target`\n- `ogc.bioclima.policy.policy-alignment`\n",
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/MayteToscano/bblocks-bioclima",
+  "gitPath": "_sources/policy"
+}

@@ -1,0 +1,45 @@
+name: Validate and process Building Blocks
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+    paths-ignore:
+      - 'build/**'
+      - 'build-local/**'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  validate-and-process:
+    name: Validate and process
+    uses: opengeospatial/bblocks-postprocess/.github/workflows/validate-and-process.yml@master
+    with:
+      test_outputs_path: /tmp/bblocks-tests
+      viewer_path: bblocks
+
+      before_postprocess: |
+        python scripts/build-concepts-index.py || true
+        python scripts/build-ontology-pages.py || true
+        python scripts/build-families.py || true
+        rm -rf build/tests build-local/tests /tmp/bblocks-tests
+        git rm -r --cached build/tests build-local/tests 2>/dev/null || true
+        {
+          echo "build/tests/"
+          echo "build-local/"
+          echo "*.validation_failed.txt"
+          echo "_report.json"
+        } >> .git/info/exclude
+
+      before_pages: |
+        rm -rf build-local build/tests /tmp/bblocks-tests
+        find . -path ./.git -prune -o -type f -size +50M -print -delete || true
+
+    secrets:
+      sparql_username: ${{ secrets.sparql_username }}
+      sparql_password: ${{ secrets.sparql_password }}

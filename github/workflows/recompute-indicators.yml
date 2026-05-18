@@ -1,0 +1,79 @@
+# -----------------------------------------------------------------------------
+# Re-run the BioClima indicator pipeline when EBV data or indicator code
+# changes, and commit the new outputs back to the repository.
+#
+# Pipeline:
+#   1. PCI (4 parameters: trend / anomaly / changepoint_year / changepoint_pvalue)
+#      via Theil-Sen + Pettitt on the two VAP EBV cubes.
+#   2. Bioclimatic zones with true outlines (4-connected components +
+#      boundary tracing in pure numpy).
+#   3. Rebuild viewer/data/families.json from each bblock.json#groupLabel.
+#   4. Stamp indicator-provenance examples with the current git commit.
+# -----------------------------------------------------------------------------
+name: Recompute indicators
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_sources/ebv/vap-coniferous/examples/**'
+      - '_sources/ebv/vap-deciduous/examples/**'
+      - '_sources/indicator/pci/code/**'
+      - '_sources/zonification/bioclimatic-zone/code/**'
+  workflow_dispatch: {}
+
+jobs:
+  recompute:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PCI requirements
+        run: pip install -r _sources/indicator/pci/code/requirements.txt
+
+      - name: Compute PCI (4 parameters, Theil-Sen + Pettitt)
+        run: |
+          python _sources/indicator/pci/code/compute.py \
+            --coniferous   _sources/ebv/vap-coniferous/examples/finland-vap-coniferous-2001-2018.covjson \
+            --deciduous    _sources/ebv/vap-deciduous/examples/finland-vap-deciduous-2001-2018.covjson \
+            --output       _sources/indicator/pci/examples/pci-finland-2001-2018.covjson \
+            --baseline-end 2010 \
+            --min-years    8
+
+      - name: Compute Bioclimatic zones (true outlines)
+        run: |
+          python _sources/zonification/bioclimatic-zone/code/zonify.py \
+            --pci        _sources/indicator/pci/examples/pci-finland-2001-2018.covjson \
+            --output     _sources/zonification/bioclimatic-zone/examples/finland-zones-2001-2018.geojson \
+            --min-pixels 4
+
+      - name: Rebuild families.json from bblock.json#groupLabel
+        run: python scripts/build-families.py
+
+      - name: Stamp indicator-provenance with current commit
+        run: python scripts/update-provenance.py || echo "(optional step — skipped)"
+
+      - name: Commit recomputed outputs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _sources/indicator/pci/examples/ \
+                  _sources/zonification/bioclimatic-zone/examples/ \
+                  _sources/provenance/indicator-provenance/examples/ \
+                  viewer/data/families.json
+          if ! git diff --cached --quiet; then
+            git commit -m "ci: recompute PCI and zones (${{ github.sha }})"
+            git push
+          else
+            echo "No changes to commit."
+          fi

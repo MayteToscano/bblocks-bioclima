@@ -1,0 +1,38 @@
+# -----------------------------------------------------------------------------
+# Local validation pre-flight.
+# Runs the BioClima-specific lint + snapshot tests BEFORE the official OGC
+# bblocks-postprocess action does its own deeper validation in
+# process-bblocks.yml.
+# -----------------------------------------------------------------------------
+name: Validate (lint + tests)
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main, master]
+    paths-ignore:
+      - 'build/**'
+      - 'build-local/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps used by the tests
+        run: pip install -r _sources/indicator/pci/code/requirements.txt
+
+      - name: BioClima local lint (structure + group + back-links)
+        run: python scripts/lint-bblocks.py
+
+      - name: Snapshot tests (16 tests on the pipeline outputs)
+        run: python -m unittest tests.test_pipeline
+
+      - name: Rebuild families.json from bblock.json#groupLabel
+        run: python scripts/build-families.py
